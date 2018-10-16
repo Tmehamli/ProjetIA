@@ -18,7 +18,7 @@ namespace Pluscourtchemin
         static public int nbnodes = 10;
         static public int numinitial;
         static public int numfinal;
-
+        //ajout d'un commentair einutile pour tester git
         public Form1()
         {
             InitializeComponent();
