@@ -14,7 +14,13 @@ namespace Partie1
     {
         public Questionnaire()
         {
+            InitializeQuestion();
             InitializeComponent();
+        }
+
+        private void InitializeQuestion()
+        {
+            throw new NotImplementedException();
         }
     }
 }

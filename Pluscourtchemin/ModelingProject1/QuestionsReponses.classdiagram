@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="820991b4-d83a-4e0d-922f-54b4a70e9166" name="QuestionsReponses" linkedPackageId="6ce235ae-2be0-4048-86c7-dabbefdfb2f2" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="1964351e-d019-4080-a778-8dcb13946fe5">
+      <profileInstance Id="7c40afe3-9465-4dc1-8ed0-e7cd526f0c19" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="95606a9c-68dc-4638-ae38-33ea257bcdc5">
+      <profileInstance Id="1e2f296a-bae5-46cb-8438-1d3fa8a2d20c" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="48cbf8c5-f462-4fdf-902b-2e8a2efca1a3" name="Question" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1e63d963-de0f-4f62-abf8-93bc28ddac6c" />
+        <targetEnds>
+          <association Id="57b77afa-7006-4082-aff2-718562002562" isDerived="false" sourceEndRoleName="Question" targetEndRoleName="Reponse" isLeaf="false" isAbstract="false">
+            <classMoniker Id="ccfd5344-0c50-4a1b-b167-e091c68ddfaa" LastKnownName="Reponse" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ffd37fb8-9691-429b-9096-30d288785de8" name="Question" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="025cd601-f0d2-4466-8140-a1b55874865f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a993ca50-4d91-4f74-9dab-633454bbc1b4" name="Reponse" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="f4ba5d77-8a7a-4c95-9a7b-98b15a63d21c" name="Lower" value="n">
+                      <elementDefinition Id="4f0f45cb-4137-48da-bdad-582dc61d710c" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="01dbddff-31bf-464e-8490-ef4cb3273d97" name="Upper" value="n">
+                      <elementDefinition Id="144ba499-aa82-428d-8408-f05094a34ec4" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="7ebefa4a-ff0c-43e1-acf9-353e02eb6c8e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fb8a3d11-eb93-4401-adc0-67872cf0a185" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ccfd5344-0c50-4a1b-b167-e091c68ddfaa" name="Reponse" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="53f3f083-531d-4a7a-a662-7e460628ec75" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="6ce235ae-2be0-4048-86c7-dabbefdfb2f2" name="ModelingProject1">
+    <elementDefinition Id="4758e025-f1b9-43d0-8fac-b5b1091e5b86" />
+  </package>
+</logicalClassDesignerModel>
