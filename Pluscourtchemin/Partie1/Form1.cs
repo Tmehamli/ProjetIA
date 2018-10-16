@@ -12,15 +12,19 @@ namespace Partie1
 {
     public partial class Questionnaire : Form
     {
+        public Question QuestionCourrante { get; private set; }
         public Questionnaire()
         {
-            InitializeQuestion();
             InitializeComponent();
+            InitializeQuestion();
         }
+
 
         private void InitializeQuestion()
         {
-            throw new NotImplementedException();
+            QuestionCourrante = new Question(1, "?", new List<Reponse>(), 'a');
+            this.groupBoxQuestion.Text = $"Question n°{QuestionCourrante.Id}";
+            this.labelQuestion.Text = QuestionCourrante.Contenu;
         }
     }
 }
