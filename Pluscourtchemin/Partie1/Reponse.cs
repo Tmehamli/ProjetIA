@@ -11,18 +11,24 @@ using System.Text;
 
 public class Reponse
 {
+    public int IdReponse { get; set; }
+
+    public int IdQuestion { get; set; }
 	public virtual string Contenu
 	{
 		get;
 		set;
 	}
 
-	public Reponse()
+    public Reponse()
 	{
 	}
 
-	public Reponse(string contenu)
+	public Reponse(int idReponse, int idQuestion, string contenu)
 	{
+        this.IdReponse = idReponse;
+        this.IdQuestion = idQuestion;
+        this.Contenu = contenu;
 	}
 
 }

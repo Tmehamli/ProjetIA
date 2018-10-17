@@ -11,8 +11,8 @@ using System.Text;
 
 public class Question
 {
-
-    public virtual char IdRep
+    public int IdQuestion { get; set; }
+    public virtual int IdReponse
 	{
 		get;
 		set;
@@ -29,22 +29,23 @@ public class Question
 		get;
 		set;
 	}
-    public int Id { get; set; }
+   
 
     public Question()
 	{
 	}
 
-	public Question(int id, string contenu, List<Reponse> reponses, char idRep)
+	public Question(int idQuestion, int idReponse, string contenu, List<Reponse> reponses)
 	{
-        Id = id;
+        IdQuestion = idQuestion;
+        IdReponse = idReponse;
         Contenu = contenu;
         Reponses = new List<Reponse>();
         foreach (var reponse in reponses)
         {
             Reponses.Add(reponse);
         }
-        IdRep = idRep;
+        
 	}
 
 }

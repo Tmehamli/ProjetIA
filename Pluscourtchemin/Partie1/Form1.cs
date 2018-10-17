@@ -16,20 +16,40 @@ namespace Partie1
     {
         //
         public Question QuestionCourrante { get; private set; }
-        List<Question> questions;
+        private List<Question> questions;
 
         public Questionnaire()
         {
+            ////CreatXMLStructure();
             InitializeComponent();
-            InitializeQuestion();
             questions = new List<Question>();
+            InitializeQuestion();
         }
 
+        private void CreatXMLStructure()
+        {
+            var reponses = new List<Reponse>();
+            var reponse1 = new Reponse(1, 1, "la mer noir 1");
+            var reponse2 = new Reponse(2, 1, "la mer noir 2");
+            var reponse3 = new Reponse(3, 1, "la mer noir 3");
+            var reponse4 = new Reponse(4, 1, "la mer noir 4");
+            reponses.Add(reponse1);
+            reponses.Add(reponse2);
+            reponses.Add(reponse3);
+            reponses.Add(reponse4);
+            var maQuestion = new Question(1, 2, "quelle est la mer?", reponses);
+            maQuestion.Reponses = reponses;
+            XmlSerializer serializerQ = new XmlSerializer(typeof(Question));
+            TextWriter writer = new StreamWriter("QuestionsReponses.xml");
+            serializerQ.Serialize(writer, maQuestion);
+            writer.Close();
+        }
 
         private void InitializeQuestion()
         {
-            QuestionCourrante = new Question(1, "?", new List<Reponse>(), 'a');
-            this.groupBoxQuestion.Text = $"Question n°{QuestionCourrante.Id}";
+            this.RecupToutesQuestions();
+            this.QuestionCourrante = new Question(1, 2, "?", new List<Reponse>());
+            this.groupBoxQuestion.Text = $"Question n°{QuestionCourrante.IdQuestion}";
             this.labelQuestion.Text = QuestionCourrante.Contenu;
         }
 
@@ -42,6 +62,6 @@ namespace Partie1
                 questions.Add(q);
             }
         }
-        
+
     }
 }
