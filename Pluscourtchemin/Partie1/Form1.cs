@@ -20,25 +20,34 @@ namespace Partie1
 
         public Questionnaire()
         {
+            
             ////CreatXMLStructure();
             InitializeComponent();
             questions = new List<Question>();
             InitializeQuestion();
         }
-
+        
+        /// <summary>
+        /// Permet la création d'un fichier xml de réference. 
+        /// </summary>
         private void CreatXMLStructure()
         {
+            // Création des questions
             var reponses = new List<Reponse>();
             var reponse1 = new Reponse(1, 1, "la mer noir 1");
-            var reponse2 = new Reponse(2, 1, "la mer noir 2");
-            var reponse3 = new Reponse(3, 1, "la mer noir 3");
-            var reponse4 = new Reponse(4, 1, "la mer noir 4");
             reponses.Add(reponse1);
+            var reponse2 = new Reponse(2, 1, "la mer noir 2");
             reponses.Add(reponse2);
+            var reponse3 = new Reponse(3, 1, "la mer noir 3");
             reponses.Add(reponse3);
+            var reponse4 = new Reponse(4, 1, "la mer noir 4");
             reponses.Add(reponse4);
+
+            // Création de la question associée et ajout des questions.
             var maQuestion = new Question(1, 2, "quelle est la mer?", reponses);
             maQuestion.Reponses = reponses;
+
+            // Opération de serialization
             XmlSerializer serializerQ = new XmlSerializer(typeof(Question));
             TextWriter writer = new StreamWriter("QuestionsReponses.xml");
             serializerQ.Serialize(writer, maQuestion);
