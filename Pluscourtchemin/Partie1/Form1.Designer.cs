@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.groupBoxQuestion = new System.Windows.Forms.GroupBox();
             this.labelQuestion = new System.Windows.Forms.Label();
-            this.radioButtonReponseX = new System.Windows.Forms.RadioButton();
             this.buttonValider = new System.Windows.Forms.Button();
             this.labelCorrection = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,20 +59,9 @@
             this.labelQuestion.TabIndex = 0;
             this.labelQuestion.Text = "La question";
             // 
-            // radioButtonReponseX
-            // 
-            this.radioButtonReponseX.AutoSize = true;
-            this.radioButtonReponseX.Location = new System.Drawing.Point(32, 108);
-            this.radioButtonReponseX.Name = "radioButtonReponseX";
-            this.radioButtonReponseX.Size = new System.Drawing.Size(129, 17);
-            this.radioButtonReponseX.TabIndex = 1;
-            this.radioButtonReponseX.TabStop = true;
-            this.radioButtonReponseX.Text = "radioButtonReponseX";
-            this.radioButtonReponseX.UseVisualStyleBackColor = true;
-            // 
             // buttonValider
             // 
-            this.buttonValider.Location = new System.Drawing.Point(108, 152);
+            this.buttonValider.Location = new System.Drawing.Point(174, 244);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(75, 23);
             this.buttonValider.TabIndex = 2;
@@ -83,7 +71,7 @@
             // labelCorrection
             // 
             this.labelCorrection.AutoSize = true;
-            this.labelCorrection.Location = new System.Drawing.Point(12, 199);
+            this.labelCorrection.Location = new System.Drawing.Point(12, 306);
             this.labelCorrection.Name = "labelCorrection";
             this.labelCorrection.Size = new System.Drawing.Size(75, 13);
             this.labelCorrection.TabIndex = 3;
@@ -106,11 +94,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 254);
+            this.ClientSize = new System.Drawing.Size(484, 347);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelCorrection);
             this.Controls.Add(this.buttonValider);
-            this.Controls.Add(this.radioButtonReponseX);
             this.Controls.Add(this.groupBoxQuestion);
             this.Name = "Questionnaire";
             this.Text = "Questionnaire";
@@ -126,7 +113,6 @@
 
         private System.Windows.Forms.GroupBox groupBoxQuestion;
         private System.Windows.Forms.Label labelQuestion;
-        private System.Windows.Forms.RadioButton radioButtonReponseX;
         private System.Windows.Forms.Button buttonValider;
         private System.Windows.Forms.Label labelCorrection;
         private System.Windows.Forms.Label label1;
