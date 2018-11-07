@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupBoxQuestion = new System.Windows.Forms.GroupBox();
             this.labelQuestion = new System.Windows.Forms.Label();
             this.buttonValider = new System.Windows.Forms.Button();
             this.labelCorrection = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.errorProviderChoisirReponse = new System.Windows.Forms.ErrorProvider(this.components);
+            this.labelShowCorrectOrNo = new System.Windows.Forms.Label();
+            this.buttonSuivant = new System.Windows.Forms.Button();
+            this.labelSelectAnAnswer = new System.Windows.Forms.Label();
             this.groupBoxQuestion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderChoisirReponse)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxQuestion
@@ -67,35 +66,60 @@
             this.buttonValider.TabIndex = 2;
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
+            this.buttonValider.Click += new System.EventHandler(this.ButtonValider_Click);
             // 
             // labelCorrection
             // 
             this.labelCorrection.AutoSize = true;
-            this.labelCorrection.Location = new System.Drawing.Point(12, 306);
+            this.labelCorrection.Location = new System.Drawing.Point(320, 135);
             this.labelCorrection.Name = "labelCorrection";
             this.labelCorrection.Size = new System.Drawing.Size(75, 13);
             this.labelCorrection.TabIndex = 3;
             this.labelCorrection.Text = "Correction n°X";
+            this.labelCorrection.Visible = false;
             // 
-            // label1
+            // labelShowCorrectOrNo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(320, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "CorrectOrNo";
+            this.labelShowCorrectOrNo.AutoSize = true;
+            this.labelShowCorrectOrNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShowCorrectOrNo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelShowCorrectOrNo.Location = new System.Drawing.Point(320, 108);
+            this.labelShowCorrectOrNo.Name = "labelShowCorrectOrNo";
+            this.labelShowCorrectOrNo.Size = new System.Drawing.Size(77, 13);
+            this.labelShowCorrectOrNo.TabIndex = 4;
+            this.labelShowCorrectOrNo.Text = "CorrectOrNo";
+            this.labelShowCorrectOrNo.Visible = false;
             // 
-            // errorProviderChoisirReponse
+            // buttonSuivant
             // 
-            this.errorProviderChoisirReponse.ContainerControl = this;
+            this.buttonSuivant.Enabled = false;
+            this.buttonSuivant.Location = new System.Drawing.Point(285, 244);
+            this.buttonSuivant.Name = "buttonSuivant";
+            this.buttonSuivant.Size = new System.Drawing.Size(75, 23);
+            this.buttonSuivant.TabIndex = 5;
+            this.buttonSuivant.Text = "Suivant";
+            this.buttonSuivant.UseVisualStyleBackColor = true;
+            this.buttonSuivant.Click += new System.EventHandler(this.ButtonSuivant_Click);
+            // 
+            // labelSelectAnAnswer
+            // 
+            this.labelSelectAnAnswer.AutoSize = true;
+            this.labelSelectAnAnswer.ForeColor = System.Drawing.Color.Red;
+            this.labelSelectAnAnswer.Location = new System.Drawing.Point(128, 270);
+            this.labelSelectAnAnswer.Name = "labelSelectAnAnswer";
+            this.labelSelectAnAnswer.Size = new System.Drawing.Size(165, 13);
+            this.labelSelectAnAnswer.TabIndex = 6;
+            this.labelSelectAnAnswer.Text = "Veuillez selectionner une réponse";
+            this.labelSelectAnAnswer.Visible = false;
             // 
             // Questionnaire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 347);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelSelectAnAnswer);
+            this.Controls.Add(this.buttonSuivant);
+            this.Controls.Add(this.labelShowCorrectOrNo);
             this.Controls.Add(this.labelCorrection);
             this.Controls.Add(this.buttonValider);
             this.Controls.Add(this.groupBoxQuestion);
@@ -103,7 +127,6 @@
             this.Text = "Questionnaire";
             this.groupBoxQuestion.ResumeLayout(false);
             this.groupBoxQuestion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderChoisirReponse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,8 +138,9 @@
         private System.Windows.Forms.Label labelQuestion;
         private System.Windows.Forms.Button buttonValider;
         private System.Windows.Forms.Label labelCorrection;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ErrorProvider errorProviderChoisirReponse;
+        private System.Windows.Forms.Label labelShowCorrectOrNo;
+        private System.Windows.Forms.Button buttonSuivant;
+        private System.Windows.Forms.Label labelSelectAnAnswer;
     }
 }
 

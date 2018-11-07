@@ -23,23 +23,24 @@ public class Question
 		get;
 		set;
 	}
+    public int Valeur { get; set; }
 
 	public virtual List<Reponse> Reponses
 	{
 		get;
 		set;
 	}
-   
 
     public Question()
 	{
 	}
 
-	public Question(int idQuestion, int idReponse, string contenu, List<Reponse> reponses)
+	public Question(int idQuestion, int idReponse, int valeur, string contenu, List<Reponse> reponses)
 	{
         IdQuestion = idQuestion;
         IdReponse = idReponse;
         Contenu = contenu;
+        Valeur = valeur;
         Reponses = new List<Reponse>();
         foreach (var reponse in reponses)
         {
