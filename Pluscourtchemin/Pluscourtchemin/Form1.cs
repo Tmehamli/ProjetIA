@@ -53,7 +53,7 @@ namespace Pluscourtchemin
             for (int i = 0; i < nbnodes; i++)
                 for (int j = 0; j < nbnodes; j++)
                 {
-                    if (matrice[i, j] != -1)
+                    if ((matrice[i, j] != -1) && (i <= j))
                     {
                         listBoxgraphe.Items.Add(i + "--->" + j + "   : " + Convert.ToString(matrice[i, j]));
                     }
@@ -216,11 +216,6 @@ namespace Pluscourtchemin
                 historiqueUtiFerme.Add(listeFerme);
                 historiqueUtiOuvert.Add(listeOuvert);
             }
-        }
-
-        private void listBoxgraphe_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 
