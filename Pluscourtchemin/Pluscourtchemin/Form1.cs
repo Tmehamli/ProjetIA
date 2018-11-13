@@ -71,8 +71,32 @@ namespace Pluscourtchemin
             }
 
             g.GetSearchTree(treeView1);
+            
+        }
 
-            // lancer la méthode de correction
+        private void Algorithme_AEtoile()
+        {
+            numinitial = Convert.ToInt32(textBox1.Text);
+            numfinal = Convert.ToInt32(textBox2.Text);
+            SearchTree g = new SearchTree();
+            Node2 N0 = new Node2();
+            N0.numero = numinitial;
+            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
+
+            Node2 N1 = N0;
+            for (int i = 1; i < solution.Count; i++)
+            {
+                Node2 N2 = (Node2)solution[i];
+                listBox1.Items.Add(Convert.ToString(N1.numero)
+                     + "--->" + Convert.ToString(N2.numero)
+                     + "   : " + Convert.ToString(matrice[N1.numero, N2.numero]));
+                N1 = N2;
+            }
+
+            g.GetSearchTree(treeView1);
+
+            //bool reussite = (Correction(historiqueUtiFerme, g.Hist
+
         }
 
         private void buttonInit2_Click(object sender, EventArgs e)
@@ -207,6 +231,45 @@ namespace Pluscourtchemin
                 historiqueUtiFerme.Add(listeFerme);
                 historiqueUtiOuvert.Add(listeOuvert);
             }
+        }
+
+        public bool Correction(List<List<GenericNode>> listeUt, List<List<GenericNode>> listeIA)
+        {
+            int nbEtape = listeIA.Count();
+            if (listeUt.Count() != nbEtape) { return false; }
+            else
+            {
+                for (int i = 0; i < nbEtape; i++) //parcourir chaque étape
+                {
+                    int nbNoeud = listeIA[i].Count();
+                    if (listeUt[i].Count() != nbNoeud) { return false; }
+                    else
+                    {
+                        //trier les listes pour ne pas avoir de problème d'odre
+                        listeUt[i].Sort(Compare);
+                        listeIA[i].Sort(Compare);
+
+                        for (int j = 0; j < nbNoeud; j++) // pour chaque noeud
+                        {
+                            if (((Node2)listeUt[i][j]).numero != ((Node2)listeIA[i][j]).numero) { return false; }
+                        }
+                    }
+
+                }
+                return true;
+            }
+
+        }
+
+        private int Compare(GenericNode n1, GenericNode n2)
+        {
+            int num1 = ((Node2)n1).numero;
+            int num2 = ((Node2)n2).numero;
+            if (num1 > num2)
+                return -1;
+            else if (num1 < num2)
+                return 1;
+            else return 0;
         }
 
     }
