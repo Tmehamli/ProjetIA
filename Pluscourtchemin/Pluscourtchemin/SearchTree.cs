@@ -11,6 +11,10 @@ namespace Pluscourtchemin
         public List<GenericNode> L_Ouverts;
         public List<GenericNode> L_Fermes;
 
+        public List<List<GenericNode>> historiqueIAOuverts = new List<List<GenericNode>>();
+
+        public List<List<GenericNode>> historiqueIAFermes = new List<List<GenericNode>>();
+
         public int CountInOpenList()
         {
             return L_Ouverts.Count;
@@ -26,7 +30,7 @@ namespace Pluscourtchemin
 
             while (i < L_Fermes.Count)
             {
-                if (L_Fermes[i].IsEqual (N2))
+                if (L_Fermes[i].IsEqual(N2))
                     return L_Fermes[i];
                 i++;
             }
@@ -57,12 +61,62 @@ namespace Pluscourtchemin
             // tant que le noeud n'est pas terminal et que ouverts n'est pas vide
             while (L_Ouverts.Count != 0 && N.EndState() == false)
             {
-                ////var 
-                ////HistoriqueOuvertsIA.Add()
                 // Le meilleur noeud des ouverts est supposé placé en tête de liste
                 // On le place dans les fermés
                 L_Ouverts.Remove(N);
                 L_Fermes.Add(N);
+
+                // Il faut trouver les noeuds successeurs de N
+                this.MAJSuccesseurs(N);
+                // Inutile de retrier car les insertions ont été faites en respectant l'ordre
+
+                // On prend le meilleur, donc celui en position 0, pour continuer à explorer les états
+                // A condition qu'il existe bien sûr
+                if (L_Ouverts.Count > 0)
+                {
+                    N = L_Ouverts[0];
+                }
+                else
+                {
+                    N = null;
+                }
+            }
+
+            // A* terminé
+            // On retourne le chemin qui va du noeud initial au noeud final sous forme de liste
+            // Le chemin est retrouvé en partant du noeud final et en accédant aux parents de manière
+            // itérative jusqu'à ce qu'on tombe sur le noeud initial
+            List<GenericNode> _LN = new List<GenericNode>();
+            if (N != null)
+            {
+                _LN.Add(N);
+
+                while (N != N0)
+                {
+                    N = N.GetNoeud_Parent();
+                    _LN.Insert(0, N);  // On insère en position 1
+                }
+            }
+            return _LN;
+        }
+        public List<GenericNode> RechercheSolutionAEtoile2(GenericNode N0)
+        {
+            L_Ouverts = new List<GenericNode>();
+            L_Fermes = new List<GenericNode>();
+            // Le noeud passé en paramètre est supposé être le noeud initial
+            GenericNode N = N0;
+            L_Ouverts.Add(N0);
+
+            // tant que le noeud n'est pas terminal et que ouverts n'est pas vide
+            while (L_Ouverts.Count != 0 && N.EndState() == false)
+            {
+                historiqueIAOuverts.Add(L_Ouverts);
+
+                // Le meilleur noeud des ouverts est supposé placé en tête de liste
+                // On le place dans les fermés
+                L_Ouverts.Remove(N);
+                L_Fermes.Add(N);
+                historiqueIAFermes.Add(L_Fermes);
 
                 // Il faut trouver les noeuds successeurs de N
                 this.MAJSuccesseurs(N);
@@ -122,7 +176,7 @@ namespace Pluscourtchemin
                             // HCost pas recalculé car toujours bon
                             N2bis.calculCoutTotal(); // somme de GCost et HCost
                             // Mise à jour de la famille ....
-                            N2bis.Supprime_Liens_Parent ();
+                            N2bis.Supprime_Liens_Parent();
                             N2bis.SetNoeud_Parent(N);
                             // Mise à jour des ouverts
                             L_Ouverts.Remove(N2bis);
@@ -178,30 +232,30 @@ namespace Pluscourtchemin
 
         // Si on veut afficher l'arbre de recherche, il suffit de passer un treeview en paramètres
         // Celui-ci est mis à jour avec les noeuds de la liste des fermés, on ne tient pas compte des ouverts
-        public void GetSearchTree( TreeView TV )
+        public void GetSearchTree(TreeView TV)
         {
             if (L_Fermes == null) return;
             if (L_Fermes.Count == 0) return;
-            
+
             // On suppose le TreeView préexistant
             TV.Nodes.Clear();
 
-            TreeNode TN = new TreeNode ( L_Fermes[0].ToString() );
+            TreeNode TN = new TreeNode(L_Fermes[0].ToString());
             TV.Nodes.Add(TN);
 
-            AjouteBranche ( L_Fermes[0], TN );
+            AjouteBranche(L_Fermes[0], TN);
         }
 
         // AjouteBranche est exclusivement appelée par GetSearchTree; les noeuds sont ajoutés de manière récursive
-        private void AjouteBranche( GenericNode GN, TreeNode TN)
+        private void AjouteBranche(GenericNode GN, TreeNode TN)
         {
             foreach (GenericNode GNfils in GN.GetEnfants())
             {
                 TreeNode TNfils = new TreeNode(GNfils.ToString());
                 TN.Nodes.Add(TNfils);
-                if (GNfils.GetEnfants().Count > 0) AjouteBranche(GNfils, TNfils); 
+                if (GNfils.GetEnfants().Count > 0) AjouteBranche(GNfils, TNfils);
             }
         }
-  
+
     }
 }

@@ -14,7 +14,7 @@ namespace Pluscourtchemin
 {
     public partial class Form1 : Form
     {
-        public Random alea = new Random(10);
+        public Random alea = new Random();
         static public double[,] matrice;
         static public int nbnodes = 10;
         static public int numinitial;
@@ -42,13 +42,22 @@ namespace Pluscourtchemin
                 for (int j = 0; j < nbnodes; j++)
                     matrice[i, j] = -1;
 
-            matrice[0, 1] = Convert.ToDouble(alea);      matrice[1, 0] = matrice[0, 1];
-            matrice[0, 2] = Convert.ToDouble(alea);      matrice[2, 0] = matrice[0, 2];
-            matrice[0, 3] = Convert.ToDouble(alea);      matrice[3, 0] = matrice[0, 3];
-            matrice[1, 4] = Convert.ToDouble(alea);      matrice[4, 1] = matrice[1, 4];
-            matrice[2, 4] = Convert.ToDouble(alea);      matrice[4, 2] = matrice[2, 4];
-            matrice[4, 5] = Convert.ToDouble(alea);      matrice[5, 4] = matrice[4, 5];
-            matrice[5, 6] = Convert.ToDouble(alea);      matrice[6, 5] = matrice[5, 6];
+            matrice[0, 1] = alea.Next(1, 11);          matrice[1, 0] = matrice[0, 1];
+            matrice[0, 2] = alea.Next(1, 11);          matrice[2, 0] = matrice[0, 2];
+            matrice[0, 3] = alea.Next(1, 11);          matrice[3, 0] = matrice[0, 3];
+            matrice[1, 4] = alea.Next(1, 11);          matrice[4, 1] = matrice[1, 4];
+            matrice[2, 4] = alea.Next(1, 11);          matrice[4, 2] = matrice[2, 4];
+            matrice[4, 5] = alea.Next(1, 11);          matrice[5, 4] = matrice[4, 5];
+            matrice[5, 6] = alea.Next(1, 11);          matrice[6, 5] = matrice[5, 6];
+
+            for (int i = 0; i < nbnodes; i++)
+                for (int j = 0; j < nbnodes; j++)
+                {
+                    if ((matrice[i, j] != -1) && (i <= j))
+                    {
+                        listBoxgraphe.Items.Add(i + "--->" + j + "   : " + Convert.ToString(matrice[i, j]));
+                    }
+                }
         }
 
         private void buttonAEtoile_Click(object sender, EventArgs e)
@@ -58,7 +67,7 @@ namespace Pluscourtchemin
             SearchTree g = new SearchTree();
             Node2 N0 = new Node2();
             N0.numero = numinitial;
-            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
+            List<GenericNode> solution = g.RechercheSolutionAEtoile2(N0);
 
             Node2 N1 = N0;
             for (int i = 1; i < solution.Count; i++)
