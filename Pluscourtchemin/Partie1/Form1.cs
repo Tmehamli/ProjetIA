@@ -25,7 +25,7 @@ namespace Partie1
         public Questionnaire()
         {
 
-            ////CreatXMLStructure();
+            CreatXMLStructure();
             InitializeComponent();
             questions = new List<Question>();
             this.score = 0;

@@ -25,7 +25,7 @@ namespace Pluscourtchemin
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonInit1_Click(object sender, EventArgs e)
         {
            
             matrice = new double[nbnodes, nbnodes];
@@ -42,7 +42,7 @@ namespace Pluscourtchemin
             matrice[5, 6] = 4;      matrice[6, 5] = 4;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonAEtoile_Click(object sender, EventArgs e)
         {
             numinitial = Convert.ToInt32(textBox1.Text);
             numfinal = Convert.ToInt32(textBox2.Text);
@@ -64,7 +64,7 @@ namespace Pluscourtchemin
             g.GetSearchTree(treeView1);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonInit2_Click(object sender, EventArgs e)
         {
 
             StreamReader monStreamReader = new StreamReader("graphe1.txt");

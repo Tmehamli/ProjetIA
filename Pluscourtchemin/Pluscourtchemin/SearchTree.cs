@@ -57,6 +57,8 @@ namespace Pluscourtchemin
             // tant que le noeud n'est pas terminal et que ouverts n'est pas vide
             while (L_Ouverts.Count != 0 && N.EndState() == false)
             {
+                ////var 
+                ////HistoriqueOuvertsIA.Add()
                 // Le meilleur noeud des ouverts est supposé placé en tête de liste
                 // On le place dans les fermés
                 L_Ouverts.Remove(N);
