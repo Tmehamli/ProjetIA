@@ -217,6 +217,7 @@ namespace Pluscourtchemin
                 historiqueUtiOuvert.Add(listeOuvert);
             }
         }
+
     }
 
 }

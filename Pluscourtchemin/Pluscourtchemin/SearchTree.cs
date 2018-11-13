@@ -11,8 +11,9 @@ namespace Pluscourtchemin
         public List<GenericNode> L_Ouverts;
         public List<GenericNode> L_Fermes;
 
-        public List<List<GenericNode>> HistoriqueIAOuverts { get; set; }
-        public List<List<GenericNode>> HistoriqueIAFermes { get; set; }
+        public List<List<GenericNode>> historiqueIAOuverts = new List<List<GenericNode>>();
+
+        public List<List<GenericNode>> historiqueIAFermes = new List<List<GenericNode>>();
 
         public int CountInOpenList()
         {
@@ -109,15 +110,14 @@ namespace Pluscourtchemin
             // tant que le noeud n'est pas terminal et que ouverts n'est pas vide
             while (L_Ouverts.Count != 0 && N.EndState() == false)
             {
-                List<GenericNode> intermediaire = L_Ouverts;
-                HistoriqueIAOuverts.Add(intermediaire);
+                historiqueIAOuverts.Add(L_Ouverts);
 
                 // Le meilleur noeud des ouverts est supposé placé en tête de liste
                 // On le place dans les fermés
                 L_Ouverts.Remove(N);
                 L_Fermes.Add(N);
-                intermediaire = L_Fermes;
-                HistoriqueIAFermes.Add(intermediaire);
+                historiqueIAFermes.Add(L_Fermes);
+
                 // Il faut trouver les noeuds successeurs de N
                 this.MAJSuccesseurs(N);
                 // Inutile de retrier car les insertions ont été faites en respectant l'ordre
