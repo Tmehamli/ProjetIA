@@ -218,10 +218,6 @@ namespace Pluscourtchemin
             }
         }
 
-        private void listBoxgraphe_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }
