@@ -49,7 +49,7 @@ namespace Pluscourtchemin
             SearchTree g = new SearchTree();
             Node2 N0 = new Node2();
             N0.numero = numinitial;
-            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
+            List<GenericNode> solution = g.RechercheSolutionAEtoile2(N0);
 
             Node2 N1 = N0;
             for (int i=1; i < solution.Count; i++)
