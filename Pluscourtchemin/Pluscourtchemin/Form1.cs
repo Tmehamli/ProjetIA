@@ -52,7 +52,12 @@ namespace Pluscourtchemin
 
             for (int i = 0; i < nbnodes; i++)
                 for (int j = 0; j < nbnodes; j++)
-                    Console.WriteLine("{0}", matrice[i, j]);
+                {
+                    if (matrice[i, j] != -1)
+                    {
+                        listBoxgraphe.Items.Add(i + "--->" + j + "   : " + Convert.ToString(matrice[i, j]));
+                    }
+                }
         }
 
         private void buttonAEtoile_Click(object sender, EventArgs e)
@@ -213,6 +218,10 @@ namespace Pluscourtchemin
             }
         }
 
+        private void listBoxgraphe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

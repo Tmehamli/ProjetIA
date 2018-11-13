@@ -135,6 +135,7 @@
             this.listBoxgraphe.Name = "listBoxgraphe";
             this.listBoxgraphe.Size = new System.Drawing.Size(100, 121);
             this.listBoxgraphe.TabIndex = 9;
+            this.listBoxgraphe.SelectedIndexChanged += new System.EventHandler(this.listBoxgraphe_SelectedIndexChanged);
             // 
             // textTitre
             // 
