@@ -14,6 +14,7 @@ namespace Pluscourtchemin
 {
     public partial class Form1 : Form
     {
+        public Random alea = new Random(10);
         static public double[,] matrice;
         static public int nbnodes = 10;
         static public int numinitial;
@@ -41,13 +42,13 @@ namespace Pluscourtchemin
                 for (int j = 0; j < nbnodes; j++)
                     matrice[i, j] = -1;
 
-            matrice[0, 1] = 3; matrice[1, 0] = 3;
-            matrice[0, 2] = 5; matrice[2, 0] = 5;
-            matrice[0, 3] = 7; matrice[3, 0] = 7;
-            matrice[1, 4] = 8; matrice[4, 1] = 8;
-            matrice[2, 4] = 3; matrice[4, 2] = 3;
-            matrice[4, 5] = 7; matrice[5, 4] = 7;
-            matrice[5, 6] = 4; matrice[6, 5] = 4;
+            matrice[0, 1] = Convert.ToDouble(alea);      matrice[1, 0] = matrice[0, 1];
+            matrice[0, 2] = Convert.ToDouble(alea);      matrice[2, 0] = matrice[0, 2];
+            matrice[0, 3] = Convert.ToDouble(alea);      matrice[3, 0] = matrice[0, 3];
+            matrice[1, 4] = Convert.ToDouble(alea);      matrice[4, 1] = matrice[1, 4];
+            matrice[2, 4] = Convert.ToDouble(alea);      matrice[4, 2] = matrice[2, 4];
+            matrice[4, 5] = Convert.ToDouble(alea);      matrice[5, 4] = matrice[4, 5];
+            matrice[5, 6] = Convert.ToDouble(alea);      matrice[6, 5] = matrice[5, 6];
         }
 
         private void buttonAEtoile_Click(object sender, EventArgs e)
