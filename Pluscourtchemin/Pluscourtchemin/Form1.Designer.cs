@@ -39,13 +39,14 @@
             this.buttonInit2 = new System.Windows.Forms.Button();
             this.listBoxgraphe = new System.Windows.Forms.ListBox();
             this.textTitre = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBoxShowFermeUti = new System.Windows.Forms.ListBox();
             this.champOuverts = new System.Windows.Forms.TextBox();
             this.champFermes = new System.Windows.Forms.TextBox();
             this.txtInstruction = new System.Windows.Forms.Label();
             this.txtOuvert = new System.Windows.Forms.Label();
             this.txtFerme = new System.Windows.Forms.Label();
             this.btn_Valider = new System.Windows.Forms.Button();
+            this.listBoxShowOuvertUti = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // buttonInit1
@@ -105,9 +106,9 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(171, 210);
+            this.listBox1.Location = new System.Drawing.Point(727, 114);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(128, 121);
+            this.listBox1.Size = new System.Drawing.Size(128, 69);
             this.listBox1.TabIndex = 6;
             // 
             // treeView1
@@ -146,13 +147,13 @@
             this.textTitre.TabIndex = 10;
             this.textTitre.Text = "Test Dijkstra";
             // 
-            // listBox2
+            // listBoxShowFermeUti
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(356, 210);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(128, 121);
-            this.listBox2.TabIndex = 11;
+            this.listBoxShowFermeUti.FormattingEnabled = true;
+            this.listBoxShowFermeUti.Location = new System.Drawing.Point(169, 185);
+            this.listBoxShowFermeUti.Name = "listBoxShowFermeUti";
+            this.listBoxShowFermeUti.Size = new System.Drawing.Size(100, 108);
+            this.listBoxShowFermeUti.TabIndex = 11;
             // 
             // champOuverts
             // 
@@ -205,18 +206,27 @@
             this.btn_Valider.UseVisualStyleBackColor = true;
             this.btn_Valider.Click += new System.EventHandler(this.btn_Valider_Click);
             // 
+            // listBoxShowOuvertUti
+            // 
+            this.listBoxShowOuvertUti.FormattingEnabled = true;
+            this.listBoxShowOuvertUti.Location = new System.Drawing.Point(314, 186);
+            this.listBoxShowOuvertUti.Name = "listBoxShowOuvertUti";
+            this.listBoxShowOuvertUti.Size = new System.Drawing.Size(100, 108);
+            this.listBoxShowOuvertUti.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 350);
+            this.ClientSize = new System.Drawing.Size(900, 350);
+            this.Controls.Add(this.listBoxShowOuvertUti);
             this.Controls.Add(this.btn_Valider);
             this.Controls.Add(this.txtFerme);
             this.Controls.Add(this.txtOuvert);
             this.Controls.Add(this.txtInstruction);
             this.Controls.Add(this.champFermes);
             this.Controls.Add(this.champOuverts);
-            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.listBoxShowFermeUti);
             this.Controls.Add(this.textTitre);
             this.Controls.Add(this.listBoxgraphe);
             this.Controls.Add(this.buttonInit2);
@@ -249,13 +259,14 @@
         private System.Windows.Forms.Button buttonInit2;
         private System.Windows.Forms.ListBox listBoxgraphe;
         private System.Windows.Forms.Label textTitre;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBoxShowFermeUti;
         private System.Windows.Forms.TextBox champOuverts;
         private System.Windows.Forms.TextBox champFermes;
         private System.Windows.Forms.Label txtInstruction;
         private System.Windows.Forms.Label txtOuvert;
         private System.Windows.Forms.Label txtFerme;
         private System.Windows.Forms.Button btn_Valider;
+        private System.Windows.Forms.ListBox listBoxShowOuvertUti;
     }
 }
 
