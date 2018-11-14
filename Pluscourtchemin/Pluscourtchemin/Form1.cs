@@ -20,14 +20,16 @@ namespace Pluscourtchemin
         static public int numinitial;
         static public int numfinal;
 
-        public List<List<GenericNode>> historiqueUtiOuvert;
-        public List<List<GenericNode>> historiqueUtiFerme;
+        static public List<List<GenericNode>> historiqueUtiOuvert;
+        static public List<List<GenericNode>> historiqueUtiFerme;
 
         //ajout d'un commentair einutile pour tester git
         // test micro
         public Form1()
         {
             InitializeComponent();
+            historiqueUtiOuvert = new List<List<GenericNode>>();
+            historiqueUtiFerme = new List<List<GenericNode>>();
         }
         public void Form1_Load(object sender, EventArgs e)
         {
@@ -42,13 +44,13 @@ namespace Pluscourtchemin
                 for (int j = 0; j < nbnodes; j++)
                     matrice[i, j] = -1;
 
-            matrice[0, 1] = alea.Next(1, 11);          matrice[1, 0] = matrice[0, 1];
-            matrice[0, 2] = alea.Next(1, 11);          matrice[2, 0] = matrice[0, 2];
-            matrice[0, 3] = alea.Next(1, 11);          matrice[3, 0] = matrice[0, 3];
-            matrice[1, 4] = alea.Next(1, 11);          matrice[4, 1] = matrice[1, 4];
-            matrice[2, 4] = alea.Next(1, 11);          matrice[4, 2] = matrice[2, 4];
-            matrice[4, 5] = alea.Next(1, 11);          matrice[5, 4] = matrice[4, 5];
-            matrice[5, 6] = alea.Next(1, 11);          matrice[6, 5] = matrice[5, 6];
+            matrice[0, 1] = alea.Next(1, 11); matrice[1, 0] = matrice[0, 1];
+            matrice[0, 2] = alea.Next(1, 11); matrice[2, 0] = matrice[0, 2];
+            matrice[0, 3] = alea.Next(1, 11); matrice[3, 0] = matrice[0, 3];
+            matrice[1, 4] = alea.Next(1, 11); matrice[4, 1] = matrice[1, 4];
+            matrice[2, 4] = alea.Next(1, 11); matrice[4, 2] = matrice[2, 4];
+            matrice[4, 5] = alea.Next(1, 11); matrice[5, 4] = matrice[4, 5];
+            matrice[5, 6] = alea.Next(1, 11); matrice[6, 5] = matrice[5, 6];
 
             for (int i = 0; i < nbnodes; i++)
                 for (int j = 0; j < nbnodes; j++)
@@ -80,7 +82,7 @@ namespace Pluscourtchemin
             }
 
             g.GetSearchTree(treeView1);
-            
+
         }
 
         private void Algorithme_AEtoile()
@@ -236,9 +238,13 @@ namespace Pluscourtchemin
                 }
 
                 //le mettre dans une liste statique.
-
+                
                 historiqueUtiFerme.Add(listeFerme);
                 historiqueUtiOuvert.Add(listeOuvert);
+
+                listBoxShowFermeUti.Items.Add(Convert.ToString(historiqueUtiFerme[0][0]));
+                listBoxShowOuvertUti.Items.Add(Convert.ToString(historiqueUtiOuvert[historiqueUtiOuvert.Count - 1][listeOuvert.Count - 1]));
+
             }
         }
 
