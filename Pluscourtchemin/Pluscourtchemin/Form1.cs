@@ -93,7 +93,7 @@ namespace Pluscourtchemin
             
             Node2 N0 = new Node2();
             N0.numero = numinitial;
-            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
+            List<GenericNode> solution = g.RechercheSolutionAEtoile2(N0);
 
             Node2 N1 = N0;
             for (int i = 1; i < solution.Count; i++)
@@ -280,6 +280,7 @@ namespace Pluscourtchemin
             if (listeUt.Count() != nbEtape) { return false; }
             else
             {
+
                 for (int i = 0; i < nbEtape; i++) //parcourir chaque étape
                 {
                     int nbNoeud = listeIA[i].Count();
@@ -306,11 +307,11 @@ namespace Pluscourtchemin
         {
             string nouveauOuvert = "";
             string nouveauFerme = "";
-            textTitre.Text = "coucou";
-            foreach (List<GenericNode> listeN in g.historiqueIAFermes)
+
+            foreach (List<GenericNode> listeN in g.historiqueIAFermes) // état par état
             {
                 nouveauFerme = "";
-                foreach (GenericNode n in listeN)
+                foreach (GenericNode n in listeN) // noeud de chaque état
                 {
                     nouveauFerme += Convert.ToString(((Node2)n).numero) + ", ";
                     
@@ -318,6 +319,7 @@ namespace Pluscourtchemin
                 listBoxShowFermeIA.Items.Add(nouveauFerme);
             }
 
+            g.historiqueIAOuverts.RemoveAt(0);
             foreach (List<GenericNode> listeN in g.historiqueIAOuverts)
             {
                 nouveauOuvert = "";
@@ -333,9 +335,9 @@ namespace Pluscourtchemin
             int num1 = ((Node2)n1).numero;
             int num2 = ((Node2)n2).numero;
             if (num1 > num2)
-                return -1;
-            else if (num1 < num2)
                 return 1;
+            else if (num1 < num2)
+                return -1;
             else return 0;
         }
 

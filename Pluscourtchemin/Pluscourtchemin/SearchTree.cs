@@ -110,13 +110,13 @@ namespace Pluscourtchemin
             // tant que le noeud n'est pas terminal et que ouverts n'est pas vide
             while (L_Ouverts.Count != 0 && N.EndState() == false)
             {
-                historiqueIAOuverts.Add(L_Ouverts);
+                historiqueIAOuverts.Add(new List<GenericNode>(L_Ouverts));
 
                 // Le meilleur noeud des ouverts est supposé placé en tête de liste
                 // On le place dans les fermés
                 L_Ouverts.Remove(N);
                 L_Fermes.Add(N);
-                historiqueIAFermes.Add(L_Fermes);
+                historiqueIAFermes.Add(new List<GenericNode>(L_Fermes));
 
                 // Il faut trouver les noeuds successeurs de N
                 this.MAJSuccesseurs(N);
