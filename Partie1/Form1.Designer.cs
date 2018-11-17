@@ -60,7 +60,7 @@
             // 
             // buttonValider
             // 
-            this.buttonValider.Location = new System.Drawing.Point(174, 244);
+            this.buttonValider.Location = new System.Drawing.Point(174, 292);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(75, 23);
             this.buttonValider.TabIndex = 2;
@@ -93,7 +93,7 @@
             // buttonSuivant
             // 
             this.buttonSuivant.Enabled = false;
-            this.buttonSuivant.Location = new System.Drawing.Point(285, 244);
+            this.buttonSuivant.Location = new System.Drawing.Point(285, 292);
             this.buttonSuivant.Name = "buttonSuivant";
             this.buttonSuivant.Size = new System.Drawing.Size(75, 23);
             this.buttonSuivant.TabIndex = 5;
@@ -105,7 +105,7 @@
             // 
             this.labelSelectAnAnswer.AutoSize = true;
             this.labelSelectAnAnswer.ForeColor = System.Drawing.Color.Red;
-            this.labelSelectAnAnswer.Location = new System.Drawing.Point(128, 270);
+            this.labelSelectAnAnswer.Location = new System.Drawing.Point(128, 318);
             this.labelSelectAnAnswer.Name = "labelSelectAnAnswer";
             this.labelSelectAnAnswer.Size = new System.Drawing.Size(165, 13);
             this.labelSelectAnAnswer.TabIndex = 6;

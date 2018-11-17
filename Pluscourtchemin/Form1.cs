@@ -23,8 +23,6 @@ namespace Pluscourtchemin
         static public List<List<GenericNode>> historiqueUtiOuvert;
         static public List<List<GenericNode>> historiqueUtiFerme;
 
-        //ajout d'un commentair einutile pour tester git
-        // test micro
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +30,7 @@ namespace Pluscourtchemin
             historiqueUtiFerme = new List<List<GenericNode>>();
             this.labelShowCorrectOrNot.Visible = false;
         }
+
         public void Form1_Load(object sender, EventArgs e)
         {
 
@@ -330,6 +329,7 @@ namespace Pluscourtchemin
                 listBoxShowOuvertIA.Items.Add(nouveauOuvert);
             }
         }
+
         private int Compare(GenericNode n1, GenericNode n2)
         {
             int num1 = ((Node2)n1).numero;
@@ -341,6 +341,5 @@ namespace Pluscourtchemin
             else return 0;
         }
 
-      
     }
 }
