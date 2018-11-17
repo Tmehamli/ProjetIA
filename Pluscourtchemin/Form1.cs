@@ -299,7 +299,10 @@ namespace Pluscourtchemin
                 historiqueUtiFerme.Add(listeFerme);
                 historiqueUtiOuvert.Add(listeOuvert);
 
-               
+                champOuverts.Text = "";
+                champFermes.Text = "";
+
+
 
             }
         }
@@ -371,6 +374,5 @@ namespace Pluscourtchemin
                 return -1;
             else return 0;
         }
-
     }
 }

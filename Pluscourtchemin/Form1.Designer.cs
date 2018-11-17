@@ -41,7 +41,6 @@
             this.textTitre = new System.Windows.Forms.Label();
             this.listBoxShowFermeUti = new System.Windows.Forms.ListBox();
             this.champOuverts = new System.Windows.Forms.TextBox();
-            this.champFermes = new System.Windows.Forms.TextBox();
             this.txtInstruction = new System.Windows.Forms.Label();
             this.txtOuvert = new System.Windows.Forms.Label();
             this.txtFerme = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.labelShowCorrectOrNot = new System.Windows.Forms.Label();
             this.listBoxShowOuvertIA = new System.Windows.Forms.ListBox();
             this.listBoxShowFermeIA = new System.Windows.Forms.ListBox();
+            this.champFermes = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonInit1
@@ -167,13 +167,6 @@
             this.champOuverts.Size = new System.Drawing.Size(100, 20);
             this.champOuverts.TabIndex = 12;
             // 
-            // champFermes
-            // 
-            this.champFermes.Location = new System.Drawing.Point(175, 159);
-            this.champFermes.Name = "champFermes";
-            this.champFermes.Size = new System.Drawing.Size(100, 20);
-            this.champFermes.TabIndex = 13;
-            // 
             // txtInstruction
             // 
             this.txtInstruction.AutoSize = true;
@@ -260,6 +253,13 @@
             this.listBoxShowFermeIA.Size = new System.Drawing.Size(100, 108);
             this.listBoxShowFermeIA.TabIndex = 21;
             // 
+            // champFermes
+            // 
+            this.champFermes.Location = new System.Drawing.Point(175, 159);
+            this.champFermes.Name = "champFermes";
+            this.champFermes.Size = new System.Drawing.Size(100, 20);
+            this.champFermes.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,7 +312,6 @@
         private System.Windows.Forms.Label textTitre;
         private System.Windows.Forms.ListBox listBoxShowFermeUti;
         private System.Windows.Forms.TextBox champOuverts;
-        private System.Windows.Forms.TextBox champFermes;
         private System.Windows.Forms.Label txtInstruction;
         private System.Windows.Forms.Label txtOuvert;
         private System.Windows.Forms.Label txtFerme;
@@ -323,6 +322,7 @@
         private System.Windows.Forms.Label labelShowCorrectOrNot;
         private System.Windows.Forms.ListBox listBoxShowOuvertIA;
         private System.Windows.Forms.ListBox listBoxShowFermeIA;
+        private System.Windows.Forms.TextBox champFermes;
     }
 }
 
