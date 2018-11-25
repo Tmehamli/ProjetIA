@@ -52,6 +52,7 @@
             this.labelShowCorrectOrNot = new System.Windows.Forms.Label();
             this.listBoxShowOuvertIA = new System.Windows.Forms.ListBox();
             this.listBoxShowFermeIA = new System.Windows.Forms.ListBox();
+            this.champFermes = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonInitAlea
@@ -259,6 +260,13 @@
             this.listBoxShowFermeIA.Name = "listBoxShowFermeIA";
             this.listBoxShowFermeIA.Size = new System.Drawing.Size(100, 108);
             this.listBoxShowFermeIA.TabIndex = 21;
+            // 
+            // champFermes
+            // 
+            this.champFermes.Location = new System.Drawing.Point(175, 159);
+            this.champFermes.Name = "champFermes";
+            this.champFermes.Size = new System.Drawing.Size(100, 20);
+            this.champFermes.TabIndex = 13;
             // 
             // Form1
             // 

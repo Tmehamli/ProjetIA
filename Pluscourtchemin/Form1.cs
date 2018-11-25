@@ -41,13 +41,44 @@ namespace Pluscourtchemin
                 for (int j = 0; j < nbnodes; j++)
                     matrice[i, j] = -1;
 
-            matrice[0, 1] = alea.Next(1, 11); matrice[1, 0] = matrice[0, 1];
-            matrice[0, 2] = alea.Next(1, 11); matrice[2, 0] = matrice[0, 2];
-            matrice[0, 3] = alea.Next(1, 11); matrice[3, 0] = matrice[0, 3];
-            matrice[1, 4] = alea.Next(1, 11); matrice[4, 1] = matrice[1, 4];
-            matrice[2, 4] = alea.Next(1, 11); matrice[4, 2] = matrice[2, 4];
-            matrice[4, 5] = alea.Next(1, 11); matrice[5, 4] = matrice[4, 5];
-            matrice[5, 6] = alea.Next(1, 11); matrice[6, 5] = matrice[5, 6];
+            int graphNumero = alea.Next(4);
+            // On choisit aléatoirement un graphe parmis trois différents 
+            if (graphNumero == 1)
+            {
+                matrice[0, 1] = alea.Next(1, 11); matrice[1, 0] = matrice[0, 1];
+                matrice[0, 2] = alea.Next(1, 11); matrice[2, 0] = matrice[0, 2];
+                matrice[0, 3] = alea.Next(1, 11); matrice[3, 0] = matrice[0, 3];
+                matrice[1, 4] = alea.Next(1, 11); matrice[4, 1] = matrice[1, 4];
+                matrice[2, 4] = alea.Next(1, 11); matrice[4, 2] = matrice[2, 4];
+                matrice[2, 5] = alea.Next(1, 11); matrice[5, 2] = matrice[2, 5];
+                matrice[4, 5] = alea.Next(1, 11); matrice[5, 4] = matrice[4, 5];
+                matrice[5, 6] = alea.Next(1, 11); matrice[6, 5] = matrice[5, 6];
+            }
+
+            if (graphNumero == 2)
+            {
+                matrice[0, 1] = alea.Next(1, 11); matrice[1, 0] = matrice[0, 1];
+                matrice[0, 2] = alea.Next(1, 11); matrice[2, 0] = matrice[0, 2];
+                matrice[1, 3] = alea.Next(1, 11); matrice[3, 1] = matrice[1, 3];
+                matrice[2, 3] = alea.Next(1, 11); matrice[3, 2] = matrice[2, 3];
+                matrice[3, 4] = alea.Next(1, 11); matrice[4, 3] = matrice[3, 4];
+                matrice[3, 5] = alea.Next(1, 11); matrice[5, 3] = matrice[3, 5];
+                matrice[4, 6] = alea.Next(1, 11); matrice[6, 4] = matrice[4, 6];
+                matrice[5, 6] = alea.Next(1, 11); matrice[6, 5] = matrice[5, 6];
+            }
+
+            if (graphNumero == 3)
+            {
+                matrice[0, 1] = alea.Next(1, 11); matrice[1, 0] = matrice[0, 1];
+                matrice[0, 2] = alea.Next(1, 11); matrice[2, 0] = matrice[0, 2];
+                matrice[2, 3] = alea.Next(1, 11); matrice[3, 2] = matrice[2, 3];
+                matrice[3, 4] = alea.Next(1, 11); matrice[4, 3] = matrice[3, 4];
+                matrice[2, 5] = alea.Next(1, 11); matrice[5, 2] = matrice[2, 5];
+                matrice[2, 6] = alea.Next(1, 11); matrice[6, 2] = matrice[2, 6];
+                matrice[5, 7] = alea.Next(1, 11); matrice[7, 5] = matrice[5, 7];
+                matrice[6, 7] = alea.Next(1, 11); matrice[7, 6] = matrice[6, 7];
+            }
+
 
             for (int i = 0; i < nbnodes; i++)
                 for (int j = 0; j < nbnodes; j++)
@@ -349,6 +380,5 @@ namespace Pluscourtchemin
                 return -1;
             else return 0;
         }
-
     }
 }
