@@ -52,6 +52,7 @@
             this.labelShowCorrectOrNot = new System.Windows.Forms.Label();
             this.listBoxShowOuvertIA = new System.Windows.Forms.ListBox();
             this.listBoxShowFermeIA = new System.Windows.Forms.ListBox();
+            this.buttonShowTree = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonInitAlea
@@ -260,11 +261,22 @@
             this.listBoxShowFermeIA.Size = new System.Drawing.Size(100, 108);
             this.listBoxShowFermeIA.TabIndex = 21;
             // 
+            // buttonShowTree
+            // 
+            this.buttonShowTree.Location = new System.Drawing.Point(586, 315);
+            this.buttonShowTree.Name = "buttonShowTree";
+            this.buttonShowTree.Size = new System.Drawing.Size(116, 23);
+            this.buttonShowTree.TabIndex = 23;
+            this.buttonShowTree.Text = "Remplir l\'arbre";
+            this.buttonShowTree.UseVisualStyleBackColor = true;
+            this.buttonShowTree.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1043, 350);
+            this.Controls.Add(this.buttonShowTree);
             this.Controls.Add(this.listBoxShowOuvertIA);
             this.Controls.Add(this.listBoxShowFermeIA);
             this.Controls.Add(this.labelShowCorrectOrNot);
@@ -322,6 +334,7 @@
         public System.Windows.Forms.Button buttonInitAlea;
         public System.Windows.Forms.ListBox listBoxShowOuvertIA;
         public System.Windows.Forms.ListBox listBoxShowFermeIA;
+        private System.Windows.Forms.Button buttonShowTree;
     }
 }
 

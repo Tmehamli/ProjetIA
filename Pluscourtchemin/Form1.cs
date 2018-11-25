@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-
 namespace Pluscourtchemin
 {
     public partial class Form1 : Form
@@ -379,6 +378,18 @@ namespace Pluscourtchemin
             else if (num1 < num2)
                 return -1;
             else return 0;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var g = new SearchTree();
+            Algorithme_AEtoile(g);
+            Node2 N0 = new Node2();
+            N0.numero = numinitial;
+            ////List<GenericNode> solution = g.RechercheSolutionAEtoile2(N0);
+            var drawForm = new DrawForm(g.historiqueIAFermes.LastOrDefault());
+            drawForm.ShowDialog();
+            ////GraphDrawer();
         }
     }
 }
