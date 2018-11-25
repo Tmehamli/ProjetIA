@@ -31,13 +31,10 @@ namespace Pluscourtchemin
             this.labelShowCorrectOrNot.Visible = false;
         }
 
-        public void Form1_Load(object sender, EventArgs e)
+        private void buttonInitAlea_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void buttonInit1_Click(object sender, EventArgs e)
-        {
+            // Reinitialisation des affichages
+            this.ClearFormDisplays();
 
             matrice = new double[nbnodes, nbnodes];
             for (int i = 0; i < nbnodes; i++)
@@ -57,15 +54,27 @@ namespace Pluscourtchemin
                 {
                     if ((matrice[i, j] != -1) && (i <= j))
                     {
-                        listBoxgraphe.Items.Add(i + "--->" + j + "   : " + Convert.ToString(matrice[i, j]));
+                        listBoxGraphe.Items.Add(i + "--->" + j + "   : " + Convert.ToString(matrice[i, j]));
                     }
                 }
         }
 
+        private void ClearFormDisplays()
+        {
+            listBoxGraphe.Items.Clear();
+            textBoxFermes.Text = string.Empty;
+            textBoxOuverts.Text = string.Empty;
+            listBoxShowOuvertUti.Items.Clear();
+            listBoxShowFermeUti.Items.Clear();
+            treeViewCorrection.Nodes.Clear();
+            listBoxShowOuvertIA.Items.Clear();
+            listBoxShowFermeIA.Items.Clear();
+        }
+
         private void buttonAEtoile_Click(object sender, EventArgs e)
         {
-            numinitial = Convert.ToInt32(textBox1.Text);
-            numfinal = Convert.ToInt32(textBox2.Text);
+            numinitial = Convert.ToInt32(textBoxInitialNode.Text);
+            numfinal = Convert.ToInt32(textBoxFinalNode.Text);
             SearchTree g = new SearchTree();
             Node2 N0 = new Node2();
             N0.numero = numinitial;
@@ -81,15 +90,15 @@ namespace Pluscourtchemin
                 N1 = N2;
             }
 
-            g.GetSearchTree(treeView1);
+            g.GetSearchTree(treeViewCorrection);
 
         }
 
         private bool Algorithme_AEtoile(SearchTree g)
         {
-            numinitial = Convert.ToInt32(textBox1.Text);
-            numfinal = Convert.ToInt32(textBox2.Text);
-            
+            numinitial = Convert.ToInt32(textBoxInitialNode.Text);
+            numfinal = Convert.ToInt32(textBoxFinalNode.Text);
+
             Node2 N0 = new Node2();
             N0.numero = numinitial;
             List<GenericNode> solution = g.RechercheSolutionAEtoile2(N0);
@@ -104,20 +113,20 @@ namespace Pluscourtchemin
                 N1 = N2;
             }
 
-            g.GetSearchTree(treeView1);
+            g.GetSearchTree(treeViewCorrection);
 
             bool reussite = false;
-            reussite = (Correction(historiqueUtiFerme, g.historiqueIAFermes)&&(Correction(historiqueUtiOuvert, g.historiqueIAOuverts)));
+            reussite = (Correction(historiqueUtiFerme, g.historiqueIAFermes) && (Correction(historiqueUtiOuvert, g.historiqueIAOuverts)));
             return reussite;
         }
 
-        private void buttonInit2_Click(object sender, EventArgs e)
+        public void buttonInitMemoire_Click(object sender, EventArgs e)
         {
             //Initialiser les historiques pour ce graphe
             historiqueUtiFerme = new List<List<GenericNode>>();
             historiqueUtiOuvert = new List<List<GenericNode>>();
 
-            StreamReader monStreamReader = new StreamReader("graphe1.txt");
+            StreamReader monStreamReader = new StreamReader(@"D:\Program Files (x86)\ensc\2a\IA\ProjetIA\Pluscourtchemin\bin\Debug\graphe1.txt");
 
             // Lecture du fichier avec un while, évidemment !
             // 1ère ligne : "nombre de noeuds du graphe
@@ -179,7 +188,7 @@ namespace Pluscourtchemin
 
                 matrice[N1, N2] = val;
                 matrice[N2, N1] = val;
-                listBoxgraphe.Items.Add(Convert.ToString(N1)
+                listBoxGraphe.Items.Add(Convert.ToString(N1)
                    + "--->" + Convert.ToString(N2)
                    + "   : " + Convert.ToString(matrice[N1, N2]));
 
@@ -187,21 +196,19 @@ namespace Pluscourtchemin
             }
             // Fermeture du StreamReader (obligatoire) 
             monStreamReader.Close();
-
-
-
         }
 
         public void btn_Valider_Click(object sender, EventArgs e)
         {
 
-            string ouvert = champOuverts.Text;
-            string ferme = champFermes.Text;
-            if ((ouvert == "") && (ferme != ""))
+
+            if ((textBoxOuverts.Text == "") && (textBoxFermes.Text != ""))
             {
+                this.AjoutOuvertFermetUti(textBoxFermes.Text, false);
+
                 SearchTree g = new SearchTree();
                 bool reussite = Algorithme_AEtoile(g);
-                if (reussite == true )
+                if (reussite == true)
                 {
                     this.labelShowCorrectOrNot.Text = "Bonne réponse";
                     this.labelShowCorrectOrNot.ForeColor = Color.Green;
@@ -212,78 +219,79 @@ namespace Pluscourtchemin
                     this.labelShowCorrectOrNot.ForeColor = Color.Red;
                 }
                 this.labelShowCorrectOrNot.Visible = true;
-
                 AffichageHistoIA(g);
             }
             else
             {
-                List<GenericNode> listeOuvert = new List<GenericNode>();
-                List<GenericNode> listeFerme = new List<GenericNode>();
-
-                string nouveauOuvert = "";
-                string nouveauFerme = "";
-
-                //récupérer champOuvert et champFermes
-
-
-                foreach (char c in ouvert)
-                {
-                    if (c != ',')
-                    {
-                        try
-                        {
-                            int x = (int)Char.GetNumericValue(c);
-                            Node2 N = new Node2();
-                            N.numero = x;
-                            listeOuvert.Add(N);
-                            nouveauOuvert += Convert.ToString(N.numero)+", ";
-                        }
-                        catch { }
-                    }
-                }
-
-                foreach (char c in ferme)
-                {
-                    if (c != ',')
-                    {
-                        try
-                        {
-                            int x = (int)Char.GetNumericValue(c);
-                            Node2 N = new Node2();
-                            N.numero = x;
-                            listeFerme.Add(N);
-                            nouveauFerme += Convert.ToString(N.numero) + ", ";
-                        }
-                        catch { }
-                    }
-                }
-
-                // affichage listBox :
-
-                listBoxShowOuvertUti.Items.Add(nouveauOuvert);
-                listBoxShowFermeUti.Items.Add(nouveauFerme);
-                
-                //le mettre dans une liste statique.
-
-                historiqueUtiFerme.Add(listeFerme);
-                historiqueUtiOuvert.Add(listeOuvert);
-
-               
-
+                this.AjoutOuvertFermetUti(textBoxFermes.Text, false);
+                this.AjoutOuvertFermetUti(textBoxOuverts.Text, true);
             }
+        }
+
+        public void AjoutOuvertFermetUti(string input, bool isOuvert)
+        {
+            // OF = Ouvert ou ferme
+            List<GenericNode> listeOF = new List<GenericNode>();
+            string nouveauOF = "";
+
+            //récupérer champOF
+            foreach (char c in input)
+            {
+                if (c != ',')
+                {
+                    int x = (int)Char.GetNumericValue(c);
+                    Node2 N = new Node2();
+                    N.numero = x;
+                    listeOF.Add(N);
+                    nouveauOF += Convert.ToString(N.numero) + ", ";
+                }
+            }
+            // le mettre dans une liste statique,
+            // affichage listBox ,
+            // Vider la textBox de saise utilisateur.
+
+            if (isOuvert)
+            {
+                if (historiqueUtiOuvert.Count == 0)
+                {
+                    // On ajoute l'ouvert {0} au début
+                    var n = new Node2();
+                    n.numero = int.Parse(this.textBoxInitialNode.Text);
+                    var listeInit = new List<GenericNode>();
+                    listeInit.Add(n);
+                    historiqueUtiOuvert.Add(listeInit);
+                }
+                historiqueUtiOuvert.Add(listeOF);
+                listBoxShowOuvertUti.Items.Add(nouveauOF);
+                textBoxOuverts.Text = string.Empty;
+            }
+            else
+            {
+                historiqueUtiFerme.Add(listeOF);
+                listBoxShowFermeUti.Items.Add(nouveauOF);
+                textBoxFermes.Text = string.Empty;
+            }
+
+
         }
 
         public bool Correction(List<List<GenericNode>> listeUt, List<List<GenericNode>> listeIA)
         {
             int nbEtape = listeIA.Count();
-            if (listeUt.Count() != nbEtape) { return false; }
+            if (listeUt.Count() != nbEtape)
+            {
+                return false;
+            }
             else
             {
 
                 for (int i = 0; i < nbEtape; i++) //parcourir chaque étape
                 {
                     int nbNoeud = listeIA[i].Count();
-                    if (listeUt[i].Count() != nbNoeud) { return false; }
+                    if (listeUt[i].Count() != nbNoeud)
+                    {
+                        return false;
+                    }
                     else
                     {
                         //trier les listes pour ne pas avoir de problème d'odre
@@ -292,14 +300,15 @@ namespace Pluscourtchemin
 
                         for (int j = 0; j < nbNoeud; j++) // pour chaque noeud
                         {
-                            if (((Node2)listeUt[i][j]).numero != ((Node2)listeIA[i][j]).numero) { return false; }
+                            if (((Node2)listeUt[i][j]).numero != ((Node2)listeIA[i][j]).numero)
+                            {
+                                return false;
+                            }
                         }
                     }
-
                 }
                 return true;
             }
-
         }
 
         private void AffichageHistoIA(SearchTree g)
@@ -313,7 +322,7 @@ namespace Pluscourtchemin
                 foreach (GenericNode n in listeN) // noeud de chaque état
                 {
                     nouveauFerme += Convert.ToString(((Node2)n).numero) + ", ";
-                    
+
                 }
                 listBoxShowFermeIA.Items.Add(nouveauFerme);
             }

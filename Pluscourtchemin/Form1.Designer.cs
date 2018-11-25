@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonInit1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.buttonInitAlea = new System.Windows.Forms.Button();
+            this.textBoxInitialNode = new System.Windows.Forms.TextBox();
+            this.textBoxFinalNode = new System.Windows.Forms.TextBox();
             this.buttonAEtoile = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.btnInit2 = new System.Windows.Forms.Button();
-            this.listBoxgraphe = new System.Windows.Forms.ListBox();
+            this.treeViewCorrection = new System.Windows.Forms.TreeView();
+            this.btnInitMemoire = new System.Windows.Forms.Button();
+            this.listBoxGraphe = new System.Windows.Forms.ListBox();
             this.textTitre = new System.Windows.Forms.Label();
             this.listBoxShowFermeUti = new System.Windows.Forms.ListBox();
-            this.champOuverts = new System.Windows.Forms.TextBox();
-            this.champFermes = new System.Windows.Forms.TextBox();
+            this.textBoxOuverts = new System.Windows.Forms.TextBox();
+            this.textBoxFermes = new System.Windows.Forms.TextBox();
             this.txtInstruction = new System.Windows.Forms.Label();
             this.txtOuvert = new System.Windows.Forms.Label();
             this.txtFerme = new System.Windows.Forms.Label();
@@ -54,31 +54,31 @@
             this.listBoxShowFermeIA = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // buttonInit1
+            // buttonInitAlea
             // 
-            this.buttonInit1.Location = new System.Drawing.Point(35, 68);
-            this.buttonInit1.Name = "buttonInit1";
-            this.buttonInit1.Size = new System.Drawing.Size(100, 23);
-            this.buttonInit1.TabIndex = 0;
-            this.buttonInit1.Text = "Démarrer aléa";
-            this.buttonInit1.UseVisualStyleBackColor = true;
-            this.buttonInit1.Click += new System.EventHandler(this.buttonInit1_Click);
+            this.buttonInitAlea.Location = new System.Drawing.Point(35, 68);
+            this.buttonInitAlea.Name = "buttonInitAlea";
+            this.buttonInitAlea.Size = new System.Drawing.Size(100, 23);
+            this.buttonInitAlea.TabIndex = 0;
+            this.buttonInitAlea.Text = "Démarrer aléa";
+            this.buttonInitAlea.UseVisualStyleBackColor = true;
+            this.buttonInitAlea.Click += new System.EventHandler(this.buttonInitAlea_Click);
             // 
-            // textBox1
+            // textBoxInitialNode
             // 
-            this.textBox1.Location = new System.Drawing.Point(177, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "0";
+            this.textBoxInitialNode.Location = new System.Drawing.Point(177, 97);
+            this.textBoxInitialNode.Name = "textBoxInitialNode";
+            this.textBoxInitialNode.Size = new System.Drawing.Size(100, 20);
+            this.textBoxInitialNode.TabIndex = 1;
+            this.textBoxInitialNode.Text = "0";
             // 
-            // textBox2
+            // textBoxFinalNode
             // 
-            this.textBox2.Location = new System.Drawing.Point(317, 97);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "6";
+            this.textBoxFinalNode.Location = new System.Drawing.Point(317, 97);
+            this.textBoxFinalNode.Name = "textBoxFinalNode";
+            this.textBoxFinalNode.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFinalNode.TabIndex = 2;
+            this.textBoxFinalNode.Text = "6";
             // 
             // buttonAEtoile
             // 
@@ -116,31 +116,31 @@
             this.listBox1.Size = new System.Drawing.Size(128, 69);
             this.listBox1.TabIndex = 6;
             // 
-            // treeView1
+            // treeViewCorrection
             // 
-            this.treeView1.Location = new System.Drawing.Point(550, 114);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(152, 180);
-            this.treeView1.TabIndex = 7;
+            this.treeViewCorrection.Location = new System.Drawing.Point(550, 114);
+            this.treeViewCorrection.Name = "treeViewCorrection";
+            this.treeViewCorrection.Size = new System.Drawing.Size(152, 180);
+            this.treeViewCorrection.TabIndex = 7;
             // 
-            // btnInit2
+            // btnInitMemoire
             // 
-            this.btnInit2.Location = new System.Drawing.Point(35, 95);
-            this.btnInit2.Name = "btnInit2";
-            this.btnInit2.Size = new System.Drawing.Size(100, 23);
-            this.btnInit2.TabIndex = 8;
-            this.btnInit2.Text = "Démarrer Mem";
-            this.btnInit2.UseVisualStyleBackColor = true;
-            this.btnInit2.Click += new System.EventHandler(this.buttonInit2_Click);
+            this.btnInitMemoire.Location = new System.Drawing.Point(35, 95);
+            this.btnInitMemoire.Name = "btnInitMemoire";
+            this.btnInitMemoire.Size = new System.Drawing.Size(100, 23);
+            this.btnInitMemoire.TabIndex = 8;
+            this.btnInitMemoire.Text = "Démarrer Mem";
+            this.btnInitMemoire.UseVisualStyleBackColor = true;
+            this.btnInitMemoire.Click += new System.EventHandler(this.buttonInitMemoire_Click);
             // 
-            // listBoxgraphe
+            // listBoxGraphe
             // 
-            this.listBoxgraphe.FormattingEnabled = true;
-            this.listBoxgraphe.Location = new System.Drawing.Point(35, 148);
-            this.listBoxgraphe.Margin = new System.Windows.Forms.Padding(2);
-            this.listBoxgraphe.Name = "listBoxgraphe";
-            this.listBoxgraphe.Size = new System.Drawing.Size(100, 121);
-            this.listBoxgraphe.TabIndex = 9;
+            this.listBoxGraphe.FormattingEnabled = true;
+            this.listBoxGraphe.Location = new System.Drawing.Point(35, 148);
+            this.listBoxGraphe.Margin = new System.Windows.Forms.Padding(2);
+            this.listBoxGraphe.Name = "listBoxGraphe";
+            this.listBoxGraphe.Size = new System.Drawing.Size(100, 121);
+            this.listBoxGraphe.TabIndex = 9;
             // 
             // textTitre
             // 
@@ -160,19 +160,19 @@
             this.listBoxShowFermeUti.Size = new System.Drawing.Size(100, 108);
             this.listBoxShowFermeUti.TabIndex = 11;
             // 
-            // champOuverts
+            // textBoxOuverts
             // 
-            this.champOuverts.Location = new System.Drawing.Point(320, 159);
-            this.champOuverts.Name = "champOuverts";
-            this.champOuverts.Size = new System.Drawing.Size(100, 20);
-            this.champOuverts.TabIndex = 12;
+            this.textBoxOuverts.Location = new System.Drawing.Point(320, 159);
+            this.textBoxOuverts.Name = "textBoxOuverts";
+            this.textBoxOuverts.Size = new System.Drawing.Size(100, 20);
+            this.textBoxOuverts.TabIndex = 12;
             // 
-            // champFermes
+            // textBoxFermes
             // 
-            this.champFermes.Location = new System.Drawing.Point(175, 159);
-            this.champFermes.Name = "champFermes";
-            this.champFermes.Size = new System.Drawing.Size(100, 20);
-            this.champFermes.TabIndex = 13;
+            this.textBoxFermes.Location = new System.Drawing.Point(175, 159);
+            this.textBoxFermes.Name = "textBoxFermes";
+            this.textBoxFermes.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFermes.TabIndex = 13;
             // 
             // txtInstruction
             // 
@@ -275,23 +275,22 @@
             this.Controls.Add(this.txtFerme);
             this.Controls.Add(this.txtOuvert);
             this.Controls.Add(this.txtInstruction);
-            this.Controls.Add(this.champFermes);
-            this.Controls.Add(this.champOuverts);
+            this.Controls.Add(this.textBoxFermes);
+            this.Controls.Add(this.textBoxOuverts);
             this.Controls.Add(this.listBoxShowFermeUti);
             this.Controls.Add(this.textTitre);
-            this.Controls.Add(this.listBoxgraphe);
-            this.Controls.Add(this.btnInit2);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.listBoxGraphe);
+            this.Controls.Add(this.btnInitMemoire);
+            this.Controls.Add(this.treeViewCorrection);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonAEtoile);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.buttonInit1);
+            this.Controls.Add(this.textBoxFinalNode);
+            this.Controls.Add(this.textBoxInitialNode);
+            this.Controls.Add(this.buttonInitAlea);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,30 +298,30 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonInit1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button buttonAEtoile;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.Button btnInit2;
-        private System.Windows.Forms.ListBox listBoxgraphe;
-        private System.Windows.Forms.Label textTitre;
-        private System.Windows.Forms.ListBox listBoxShowFermeUti;
-        private System.Windows.Forms.TextBox champOuverts;
-        private System.Windows.Forms.TextBox champFermes;
-        private System.Windows.Forms.Label txtInstruction;
-        private System.Windows.Forms.Label txtOuvert;
-        private System.Windows.Forms.Label txtFerme;
-        private System.Windows.Forms.Button btn_Valider;
-        private System.Windows.Forms.ListBox listBoxShowOuvertUti;
-        private System.Windows.Forms.Label txtCorrection;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label labelShowCorrectOrNot;
-        private System.Windows.Forms.ListBox listBoxShowOuvertIA;
-        private System.Windows.Forms.ListBox listBoxShowFermeIA;
+        public System.Windows.Forms.TextBox textBoxInitialNode;
+        public System.Windows.Forms.TextBox textBoxFinalNode;
+        public System.Windows.Forms.Button buttonAEtoile;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.ListBox listBox1;
+        public System.Windows.Forms.TreeView treeViewCorrection;
+        public System.Windows.Forms.Button btnInitMemoire;
+        public System.Windows.Forms.ListBox listBoxGraphe;
+        public System.Windows.Forms.Label textTitre;
+        public System.Windows.Forms.ListBox listBoxShowFermeUti;
+        public System.Windows.Forms.TextBox textBoxOuverts;
+        public System.Windows.Forms.TextBox textBoxFermes;
+        public System.Windows.Forms.Label txtInstruction;
+        public System.Windows.Forms.Label txtOuvert;
+        public System.Windows.Forms.Label txtFerme;
+        public System.Windows.Forms.Button btn_Valider;
+        public System.Windows.Forms.ListBox listBoxShowOuvertUti;
+        public System.Windows.Forms.Label txtCorrection;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label labelShowCorrectOrNot;
+        public System.Windows.Forms.Button buttonInitAlea;
+        public System.Windows.Forms.ListBox listBoxShowOuvertIA;
+        public System.Windows.Forms.ListBox listBoxShowFermeIA;
     }
 }
 

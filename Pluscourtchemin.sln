@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pluscourtchemin", "Pluscourtchemin\Pluscourtchemin.csproj", "{6F7C0E5C-624A-42B0-87CF-AF86C721E2F7}"
 EndProject
@@ -11,7 +11,7 @@ Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject1", "Modelin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelingProject1Lib", "ModelingProject1Lib\ModelingProject1Lib.csproj", "{3D65236C-B97A-4966-808F-CE6580E2053F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluscourtcheminTests1", "PluscourtcheminTests1\PluscourtcheminTests1.csproj", "{B11C7DB4-7937-47B5-8FE5-522E6CA22B54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluscourtcheminTests", "PluscourtcheminTests1\PluscourtcheminTests.csproj", "{B11C7DB4-7937-47B5-8FE5-522E6CA22B54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

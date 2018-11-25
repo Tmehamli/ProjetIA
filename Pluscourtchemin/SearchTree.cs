@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Pluscourtchemin
 {
-    class SearchTree
+    public class SearchTree
     {
         public List<GenericNode> L_Ouverts;
         public List<GenericNode> L_Fermes;
