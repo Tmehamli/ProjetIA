@@ -156,7 +156,7 @@ namespace Pluscourtchemin
             historiqueUtiFerme = new List<List<GenericNode>>();
             historiqueUtiOuvert = new List<List<GenericNode>>();
 
-            StreamReader monStreamReader = new StreamReader(@"D:\Program Files (x86)\ensc\2a\IA\ProjetIA\Pluscourtchemin\bin\Debug\graphe1.txt");
+            StreamReader monStreamReader = new StreamReader(@"graphe1.txt");
 
             // Lecture du fichier avec un while, évidemment !
             // 1ère ligne : "nombre de noeuds du graphe

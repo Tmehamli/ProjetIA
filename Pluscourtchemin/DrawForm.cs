@@ -12,7 +12,6 @@ namespace Pluscourtchemin
 {
     public partial class DrawForm : Form
     {
-        private double[,] matrice;
         private Graphics g;
         private Pen pen;
         private List<TextBox> listTextBox;
@@ -34,13 +33,19 @@ namespace Pluscourtchemin
             g = pe.Graphics;
             // Insert code to paint the form here.  
             pen = new Pen(Color.FromArgb(255, 0, 0, 0));
-            this.CreatNewTextBox(new Point(150, 50));
+            ;
+            this.Controls.Add(this.CreatNewTextBox(new Point(150, 50)));
+
             DrawGraph(lastFerme[0], new Point(150, 50), new Point(150, 50));
-            ////this.CreatNewTextBox(new Point(150, 50));
-            foreach (var textbox in listTextBox)
-            {
-                this.Controls.Add(textbox);
-            }
+            var controls = this.Controls.Count;
+            ////for (int i = 1; i < listTextBox.Count; i++)
+            ////{
+            ////    this.Controls.Add(listTextBox[i]);
+            ////}
+            ////foreach(var textbox in listTextBox)
+            ////{
+            ////    this.Controls.Add(textbox);
+            ////}
         }
 
         private void DrawGraph(GenericNode node, Point parentLocation, Point initLocation)
@@ -64,17 +69,17 @@ namespace Pluscourtchemin
                     }
                     y = parentLocation.Y + 50;
                     Point myEndPoint = new Point(x, y);
-                    this.CreatNewTextBox(myEndPoint);
                     ////if (this.listTextBox.Count < this.lastFerme.Count + 1)
                     ////{
                     ////}
                     g.DrawLine(pen, myStartPoint, myEndPoint);
+                    this.Controls.Add(this.CreatNewTextBox(myEndPoint));
                     DrawGraph(child, myEndPoint, initLocation);
                 }
             }
         }
 
-        private void CreatNewTextBox(Point point)
+        private TextBox CreatNewTextBox(Point point)
         {
             // 
             // textBoxX
@@ -84,9 +89,14 @@ namespace Pluscourtchemin
             textBoxX.Name = "textBox" + (listTextBox.Count + 1);
             textBoxX.Size = new System.Drawing.Size(20, 20);
             textBoxX.TabIndex = listTextBox.Count + 1;
-            this.listTextBox.Add(textBoxX);
+            return textBoxX;
+            ////this.listTextBox.Add(textBoxX);
             ////this.Controls.Add(textBoxX);
         }
 
+        private void DrawForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
