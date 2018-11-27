@@ -1,6 +1,6 @@
 ﻿namespace Pluscourtchemin
 {
-    partial class Form1
+    partial class FormDijkstra
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -271,7 +271,7 @@
             this.buttonShowTree.UseVisualStyleBackColor = true;
             this.buttonShowTree.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // FormDijkstra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -301,8 +301,8 @@
             this.Controls.Add(this.textBoxFinalNode);
             this.Controls.Add(this.textBoxInitialNode);
             this.Controls.Add(this.buttonInitAlea);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormDijkstra";
+            this.Text = "Mise en application";
             this.ResumeLayout(false);
             this.PerformLayout();
 

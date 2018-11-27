@@ -52,11 +52,11 @@
     <Compile Include="Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="QuestionsForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="QuestionsForm.Designer.cs">
+      <DependentUpon>QuestionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Gestionnaire.cs">
       <SubType>Form</SubType>
@@ -64,11 +64,11 @@
     <Compile Include="Gestionnaire.Designer.cs">
       <DependentUpon>Gestionnaire.cs</DependentUpon>
     </Compile>
-    <Compile Include="LastWindow.cs">
+    <Compile Include="ShowScoreForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LastWindow.Designer.cs">
-      <DependentUpon>LastWindow.cs</DependentUpon>
+    <Compile Include="ShowScoreForm.Designer.cs">
+      <DependentUpon>ShowScoreForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,14 +77,14 @@
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="QuestionsForm.resx">
+      <DependentUpon>QuestionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestionnaire.resx">
       <DependentUpon>Gestionnaire.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LastWindow.resx">
-      <DependentUpon>LastWindow.cs</DependentUpon>
+    <EmbeddedResource Include="ShowScoreForm.resx">
+      <DependentUpon>ShowScoreForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

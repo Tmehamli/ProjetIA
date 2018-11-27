@@ -197,7 +197,7 @@ namespace Partie1
             }
             else
             {
-                LastWindow ucLastWindow = new LastWindow(score);
+                ShowScoreForm ucLastWindow = new ShowScoreForm(score);
                 ((Gestionnaire)this.Parent).ChangeControl(ucLastWindow);
             }
 

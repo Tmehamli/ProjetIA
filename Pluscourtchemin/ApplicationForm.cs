@@ -11,7 +11,7 @@ using System.IO;
 
 namespace Pluscourtchemin
 {
-    public partial class Form1 : Form
+    public partial class FormDijkstra : Form
     {
         public Random alea = new Random();
         static public double[,] matrice;
@@ -22,7 +22,7 @@ namespace Pluscourtchemin
         static public List<List<GenericNode>> historiqueUtiOuvert;
         static public List<List<GenericNode>> historiqueUtiFerme;
 
-        public Form1()
+        public FormDijkstra()
         {
             InitializeComponent();
             historiqueUtiOuvert = new List<List<GenericNode>>();
@@ -387,7 +387,7 @@ namespace Pluscourtchemin
             Node2 N0 = new Node2();
             N0.numero = numinitial;
             ////List<GenericNode> solution = g.RechercheSolutionAEtoile2(N0);
-            var drawForm = new DrawForm(g.historiqueIAFermes.LastOrDefault());
+            var drawForm = new TreeDrawForm(g.historiqueIAFermes.LastOrDefault());
             drawForm.ShowDialog();
             ////GraphDrawer();
         }
