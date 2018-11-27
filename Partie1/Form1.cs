@@ -21,14 +21,16 @@ namespace Partie1
         private List<int> notAlreadyAskedQuestions;
         private int nbQuestion;
         private int score;
+        private int scoreMax;
 
         public Questionnaire()
         {
 
-            CreatXMLStructure();
+            //CreatXMLStructure(); // tant qu'on a pas le fichier xml des questions
             InitializeComponent();
             questions = new List<Question>();
             this.score = 0;
+            this.scoreMax = 0;
             this.notAlreadyAskedQuestions = new List<int>();
             this.DownloadQuestions();
             this.notAlreadyAskedQuestions = questions.Select(q => q.IdQuestion).ToList();
@@ -41,6 +43,7 @@ namespace Partie1
         /// </summary>
         private void UpdateDisplay()
         {
+            //Afficher les boutons de réponses
             answers = new List<RadioButton>();
             for (int i = 0; i < this.currentQuestion.Reponses.Count; i++)
             {
@@ -58,6 +61,12 @@ namespace Partie1
                 radioButtonReponseX.UseVisualStyleBackColor = true;
                 this.Controls.Add(radioButtonReponseX);
                 this.answers.Add(radioButtonReponseX);
+            }
+
+            //Afficher l'image si besoin
+            if ()
+            {
+                image =
             }
         }
 
@@ -128,7 +137,7 @@ namespace Partie1
         public void DownloadQuestions()
         {
             XmlSerializer xs = new XmlSerializer(typeof(List<Question>));
-            using (StreamReader rd = new StreamReader("QuestionsReponses.xml"))
+            using (StreamReader rd = new StreamReader("../../QuestionsReponses.xml"))
             {
                 List<Question> q = xs.Deserialize(rd) as List<Question>;
                 questions = q;
@@ -144,6 +153,7 @@ namespace Partie1
             {
                 var buttonChecked = buttonsChecked[0];
                 bool isCorrect = this.CheckAnswer(buttonChecked);
+                this.scoreMax += this.currentQuestion.Valeur;
                 if (isCorrect)
                 {
                     this.score += this.currentQuestion.Valeur; 
@@ -183,7 +193,7 @@ namespace Partie1
 
         private void Suivant(object sender, EventArgs e)
         {
-            if (this.notAlreadyAskedQuestions.Count != 0)
+            if (this.nbQuestion<5)
             {
                 this.labelSelectAnAnswer.Visible = false;
                 this.labelShowCorrectOrNo.Visible = false;
@@ -197,7 +207,7 @@ namespace Partie1
             }
             else
             {
-                LastWindow ucLastWindow = new LastWindow(score);
+                LastWindow ucLastWindow = new LastWindow(score, scoreMax);
                 ((Gestionnaire)this.Parent).ChangeControl(ucLastWindow);
             }
 

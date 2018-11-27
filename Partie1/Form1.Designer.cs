@@ -34,7 +34,9 @@
             this.labelShowCorrectOrNo = new System.Windows.Forms.Label();
             this.labelSelectAnAnswer = new System.Windows.Forms.Label();
             this.btnControl = new System.Windows.Forms.Button();
+            this.image = new System.Windows.Forms.PictureBox();
             this.groupBoxQuestion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.image)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxQuestion
@@ -44,7 +46,7 @@
             this.groupBoxQuestion.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxQuestion.Name = "groupBoxQuestion";
             this.groupBoxQuestion.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxQuestion.Size = new System.Drawing.Size(575, 89);
+            this.groupBoxQuestion.Size = new System.Drawing.Size(608, 89);
             this.groupBoxQuestion.TabIndex = 0;
             this.groupBoxQuestion.TabStop = false;
             this.groupBoxQuestion.Text = "Question n°X";
@@ -63,7 +65,7 @@
             // labelCorrection
             // 
             this.labelCorrection.AutoSize = true;
-            this.labelCorrection.Location = new System.Drawing.Point(427, 166);
+            this.labelCorrection.Location = new System.Drawing.Point(241, 301);
             this.labelCorrection.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCorrection.Name = "labelCorrection";
             this.labelCorrection.Size = new System.Drawing.Size(100, 17);
@@ -76,7 +78,7 @@
             this.labelShowCorrectOrNo.AutoSize = true;
             this.labelShowCorrectOrNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelShowCorrectOrNo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelShowCorrectOrNo.Location = new System.Drawing.Point(427, 133);
+            this.labelShowCorrectOrNo.Location = new System.Drawing.Point(241, 268);
             this.labelShowCorrectOrNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelShowCorrectOrNo.Name = "labelShowCorrectOrNo";
             this.labelShowCorrectOrNo.Size = new System.Drawing.Size(99, 17);
@@ -106,10 +108,19 @@
             this.btnControl.UseVisualStyleBackColor = true;
             this.btnControl.Click += new System.EventHandler(this.btnControl_Click);
             // 
+            // image
+            // 
+            this.image.Location = new System.Drawing.Point(641, 26);
+            this.image.Name = "image";
+            this.image.Size = new System.Drawing.Size(254, 382);
+            this.image.TabIndex = 8;
+            this.image.TabStop = false;
+            // 
             // Questionnaire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.image);
             this.Controls.Add(this.btnControl);
             this.Controls.Add(this.labelSelectAnAnswer);
             this.Controls.Add(this.labelShowCorrectOrNo);
@@ -117,9 +128,10 @@
             this.Controls.Add(this.groupBoxQuestion);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Questionnaire";
-            this.Size = new System.Drawing.Size(645, 427);
+            this.Size = new System.Drawing.Size(913, 427);
             this.groupBoxQuestion.ResumeLayout(false);
             this.groupBoxQuestion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,6 +145,7 @@
         private System.Windows.Forms.Label labelShowCorrectOrNo;
         private System.Windows.Forms.Label labelSelectAnAnswer;
         private System.Windows.Forms.Button btnControl;
+        private System.Windows.Forms.PictureBox image;
     }
 }
 
