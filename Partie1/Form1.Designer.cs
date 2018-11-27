@@ -90,7 +90,7 @@
             // 
             this.labelSelectAnAnswer.AutoSize = true;
             this.labelSelectAnAnswer.ForeColor = System.Drawing.Color.Red;
-            this.labelSelectAnAnswer.Location = new System.Drawing.Point(171, 391);
+            this.labelSelectAnAnswer.Location = new System.Drawing.Point(179, 391);
             this.labelSelectAnAnswer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSelectAnAnswer.Name = "labelSelectAnAnswer";
             this.labelSelectAnAnswer.Size = new System.Drawing.Size(222, 17);
@@ -112,7 +112,8 @@
             // 
             this.image.Location = new System.Drawing.Point(641, 26);
             this.image.Name = "image";
-            this.image.Size = new System.Drawing.Size(254, 382);
+            this.image.Size = new System.Drawing.Size(420, 382);
+            this.image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.image.TabIndex = 8;
             this.image.TabStop = false;
             // 
@@ -128,7 +129,7 @@
             this.Controls.Add(this.groupBoxQuestion);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Questionnaire";
-            this.Size = new System.Drawing.Size(913, 427);
+            this.Size = new System.Drawing.Size(1080, 427);
             this.groupBoxQuestion.ResumeLayout(false);
             this.groupBoxQuestion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();

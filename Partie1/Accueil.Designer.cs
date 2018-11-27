@@ -38,7 +38,7 @@
             // btnCommencer
             // 
             this.btnCommencer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCommencer.Location = new System.Drawing.Point(323, 206);
+            this.btnCommencer.Location = new System.Drawing.Point(410, 206);
             this.btnCommencer.Name = "btnCommencer";
             this.btnCommencer.Size = new System.Drawing.Size(207, 43);
             this.btnCommencer.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             this.text1.AutoSize = true;
             this.text1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text1.Location = new System.Drawing.Point(262, 30);
+            this.text1.Location = new System.Drawing.Point(349, 30);
             this.text1.Name = "text1";
             this.text1.Size = new System.Drawing.Size(328, 32);
             this.text1.TabIndex = 1;
@@ -59,7 +59,7 @@
             // btnQuitter
             // 
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnQuitter.Location = new System.Drawing.Point(323, 272);
+            this.btnQuitter.Location = new System.Drawing.Point(410, 272);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(207, 38);
             this.btnQuitter.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             this.text2.AutoSize = true;
             this.text2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text2.Location = new System.Drawing.Point(195, 111);
+            this.text2.Location = new System.Drawing.Point(282, 111);
             this.text2.Name = "text2";
             this.text2.Size = new System.Drawing.Size(478, 29);
             this.text2.TabIndex = 3;
@@ -80,7 +80,7 @@
             // texteAuteur
             // 
             this.texteAuteur.AutoSize = true;
-            this.texteAuteur.Location = new System.Drawing.Point(518, 375);
+            this.texteAuteur.Location = new System.Drawing.Point(605, 375);
             this.texteAuteur.Name = "texteAuteur";
             this.texteAuteur.Size = new System.Drawing.Size(371, 17);
             this.texteAuteur.TabIndex = 4;
@@ -96,7 +96,7 @@
             this.Controls.Add(this.text1);
             this.Controls.Add(this.btnCommencer);
             this.Name = "Accueil";
-            this.Size = new System.Drawing.Size(913, 427);
+            this.Size = new System.Drawing.Size(1080, 427);
             this.ResumeLayout(false);
             this.PerformLayout();
 

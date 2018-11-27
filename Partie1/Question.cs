@@ -13,34 +13,38 @@ public class Question
 {
     public int IdQuestion { get; set; }
     public virtual int IdReponse
-	{
-		get;
-		set;
-	}
+    {
+        get;
+        set;
+    }
 
-	public virtual string Contenu
-	{
-		get;
-		set;
-	}
+    public virtual string Contenu
+    {
+        get;
+        set;
+    }
     public int Valeur { get; set; }
 
-	public virtual List<Reponse> Reponses
-	{
-		get;
-		set;
-	}
+    public string ImageAdresse { get; set; }
+
+    public virtual List<Reponse> Reponses
+    {
+        get;
+        set;
+    }
+    
 
     public Question()
 	{
 	}
 
-	public Question(int idQuestion, int idReponse, int valeur, string contenu, List<Reponse> reponses)
+	public Question(int idQuestion, int idReponse, int valeur, string contenu,string imageAdresse, List<Reponse> reponses)
 	{
         IdQuestion = idQuestion;
         IdReponse = idReponse;
         Contenu = contenu;
         Valeur = valeur;
+        ImageAdresse = imageAdresse;
         Reponses = new List<Reponse>();
         foreach (var reponse in reponses)
         {

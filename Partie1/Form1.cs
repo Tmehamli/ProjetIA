@@ -63,11 +63,15 @@ namespace Partie1
                 this.answers.Add(radioButtonReponseX);
             }
 
-            //Afficher l'image si besoin
-            if ()
+            
+            //Afficher l'image
+            if (currentQuestion.ImageAdresse!="")
             {
-                image =
+                image.SizeMode = PictureBoxSizeMode.StretchImage;
+                image.Image = Image.FromFile(@"..\..\Resources\" + currentQuestion.ImageAdresse + ".jpg");
+                image.SizeMode = PictureBoxSizeMode.StretchImage;        
             }
+
         }
 
         /// <summary>
@@ -89,7 +93,7 @@ namespace Partie1
             reponses.Add(reponse4);
 
             // Création de la question associée et ajout des questions.
-            var maQuestion = new Question(0, 2, 1, "quelle est la mer?", reponses);
+            var maQuestion = new Question(0, 2, 1, "quelle est la mer?","", reponses);
 
             // Création des questions
             var reponses_2 = new List<Reponse>();
@@ -101,7 +105,7 @@ namespace Partie1
             reponses_2.Add(reponse3_2);
 
             // Création de la question associée et ajout des questions.
-            var maQuestion_2 = new Question(1, 2, 1, "quelle est la mer azer?", reponses_2);
+            var maQuestion_2 = new Question(1, 2, 1, "quelle est la mer azer?", "", reponses_2);
             mesQuestions = new List<Question>();
             mesQuestions.Add(maQuestion);
             mesQuestions.Add(maQuestion_2);
@@ -225,6 +229,9 @@ namespace Partie1
                 Suivant(sender, e);
             }
         }
+
+       
+
     }
 }
 
