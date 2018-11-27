@@ -36,53 +36,61 @@
             // 
             // ButtonFinir
             // 
-            this.ButtonFinir.Location = new System.Drawing.Point(71, 73);
+            this.ButtonFinir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonFinir.Location = new System.Drawing.Point(157, 250);
+            this.ButtonFinir.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonFinir.Name = "ButtonFinir";
-            this.ButtonFinir.Size = new System.Drawing.Size(75, 23);
+            this.ButtonFinir.Size = new System.Drawing.Size(268, 70);
             this.ButtonFinir.TabIndex = 7;
-            this.ButtonFinir.Text = "Finir";
+            this.ButtonFinir.Text = "Revenir à l\'accueil";
             this.ButtonFinir.UseVisualStyleBackColor = true;
             this.ButtonFinir.Click += new System.EventHandler(this.ButtonFinir_Click);
             // 
             // labelScore
             // 
             this.labelScore.AutoSize = true;
-            this.labelScore.Location = new System.Drawing.Point(113, 19);
+            this.labelScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelScore.Location = new System.Drawing.Point(320, 136);
+            this.labelScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelScore.Name = "labelScore";
-            this.labelScore.Size = new System.Drawing.Size(33, 13);
+            this.labelScore.Size = new System.Drawing.Size(60, 25);
             this.labelScore.TabIndex = 6;
             this.labelScore.Text = "score";
             // 
             // labelSur20
             // 
             this.labelSur20.AutoSize = true;
-            this.labelSur20.Location = new System.Drawing.Point(143, 19);
+            this.labelSur20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSur20.Location = new System.Drawing.Point(376, 136);
+            this.labelSur20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSur20.Name = "labelSur20";
-            this.labelSur20.Size = new System.Drawing.Size(24, 13);
+            this.labelSur20.Size = new System.Drawing.Size(40, 25);
             this.labelSur20.TabIndex = 5;
             this.labelSur20.Text = "/20";
             // 
             // labelResultat
             // 
             this.labelResultat.AutoSize = true;
-            this.labelResultat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResultat.Location = new System.Drawing.Point(23, 19);
+            this.labelResultat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResultat.Location = new System.Drawing.Point(139, 136);
+            this.labelResultat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelResultat.Name = "labelResultat";
-            this.labelResultat.Size = new System.Drawing.Size(54, 13);
+            this.labelResultat.Size = new System.Drawing.Size(102, 24);
             this.labelResultat.TabIndex = 4;
-            this.labelResultat.Text = "Resultat";
+            this.labelResultat.Text = "Résultat : ";
             // 
             // LastWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(219, 114);
             this.Controls.Add(this.ButtonFinir);
             this.Controls.Add(this.labelScore);
             this.Controls.Add(this.labelSur20);
             this.Controls.Add(this.labelResultat);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LastWindow";
-            this.Text = "Score";
+            this.Size = new System.Drawing.Size(627, 380);
+            this.Load += new System.EventHandler(this.LastWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

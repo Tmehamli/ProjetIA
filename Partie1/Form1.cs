@@ -12,7 +12,7 @@ using System.Xml.Serialization;
 
 namespace Partie1
 {
-    public partial class Questionnaire : Form
+    public partial class Questionnaire : UserControl
     {
         //
         private Question currentQuestion;
@@ -33,6 +33,8 @@ namespace Partie1
             this.DownloadQuestions();
             this.notAlreadyAskedQuestions = questions.Select(q => q.IdQuestion).ToList();
             AskNewQuestion();
+
+            btnControl.Text = "Valider";
         }
         /// <summary>
         /// Affiche les radios button en fonction des reponses disponibles
@@ -133,7 +135,7 @@ namespace Partie1
             }
         }
 
-        private void ButtonValider_Click(object sender, EventArgs e)
+        private void Valider(object sender, EventArgs e)
         {
             var buttonsChecked = this.answers.Where(a => a.Checked).ToList();
             this.labelSelectAnAnswer.Visible = false;
@@ -155,13 +157,15 @@ namespace Partie1
                     this.labelCorrection.Text = $"Correction : {this.currentQuestion.IdReponse + 1}.";
                 }
                 this.labelShowCorrectOrNo.Visible = true;
-                this.buttonValider.Enabled = false;
-                this.buttonSuivant.Enabled = true;
+
+
+                btnControl.Text = "Suivant";
             }
             else
             {
                 this.labelSelectAnAnswer.Visible = true;
             }
+
         }
 
         private bool CheckAnswer(RadioButton buttonChecked)
@@ -177,14 +181,12 @@ namespace Partie1
             }
         }
 
-        private void ButtonSuivant_Click(object sender, EventArgs e)
+        private void Suivant(object sender, EventArgs e)
         {
             if (this.notAlreadyAskedQuestions.Count != 0)
             {
                 this.labelSelectAnAnswer.Visible = false;
                 this.labelShowCorrectOrNo.Visible = false;
-                this.buttonSuivant.Enabled = false;
-                this.buttonValider.Enabled = true;
                 for (int i = 0; i < this.currentQuestion.Reponses.Count; i++)
                 {
                     // Suppression des reponses dans this.control
@@ -195,8 +197,22 @@ namespace Partie1
             }
             else
             {
-                LastWindow showScore = new LastWindow(this.score);
-                showScore.Show();
+                LastWindow ucLastWindow = new LastWindow(score);
+                ((Gestionnaire)this.Parent).ChangeControl(ucLastWindow);
+            }
+
+            btnControl.Text = "Valider";
+        }
+
+        private void btnControl_Click(object sender, EventArgs e)
+        {
+            if (btnControl.Text == "Valider") //si l'utilisateur valide sa réponse
+            {
+                Valider(sender, e);
+            }
+            else if(btnControl.Text == "Suivant") // si l'utilisateur veut la question suivante
+            {
+                Suivant(sender, e);
             }
         }
     }
