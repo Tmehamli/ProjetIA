@@ -22,6 +22,7 @@ namespace Partie1
         private int nbQuestion;
         private int score;
         private int scoreMax;
+        private int nbQuestionTotal;
 
         public Questionnaire()
         {
@@ -31,6 +32,7 @@ namespace Partie1
             questions = new List<Question>();
             this.score = 0;
             this.scoreMax = 0;
+            nbQuestionTotal = 5;
             this.notAlreadyAskedQuestions = new List<int>();
             this.DownloadQuestions();
             this.notAlreadyAskedQuestions = questions.Select(q => q.IdQuestion).ToList();
@@ -64,10 +66,10 @@ namespace Partie1
             }
 
             //Afficher l'image si besoin
-            if ()
-            {
-                image =
-            }
+            ////if ()
+            ////{
+            ////    image =
+            ////}
         }
 
         /// <summary>
@@ -148,15 +150,20 @@ namespace Partie1
         {
             var buttonsChecked = this.answers.Where(a => a.Checked).ToList();
             this.labelSelectAnAnswer.Visible = false;
+            this.labelCorrection.Visible = false;
 
             if (buttonsChecked.Count != 0)
             {
+                foreach (var answer in answers)
+                {
+                    answer.Enabled = false;
+                }
                 var buttonChecked = buttonsChecked[0];
                 bool isCorrect = this.CheckAnswer(buttonChecked);
                 this.scoreMax += this.currentQuestion.Valeur;
                 if (isCorrect)
                 {
-                    this.score += this.currentQuestion.Valeur; 
+                    this.score += this.currentQuestion.Valeur;
                     this.labelShowCorrectOrNo.Text = "Bonne réponse";
                     this.labelShowCorrectOrNo.ForeColor = Color.Green;
                 }
@@ -164,6 +171,7 @@ namespace Partie1
                 {
                     this.labelShowCorrectOrNo.Text = "Mauvaise réponse";
                     this.labelShowCorrectOrNo.ForeColor = Color.Red;
+                    this.labelCorrection.Visible = true;
                     this.labelCorrection.Text = $"Correction : {this.currentQuestion.IdReponse + 1}.";
                 }
                 this.labelShowCorrectOrNo.Visible = true;
@@ -193,10 +201,12 @@ namespace Partie1
 
         private void Suivant(object sender, EventArgs e)
         {
-            if (this.nbQuestion<5)
+            if (this.nbQuestion < this.nbQuestionTotal)
             {
                 this.labelSelectAnAnswer.Visible = false;
                 this.labelShowCorrectOrNo.Visible = false;
+                this.labelCorrection.Visible = false;
+
                 for (int i = 0; i < this.currentQuestion.Reponses.Count; i++)
                 {
                     // Suppression des reponses dans this.control
@@ -207,8 +217,8 @@ namespace Partie1
             }
             else
             {
-                ShowScoreForm ucLastWindow = new ShowScoreForm(score, scoreMax);
-                ((Gestionnaire)this.Parent).ChangeControl(ucLastWindow);
+                ShowScoreForm ucShowScore = new ShowScoreForm(score, scoreMax);
+                ((Gestionnaire)this.Parent).ChangeControl(ucShowScore);
             }
 
             btnControl.Text = "Valider";
@@ -220,7 +230,7 @@ namespace Partie1
             {
                 Valider(sender, e);
             }
-            else if(btnControl.Text == "Suivant") // si l'utilisateur veut la question suivante
+            else if (btnControl.Text == "Suivant") // si l'utilisateur veut la question suivante
             {
                 Suivant(sender, e);
             }
