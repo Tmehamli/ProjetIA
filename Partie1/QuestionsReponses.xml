@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ArrayOfQuestion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Question>
+    <IdQuestion>0</IdQuestion>
+    <IdReponse>3</IdReponse>
+    <Contenu>Comment peut-on définir l'Intelligence Artificielle (I.A.) ?</Contenu>
+    <Valeur>1</Valeur>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>0</IdQuestion>
+        <Contenu>Ensemble des techniques et algorithmes permettant de simuler l'intelligence </Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>0</IdQuestion>
+        <Contenu>Ensemble des techniques et algorithmes permettant un apprentissage autonome</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>0</IdQuestion>
+        <Contenu>Ensemble des techniques et algorithmes permettant de résoudre des problèmes à l'aide d'un ordinateur</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>0</IdQuestion>
+        <Contenu>Aucune de ces réponses ne convient</Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+  <Question>
+    <IdQuestion>1</IdQuestion>
+    <IdReponse>3</IdReponse>
+    <Contenu>Qu'est-ce qu'une I.A. forte ?</Contenu>
+    <Valeur>1</Valeur>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>1</IdQuestion>
+        <Contenu>Une I.A. qui bat à coup sûr son adversaire</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>1</IdQuestion>
+        <Contenu>Une I.A. capable d'apprendre de ses erreurs </Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>1</IdQuestion>
+        <Contenu>Une I.A. capable de résoudre un problème encore jamais rencontré </Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>1</IdQuestion>
+        <Contenu>Une I.A douée d'émotions, d'une conscience d'elle-même et d'une personnalité</Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+  <Question>
+    <IdQuestion>2</IdQuestion>
+    <IdReponse>1</IdReponse>
+    <Contenu>Qu'est-ce qu'une I.A. faible?</Contenu>
+    <Valeur>1</Valeur>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>2</IdQuestion>
+        <Contenu>Une I.A. incapable de battre l'homme </Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>2</IdQuestion>
+        <Contenu>Une I.A. n'ayant pas de conscience ou de pensée à proprement parler</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>2</IdQuestion>
+        <Contenu>Une I.A. incapable d'apprendre par elle-même</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>2</IdQuestion>
+        <Contenu>Une I.A. incapable de réaliser des tâches complexes </Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+  <Question>
+    <IdQuestion>3</IdQuestion>
+    <IdReponse>0</IdReponse>
+    <Contenu>La position intermédiaire entre I.A. forte et I.A. faible consiste à dire que l'I.A. ...</Contenu>
+    <Valeur>1</Valeur>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>3</IdQuestion>
+        <Contenu>Peut théoriquement être douée d'une conscience et d'une personnalité, mais en pratique peut-être impossible</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>3</IdQuestion>
+        <Contenu>Peut réaliser des tâches complexes mais pas trop</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>3</IdQuestion>
+        <Contenu>Est douée d'une concience mais n'est pas capable de battre l'Homme</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>3</IdQuestion>
+        <Contenu>Aucune de ces réponses ne convient</Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+  <Question>
+    <IdQuestion>4</IdQuestion>
+    <IdReponse>1</IdReponse>
+    <Contenu>Quel type d'algorithme permet de résoudre un problème d'optimisation ?</Contenu>
+    <Valeur>1</Valeur>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>4</IdQuestion>
+        <Contenu>Algorithme Min/Max</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>4</IdQuestion>
+        <Contenu>Algorithme génétique</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>4</IdQuestion>
+        <Contenu>Algorithme Min/max mais couplé avec Alpha/Beta</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>4</IdQuestion>
+        <Contenu>Algorithme de Dijkstra</Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+  <Question>
+    <IdQuestion>5</IdQuestion>
+    <IdReponse>2</IdReponse>
+    <Contenu>Quels sont les étapes pouvant correspondre à un algorithme génétique ?</Contenu>
+    <Valeur>1</Valeur>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>5</IdQuestion>
+        <Contenu>Création d'une population initiale puis une boucle : Tri -  Evaluation  - Selection - Mutation</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>5</IdQuestion>
+        <Contenu>Création d'une population initiale puis une boucle : Evaluation - Selection - Mutation - Tri </Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>5</IdQuestion>
+        <Contenu>Création d'une population initiale puis une boucle : Evaluation - Tri - Selection - Mutation </Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>5</IdQuestion>
+        <Contenu>Création d'une population initiale puis une boucle : Mutation - Selection  - Tri - Evaluation</Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+  <Question>
+    <IdQuestion>6</IdQuestion>
+    <IdReponse>0</IdReponse>
+    <Contenu>Un robot permet de se déplacer latéralement, ainsi de tourner vers la droite ou la gauche. Combien de dégrè de liberté possède-t-il ?</Contenu>
+    <Valeur>1</Valeur>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>6</IdQuestion>
+        <Contenu>2 degrés</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>6</IdQuestion>
+        <Contenu>4 degrés</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>6</IdQuestion>
+        <Contenu>5 degrés</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>6</IdQuestion>
+        <Contenu>6 degrés</Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+  <Question>
+    <IdQuestion>7</IdQuestion>
+    <IdReponse>2</IdReponse>
+    <Contenu>Quelle est la meilleurs méthode d'intelligence artificielle pour résoudre un jeu d'echec?</Contenu>
+    <Valeur>1</Valeur>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>7</IdQuestion>
+        <Contenu>Algorithme Min/Max</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>7</IdQuestion>
+        <Contenu>Algorithme génétique</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>7</IdQuestion>
+        <Contenu>Algorithme Min/max mais couplé avec Alpha/Beta</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>7</IdQuestion>
+        <Contenu>Algorithme de Dijkstra</Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+  <Question>
+    <IdQuestion>8</IdQuestion>
+    <IdReponse>0</IdReponse>
+    <Contenu>Quel type d'algorithme permet à un ordinateur de jouer en 1vs1 ?</Contenu>
+    <Valeur>1</Valeur>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>8</IdQuestion>
+        <Contenu>Algorithme Min/Max</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>8</IdQuestion>
+        <Contenu>Algorithme génétique</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>8</IdQuestion>
+        <Contenu>Algorithme de Dijkstra</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>8</IdQuestion>
+        <Contenu>Réseaux de neurones</Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+  <Question>
+    <IdQuestion>9</IdQuestion>
+    <IdReponse>1</IdReponse>
+    <Contenu>Quel est l'intérêt de l'extension Alpha/Beta appliquée à l'algorithme Min/Max ?</Contenu>
+    <Valeur>1</Valeur>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>9</IdQuestion>
+        <Contenu>Encadrer la solution</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>9</IdQuestion>
+        <Contenu>Eviter le développement de branches inutiles</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>9</IdQuestion>
+        <Contenu>Minimiser les valeurs extrèmes</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>9</IdQuestion>
+        <Contenu>Anticiper les prochaines branches</Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+  <Question>
+    <IdQuestion>10</IdQuestion>
+    <IdReponse>1</IdReponse>
+    <Contenu>A quel jeu est adapté l'algorithme Min/Max ?</Contenu>
+    <Valeur>1</Valeur>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>10</IdQuestion>
+        <Contenu>Jeu de taquin</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>10</IdQuestion>
+        <Contenu>Morpion</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>10</IdQuestion>
+        <Contenu>Mots croisés</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>10</IdQuestion>
+        <Contenu>Rush Hour</Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+  <Question>
+    <IdQuestion>11</IdQuestion>
+    <IdReponse>0</IdReponse>
+    <Contenu>Quel algorithme est le plus adapté pour trouver le plus court chemin entre Bordeaux et Brest ?</Contenu>
+    <Valeur>1</Valeur>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>11</IdQuestion>
+        <Contenu>Algorithme de Dijkstra couplé avec A*</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>11</IdQuestion>
+        <Contenu>Algorithme Min/Max</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>11</IdQuestion>
+        <Contenu>Algotithme Min/Max couplé avec Alpha Bêta</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>11</IdQuestion>
+        <Contenu>Algorithme de Dijkstra</Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+  <Question>
+    <IdQuestion>12</IdQuestion>
+    <IdReponse>1</IdReponse>
+    <Contenu>Quelle condition doit respecter l'algorithme A* pour être admissible ?</Contenu>
+    <Valeur>1</Valeur>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>12</IdQuestion>
+        <Contenu>Son heuristique doit être nulle</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>12</IdQuestion>
+        <Contenu>Son heuristique doit être un minorant du chemin réel qu'il reste à parcourir</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>12</IdQuestion>
+        <Contenu>Son heuristique doit estimer précisément la distance qu'il reste à parcourir</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>12</IdQuestion>
+        <Contenu>Son heuristique doit être un majorant du chemin réel qu'il reste à parcourir</Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+  <Question>
+    <IdQuestion>13</IdQuestion>
+    <IdReponse>2</IdReponse>
+    <Contenu>Comment peut-on qualifier l'exploration d'un arbre d'états faite par un algorithme Dijkstra ?</Contenu>
+    <Valeur>1</Valeur>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>13</IdQuestion>
+        <Contenu>Dirigée par le but</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>13</IdQuestion>
+        <Contenu>En profondeur</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>13</IdQuestion>
+        <Contenu>Radiale</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>13</IdQuestion>
+        <Contenu>Aucune de ces réponses</Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+  <Question>
+    <IdQuestion>14</IdQuestion>
+    <IdReponse>3</IdReponse>
+    <Contenu>Quelle condition doit respecter l'algorithme Dijskra pour être admissible ?</Contenu>
+    <Valeur>1</Valeur>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>14</IdQuestion>
+        <Contenu>Son heuristique doit être nulle</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>14</IdQuestion>
+        <Contenu>Son heuristique doit être un minorant du chemin réel qu'il reste à parcourir</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>14</IdQuestion>
+        <Contenu>Son heuristique doit estimer précisément la distance qu'il reste à parcourir</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>14</IdQuestion>
+        <Contenu>Son heuristique doit être un majorant du chemin réel qu'il reste à parcourir</Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+</ArrayOfQuestion>

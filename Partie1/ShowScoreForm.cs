@@ -13,17 +13,20 @@ namespace Partie1
     public partial class ShowScoreForm : UserControl
     {
         private int score;
+        private int scoreMax;
 
         public ShowScoreForm()
         {
             InitializeComponent();
         }
 
-        public ShowScoreForm(int score)
+        public ShowScoreForm(int score, int scoreMax)
         {
             InitializeComponent();
             this.score = score;
+            this.scoreMax = scoreMax;
             this.labelScore.Text = ""+ this.score;
+            this.labelSur20.Text = " / " + this.scoreMax;
         }
 
         private void ButtonFinir_Click(object sender, EventArgs e)
