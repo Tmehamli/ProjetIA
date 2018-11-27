@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Partie1
 {
-    public partial class LastWindow : Form
+    public partial class LastWindow : UserControl
     {
         private int score;
 
@@ -28,7 +28,13 @@ namespace Partie1
 
         private void ButtonFinir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Accueil ucAccueil = new Accueil();
+            ((Gestionnaire)this.Parent).ChangeControl(ucAccueil);
+        }
+
+        private void LastWindow_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
