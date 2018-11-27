@@ -1,6 +1,6 @@
 ﻿namespace Partie1
 {
-    partial class LastWindow
+    partial class ShowScoreForm
     {
         /// <summary>
         /// Required designer variable.

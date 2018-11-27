@@ -22,13 +22,13 @@ namespace Pluscourtchemin.Tests
          * RunAllTests : Ctrl+R, A
          * RunAllTestsInContext : Ctrl+R, T
         */
-        private Form1 form1;
+        private FormDijkstra form1;
         private object sender;
         private EventArgs e;
 
         private void Initialize()
         {
-            form1 = new Form1();
+            form1 = new FormDijkstra();
             sender = new object();
 
             e = new EventArgs();
@@ -99,9 +99,9 @@ namespace Pluscourtchemin.Tests
             // 3) On verifie que les numéros sont les mêmes que ceux d'origines
             // Pour les ouverts
             int nbOuvertOk = 0;
-            for (int i = 0; i < Form1.historiqueUtiOuvert.Count; i++)
+            for (int i = 0; i < FormDijkstra.historiqueUtiOuvert.Count; i++)
             {
-                var ouvertConsidere = Form1.historiqueUtiOuvert[i];
+                var ouvertConsidere = FormDijkstra.historiqueUtiOuvert[i];
                 int nbNoeudOk = 0;
                 for (int j = 0; j < ouvertConsidere.Count; j++)
                 {
@@ -119,9 +119,9 @@ namespace Pluscourtchemin.Tests
             }
             // Pour les fermes
             int nbFermesOk = 0;
-            for (int i = 0; i < Form1.historiqueUtiFerme.Count; i++)
+            for (int i = 0; i < FormDijkstra.historiqueUtiFerme.Count; i++)
             {
-                var fermeConsidere = Form1.historiqueUtiFerme[i];
+                var fermeConsidere = FormDijkstra.historiqueUtiFerme[i];
                 int nbNoeudOk = 0;
                 for (int j = 0; j < fermeConsidere.Count; j++)
                 {
@@ -138,8 +138,8 @@ namespace Pluscourtchemin.Tests
                 }
             }
 
-            Assert.AreEqual(nbOuvertOk, Form1.historiqueUtiOuvert.Count);
-            Assert.AreEqual(nbFermesOk, Form1.historiqueUtiFerme.Count);
+            Assert.AreEqual(nbOuvertOk, FormDijkstra.historiqueUtiOuvert.Count);
+            Assert.AreEqual(nbFermesOk, FormDijkstra.historiqueUtiFerme.Count);
         }
 
         [TestMethod]

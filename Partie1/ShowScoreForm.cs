@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace Partie1
 {
-    public partial class LastWindow : UserControl
+    public partial class ShowScoreForm : UserControl
     {
         private int score;
         private int scoreMax;
 
-        public LastWindow()
+        public ShowScoreForm()
         {
             InitializeComponent();
         }
 
-        public LastWindow(int score, int scoreMax)
+        public ShowScoreForm(int score, int scoreMax)
         {
             InitializeComponent();
             this.score = score;

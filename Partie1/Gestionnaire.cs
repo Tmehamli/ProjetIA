@@ -18,13 +18,7 @@ namespace Partie1
         {
             InitializeComponent();
             Accueil ucAccueil = new Accueil();
-
             Controls.Add(ucAccueil);
-
-        }
-
-        private void Gestionnaire_Load(object sender, EventArgs e)
-        {
 
         }
 
