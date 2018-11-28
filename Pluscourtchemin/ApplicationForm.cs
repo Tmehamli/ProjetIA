@@ -80,7 +80,7 @@ namespace Pluscourtchemin
                 ld14.Text = ld16.Text = ld19.Text = ld21.Text = "";
 
                 // chargement de l'image 
-                pictureBox1.Image = Image.FromFile("C:\\Users\\Younes G\\Desktop\\ENSC\\ProjetIA\\Images\\graphe1.jpg");
+                pictureBox1.Image = Image.FromFile("graphe1.jpg");
                 //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
@@ -107,7 +107,7 @@ namespace Pluscourtchemin
                 ld13.Text = ld15.Text = ld17.Text = ld20.Text = "";
 
                 // chargement de l'image 
-                pictureBox1.Image = Image.FromFile("C:\\Users\\Younes G\\Desktop\\ENSC\\ProjetIA\\Images\\graphe2.jpg");
+                pictureBox1.Image = Image.FromFile("graphe2.jpg");
                 //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
@@ -120,8 +120,6 @@ namespace Pluscourtchemin
                     }
                 }           
         }
-
-
 
         private void ClearFormDisplays()
         {
@@ -420,8 +418,12 @@ namespace Pluscourtchemin
             Algorithme_AEtoile(g);
             Node2 N0 = new Node2();
             N0.numero = numinitial;
+            Node2 NEnd = new Node2();
+            NEnd.numero = numfinal;
+            var lastFerme = g.historiqueIAFermes.LastOrDefault();
+            lastFerme.Add(NEnd);
             ////List<GenericNode> solution = g.RechercheSolutionAEtoile2(N0);
-            var drawForm = new TreeDrawForm(g.historiqueIAFermes.LastOrDefault());
+            var drawForm = new TreeDrawForm(lastFerme);
             drawForm.ShowDialog();
             ////GraphDrawer();
         }

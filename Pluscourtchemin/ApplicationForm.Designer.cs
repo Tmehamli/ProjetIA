@@ -48,7 +48,6 @@
             this.btn_Valider = new System.Windows.Forms.Button();
             this.listBoxShowOuvertUti = new System.Windows.Forms.ListBox();
             this.txtCorrection = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.labelShowCorrectOrNot = new System.Windows.Forms.Label();
             this.listBoxShowOuvertIA = new System.Windows.Forms.ListBox();
             this.listBoxShowFermeIA = new System.Windows.Forms.ListBox();
@@ -249,13 +248,6 @@
             this.txtCorrection.Size = new System.Drawing.Size(64, 13);
             this.txtCorrection.TabIndex = 19;
             this.txtCorrection.Text = "Correction : ";
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 23);
-            this.label3.TabIndex = 0;
             // 
             // labelShowCorrectOrNot
             // 
@@ -521,7 +513,6 @@
             this.Controls.Add(this.listBoxShowOuvertIA);
             this.Controls.Add(this.listBoxShowFermeIA);
             this.Controls.Add(this.labelShowCorrectOrNot);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtCorrection);
             this.Controls.Add(this.listBoxShowOuvertUti);
             this.Controls.Add(this.btn_Valider);
@@ -571,7 +562,6 @@
         public System.Windows.Forms.Button btn_Valider;
         public System.Windows.Forms.ListBox listBoxShowOuvertUti;
         public System.Windows.Forms.Label txtCorrection;
-        public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label labelShowCorrectOrNot;
         public System.Windows.Forms.Button buttonInitAlea;
         public System.Windows.Forms.ListBox listBoxShowOuvertIA;
