@@ -30,6 +30,21 @@ namespace Pluscourtchemin
             this.labelShowCorrectOrNot.Visible = false;
         }
 
+
+        // affiche les labels liés a l'image du graphe de dijsktra 
+        private void AfficherLabelDijsktra()
+        {
+            // selectionne tout les labels de dijkstra 
+            var labels = this.Controls.OfType<Label>()
+                          .Where(c => c.Name.StartsWith("ld"))
+                          .ToList();
+            // on affiche tout les labels de dijkstra 
+            foreach (var label in labels)
+            {
+                label.Visible = true;
+            }
+        }
+
         private void buttonInitAlea_Click(object sender, EventArgs e)
         {
             // Reinitialisation des affichages
@@ -40,8 +55,8 @@ namespace Pluscourtchemin
                 for (int j = 0; j < nbnodes; j++)
                     matrice[i, j] = -1;
 
-            int graphNumero = alea.Next(4);
-            // On choisit aléatoirement un graphe parmis trois différents 
+            int graphNumero = alea.Next(3);
+            // On choisit aléatoirement un graphe parmis trois différents  
             if (graphNumero == 1)
             {
                 matrice[0, 1] = alea.Next(1, 11); matrice[1, 0] = matrice[0, 1];
@@ -52,6 +67,21 @@ namespace Pluscourtchemin
                 matrice[2, 5] = alea.Next(1, 11); matrice[5, 2] = matrice[2, 5];
                 matrice[4, 5] = alea.Next(1, 11); matrice[5, 4] = matrice[4, 5];
                 matrice[5, 6] = alea.Next(1, 11); matrice[6, 5] = matrice[5, 6];
+
+                // initialisation des labels 
+                ld11.Text = matrice[0, 1].ToString();
+                ld12.Text = matrice[0, 2].ToString();
+                ld13.Text = matrice[0, 3].ToString();
+                ld15.Text = matrice[1, 4].ToString();
+                ld18.Text = matrice[2, 4].ToString();
+                ld17.Text = matrice[2, 5].ToString();
+                ld20.Text = matrice[4, 5].ToString();
+                ld22.Text = matrice[5, 6].ToString();
+                ld14.Text = ld16.Text = ld19.Text = ld21.Text = "";
+
+                // chargement de l'image 
+                pictureBox1.Image = Image.FromFile("C:\\Users\\Younes G\\Desktop\\ENSC\\ProjetIA\\Images\\graphe1.jpg");
+                //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
             if (graphNumero == 2)
@@ -64,20 +94,22 @@ namespace Pluscourtchemin
                 matrice[3, 5] = alea.Next(1, 11); matrice[5, 3] = matrice[3, 5];
                 matrice[4, 6] = alea.Next(1, 11); matrice[6, 4] = matrice[4, 6];
                 matrice[5, 6] = alea.Next(1, 11); matrice[6, 5] = matrice[5, 6];
-            }
 
-            if (graphNumero == 3)
-            {
-                matrice[0, 1] = alea.Next(1, 11); matrice[1, 0] = matrice[0, 1];
-                matrice[0, 2] = alea.Next(1, 11); matrice[2, 0] = matrice[0, 2];
-                matrice[2, 3] = alea.Next(1, 11); matrice[3, 2] = matrice[2, 3];
-                matrice[3, 4] = alea.Next(1, 11); matrice[4, 3] = matrice[3, 4];
-                matrice[2, 5] = alea.Next(1, 11); matrice[5, 2] = matrice[2, 5];
-                matrice[2, 6] = alea.Next(1, 11); matrice[6, 2] = matrice[2, 6];
-                matrice[5, 7] = alea.Next(1, 11); matrice[7, 5] = matrice[5, 7];
-                matrice[6, 7] = alea.Next(1, 11); matrice[7, 6] = matrice[6, 7];
-            }
+                // initialisation des labels 
+                ld11.Text = matrice[0, 1].ToString();
+                ld12.Text = matrice[0, 2].ToString();
+                ld14.Text = matrice[1, 3].ToString();
+                ld16.Text = matrice[2, 3].ToString();
+                ld18.Text = matrice[3, 4].ToString();
+                ld19.Text = matrice[3, 5].ToString();
+                ld21.Text = matrice[4, 6].ToString();
+                ld22.Text = matrice[5, 6].ToString();
+                ld13.Text = ld15.Text = ld17.Text = ld20.Text = "";
 
+                // chargement de l'image 
+                pictureBox1.Image = Image.FromFile("C:\\Users\\Younes G\\Desktop\\ENSC\\ProjetIA\\Images\\graphe2.jpg");
+                //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
 
             for (int i = 0; i < nbnodes; i++)
                 for (int j = 0; j < nbnodes; j++)
@@ -86,8 +118,10 @@ namespace Pluscourtchemin
                     {
                         listBoxGraphe.Items.Add(i + "--->" + j + "   : " + Convert.ToString(matrice[i, j]));
                     }
-                }
+                }           
         }
+
+
 
         private void ClearFormDisplays()
         {
