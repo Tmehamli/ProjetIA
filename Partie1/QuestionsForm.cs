@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using Pluscourtchemin;
 
 namespace Partie1
 {
@@ -64,14 +65,15 @@ namespace Partie1
                 this.Controls.Add(radioButtonReponseX);
                 this.answers.Add(radioButtonReponseX);
             }
-            
-            
+
+
             //Afficher l'image
+            image.Visible = false;
             if (currentQuestion.ImageAdresse!="")
             {
+                image.Visible = true;
                 image.SizeMode = PictureBoxSizeMode.StretchImage;
-                image.Image = Image.FromFile(@"..\..\Resources\" + currentQuestion.ImageAdresse + ".jpg");
-                image.SizeMode = PictureBoxSizeMode.StretchImage;        
+                image.Image = Image.FromFile(@"..\..\Resources\" + currentQuestion.ImageAdresse + ".jpg");   
             }
             
         }
@@ -218,25 +220,39 @@ namespace Partie1
                     this.Controls.RemoveAt(index);
                 }
                 this.AskNewQuestion();
+
+                btnControl.Text = "Valider";
             }
             else
             {
+                // Question Dijsktra
+
+                btnControl.Text = "Question sur Dijsktra !";
+
+
                 ShowScoreForm ucShowScore = new ShowScoreForm(score, scoreMax);
                 ((Gestionnaire)this.Parent).ChangeControl(ucShowScore);
             }
 
-            btnControl.Text = "Valider";
         }
 
         private void btnControl_Click(object sender, EventArgs e)
         {
-            if (btnControl.Text == "Valider") //si l'utilisateur valide sa réponse
+            if (btnControl.Text == "Valider") // l'utilisateur valide sa réponse
             {
                 Valider(sender, e);
             }
-            else if (btnControl.Text == "Suivant") // si l'utilisateur veut la question suivante
+            else if (btnControl.Text == "Suivant") // l'utilisateur veut la question suivante
             {
                 Suivant(sender, e);
+            }
+            else if (btnControl.Text == "Question sur Dijsktra !") // l'utilisateur va répondre à la dernière question : sur Dijsktra
+            {
+                //Pluscourtchemin.FormDijkstra formDijsktra = new FormDijkstra();
+                //formDijsktra.Retour();
+                //scoreMax += 3;
+                //// score
+                ////et après ?
             }
         }
 
