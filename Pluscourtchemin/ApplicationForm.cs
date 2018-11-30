@@ -55,7 +55,7 @@ namespace Pluscourtchemin
                 for (int j = 0; j < nbnodes; j++)
                     matrice[i, j] = -1;
 
-            int graphNumero = alea.Next(3);
+            int graphNumero = alea.Next(4);
             // On choisit aléatoirement un graphe parmis trois différents  
             if (graphNumero == 1)
             {
@@ -80,7 +80,7 @@ namespace Pluscourtchemin
                 ld14.Text = ld16.Text = ld19.Text = ld21.Text = "";
 
                 // chargement de l'image 
-                pictureBox1.Image = Image.FromFile("graphe1.jpg");
+                pictureBox1.Image = Image.FromFile(@"\bin\graphe1.jpg");
                 //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
@@ -107,7 +107,31 @@ namespace Pluscourtchemin
                 ld13.Text = ld15.Text = ld17.Text = ld20.Text = "";
 
                 // chargement de l'image 
-                pictureBox1.Image = Image.FromFile("graphe2.jpg");
+                pictureBox1.Image = Image.FromFile(@"\bin\graphe2.jpg");
+                //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+
+            if (graphNumero == 3)
+            {
+                matrice[0, 1] = alea.Next(1, 11); matrice[1, 0] = matrice[0, 1];
+                matrice[0, 2] = alea.Next(1, 11); matrice[2, 0] = matrice[0, 2];
+                matrice[1, 4] = alea.Next(1, 11); matrice[4, 1] = matrice[1, 4];
+                matrice[2, 5] = alea.Next(1, 11); matrice[5, 2] = matrice[2, 5];
+                matrice[3, 5] = alea.Next(1, 11); matrice[5, 3] = matrice[3, 5];
+                matrice[4, 6] = alea.Next(1, 11); matrice[6, 4] = matrice[4, 6];
+
+                // initialisation des labels 
+                ld11.Text = matrice[0, 1].ToString();
+                ld12.Text = matrice[0, 2].ToString();
+                ld15.Text = matrice[1, 4].ToString();
+                ld17.Text = matrice[2, 5].ToString();
+                ld19.Text = matrice[3, 5].ToString();
+                ld21.Text = matrice[4, 6].ToString();
+                ld13.Text = ld14.Text = ld16.Text = ld18.Text = ld20.Text = ld22.Text = "";
+
+
+                // chargement de l'image 
+                pictureBox1.Image = Image.FromFile(@"\bin\graphe3.jpg");
                 //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
