@@ -12,7 +12,7 @@ namespace Partie1
 {
     public partial class ShowScoreForm : UserControl
     {
-        private int score;
+        private double score;
         private int scoreMax;
 
         public ShowScoreForm()
@@ -25,8 +25,17 @@ namespace Partie1
             InitializeComponent();
             this.score = score;
             this.scoreMax = scoreMax;
-            this.labelScore.Text = ""+ this.score;
-            this.labelSur20.Text = " / " + this.scoreMax;
+
+            //remttre sur 20
+            if (this.scoreMax != 20)
+            {
+               double x = 20.00 / this.scoreMax;
+               this.score = this.score * x;
+            }
+
+            //Afficher score
+            this.labelScore.Text = ""+ Math.Round(this.score,2);
+            this.labelSur20.Text = " / 20";
         }
 
         private void ButtonFinir_Click(object sender, EventArgs e)
