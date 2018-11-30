@@ -19,8 +19,8 @@ namespace Partie1
 
         private void btnCommencer_Click(object sender, EventArgs e)
         {
-            Questionnaire ucQuestionnaire = new Questionnaire();
-            ((Gestionnaire)this.Parent).ChangeControl(ucQuestionnaire);
+            Questionnaire userControlQuestionnaire = new Questionnaire();
+            ((Gestionnaire)this.Parent).ChangeControl(userControlQuestionnaire);
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)

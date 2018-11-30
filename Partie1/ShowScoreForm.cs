@@ -34,10 +34,5 @@ namespace Partie1
             Accueil ucAccueil = new Accueil();
             ((Gestionnaire)this.Parent).ChangeControl(ucAccueil);
         }
-
-        private void LastWindow_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

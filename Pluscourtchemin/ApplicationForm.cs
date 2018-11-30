@@ -52,10 +52,14 @@ namespace Pluscourtchemin
 
             matrice = new double[nbnodes, nbnodes];
             for (int i = 0; i < nbnodes; i++)
+            {
                 for (int j = 0; j < nbnodes; j++)
+                {
                     matrice[i, j] = -1;
+                }
+            }
 
-            int graphNumero = alea.Next(3);
+            int graphNumero = alea.Next(1,3);
             // On choisit aléatoirement un graphe parmis trois différents  
             if (graphNumero == 1)
             {
@@ -80,7 +84,7 @@ namespace Pluscourtchemin
                 ld14.Text = ld16.Text = ld19.Text = ld21.Text = "";
 
                 // chargement de l'image 
-                pictureBox1.Image = Image.FromFile("graphe1.jpg");
+                pictureBox1.Image = Image.FromFile(@"..\..\..\Partie1\Resources\graphe1.jpg");
                 //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
@@ -107,18 +111,20 @@ namespace Pluscourtchemin
                 ld13.Text = ld15.Text = ld17.Text = ld20.Text = "";
 
                 // chargement de l'image 
-                pictureBox1.Image = Image.FromFile("graphe2.jpg");
+                pictureBox1.Image = Image.FromFile(@"..\..\..\Partie1\Resources\graphe2.jpg");
                 //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
             for (int i = 0; i < nbnodes; i++)
+            {
                 for (int j = 0; j < nbnodes; j++)
                 {
                     if ((matrice[i, j] != -1) && (i <= j))
                     {
                         listBoxGraphe.Items.Add(i + "--->" + j + "   : " + Convert.ToString(matrice[i, j]));
                     }
-                }           
+                }
+            }
         }
 
         private void ClearFormDisplays()
@@ -131,6 +137,7 @@ namespace Pluscourtchemin
             treeViewCorrection.Nodes.Clear();
             listBoxShowOuvertIA.Items.Clear();
             listBoxShowFermeIA.Items.Clear();
+            listBox1.Items.Clear();
         }
 
         private void buttonAEtoile_Click(object sender, EventArgs e)
@@ -188,7 +195,7 @@ namespace Pluscourtchemin
             historiqueUtiFerme = new List<List<GenericNode>>();
             historiqueUtiOuvert = new List<List<GenericNode>>();
 
-            StreamReader monStreamReader = new StreamReader(@"graphe1.txt");
+            StreamReader monStreamReader = new StreamReader(@"..\..\..\Partie1\Resources\graphe1.txt");
 
             // Lecture du fichier avec un while, évidemment !
             // 1ère ligne : "nombre de noeuds du graphe

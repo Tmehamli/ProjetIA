@@ -12,23 +12,20 @@ namespace Partie1
 {
     public partial class Gestionnaire : Form
     {
-        
-
         public Gestionnaire()
         {
             InitializeComponent();
-            Accueil ucAccueil = new Accueil();
-            Controls.Add(ucAccueil);
-
+            Accueil userControlAccueil = new Accueil();
+            Controls.Add(userControlAccueil);
         }
 
-        public void ChangeControl(UserControl control)
+        public void ChangeControl(UserControl userControl)
         {
             if (this.Controls.Count != 0)
             {
                 this.Controls.Clear();
             }
-            this.Controls.Add(control);
+            this.Controls.Add(userControl);
         }
     }
 }
