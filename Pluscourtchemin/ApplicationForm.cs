@@ -111,7 +111,7 @@ namespace Pluscourtchemin
                 ld13.Text = ld15.Text = ld17.Text = ld20.Text = "";
 
                 // chargement de l'image 
-                pictureBox1.Image = Image.FromFile(@"\bin\graphe2.jpg");
+                pictureBox1.Image = Image.FromFile(@"..\..\..\Partie1\Resources\graphe2.jpg");
                 //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
@@ -135,7 +135,7 @@ namespace Pluscourtchemin
 
 
                 // chargement de l'image 
-                pictureBox1.Image = Image.FromFile(@"..\..\..\Partie1\Resources\graphe2.jpg");
+                pictureBox1.Image = Image.FromFile(@"..\..\..\Partie1\Resources\graphe3.jpg");
                 //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
