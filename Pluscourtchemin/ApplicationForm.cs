@@ -59,7 +59,7 @@ namespace Pluscourtchemin
                 }
             }
 
-            int graphNumero = alea.Next(1,3);
+            int graphNumero = alea.Next(1, 3);
             // On choisit aléatoirement un graphe parmis trois différents  
             if (graphNumero == 1)
             {
@@ -138,29 +138,7 @@ namespace Pluscourtchemin
             listBoxShowOuvertIA.Items.Clear();
             listBoxShowFermeIA.Items.Clear();
             listBox1.Items.Clear();
-        }
-
-        private void buttonAEtoile_Click(object sender, EventArgs e)
-        {
-            numinitial = Convert.ToInt32(textBoxInitialNode.Text);
-            numfinal = Convert.ToInt32(textBoxFinalNode.Text);
-            SearchTree g = new SearchTree();
-            Node2 N0 = new Node2();
-            N0.numero = numinitial;
-            List<GenericNode> solution = g.RechercheSolutionAEtoile2(N0);
-
-            Node2 N1 = N0;
-            for (int i = 1; i < solution.Count; i++)
-            {
-                Node2 N2 = (Node2)solution[i];
-                listBox1.Items.Add(Convert.ToString(N1.numero)
-                     + "--->" + Convert.ToString(N2.numero)
-                     + "   : " + Convert.ToString(matrice[N1.numero, N2.numero]));
-                N1 = N2;
-            }
-
-            g.GetSearchTree(treeViewCorrection);
-
+            isGraphInMemory.Visible = false;
         }
 
         private bool Algorithme_AEtoile(SearchTree g)
@@ -419,20 +397,31 @@ namespace Pluscourtchemin
             else return 0;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonRetour_Click(object sender, EventArgs e)
         {
-            var g = new SearchTree();
-            Algorithme_AEtoile(g);
-            Node2 N0 = new Node2();
-            N0.numero = numinitial;
-            Node2 NEnd = new Node2();
-            NEnd.numero = numfinal;
-            var lastFerme = g.historiqueIAFermes.LastOrDefault();
-            lastFerme.Add(NEnd);
-            ////List<GenericNode> solution = g.RechercheSolutionAEtoile2(N0);
-            var drawForm = new TreeDrawForm(lastFerme);
-            drawForm.ShowDialog();
-            ////GraphDrawer();
+
+        }
+
+        private void buttonShowTree_Click(object sender, EventArgs e)
+        {
+            if (matrice != null)
+            {
+                isGraphInMemory.Visible = false;
+                var g = new SearchTree();
+                Algorithme_AEtoile(g);
+                Node2 N0 = new Node2();
+                N0.numero = numinitial;
+                Node2 NEnd = new Node2();
+                NEnd.numero = numfinal;
+                var lastFerme = g.historiqueIAFermes.LastOrDefault();
+                lastFerme.Add(NEnd);
+                var drawForm = new TreeDrawForm(lastFerme);
+                drawForm.ShowDialog();
+            }
+            else
+            {
+                isGraphInMemory.Visible = true;
+            }
         }
     }
 }

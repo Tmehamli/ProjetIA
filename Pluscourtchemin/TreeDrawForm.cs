@@ -43,7 +43,7 @@ namespace Pluscourtchemin
 
                 pen = new Pen(Color.FromArgb(255, 0, 0, 0));
                 pen.Width = 3;
-                var initPoint = new Point(250, 50);
+                var initPoint = new Point(200, 125);
                 nodesLocation.Add(initPoint);
                 DrawGraph(lastFerme[0], initPoint, initPoint);
                 foreach (var point in nodesLocation)
