@@ -14,11 +14,10 @@ namespace Partie1
 {
     public partial class Questionnaire : UserControl
     {
-        //
         private Question currentQuestion;
         private List<Question> questions;
-        private List<System.Windows.Forms.RadioButton> answers;
-        private List<int> notAlreadyAskedQuestions;
+        private List<RadioButton> answers;
+        private List<int> notAlreadyAskedQuestionsIndex;
         private int nbQuestion;
         private int score;
         private int scoreMax;
@@ -27,21 +26,23 @@ namespace Partie1
         public Questionnaire()
         {
 
-            //CreatXMLStructure(); // tant qu'on a pas le fichier xml des questions
+            ////CreatXMLStructure();
             InitializeComponent();
             questions = new List<Question>();
             this.score = 0;
             this.scoreMax = 0;
-            nbQuestionTotal = 5;
-            this.notAlreadyAskedQuestions = new List<int>();
+            this.notAlreadyAskedQuestionsIndex = new List<int>();
             this.DownloadQuestions();
-            this.notAlreadyAskedQuestions = questions.Select(q => q.IdQuestion).ToList();
+            nbQuestionTotal = questions.Count;
+            this.notAlreadyAskedQuestionsIndex = questions.Select(q => q.IdQuestion).ToList();
+
             AskNewQuestion();
 
             btnControl.Text = "Valider";
         }
+
         /// <summary>
-        /// Affiche les radios button en fonction des reponses disponibles
+        /// Affiche les radios bouton en fonction des reponses disponibles
         /// </summary>
         private void UpdateDisplay()
         {
@@ -56,7 +57,7 @@ namespace Partie1
                 radioButtonReponseX.AutoSize = true;
                 radioButtonReponseX.Location = new System.Drawing.Point(32, 95 + (i * 21));
                 radioButtonReponseX.Name = "radioButtonReponse_" + i;
-                radioButtonReponseX.Size = new System.Drawing.Size(129, 17);
+                radioButtonReponseX.Size = new System.Drawing.Size(300, 17);
                 radioButtonReponseX.TabIndex = this.labelShowCorrectOrNo.TabIndex + 1 + i;
                 radioButtonReponseX.TabStop = true;
                 radioButtonReponseX.Text = $"{i + 1}: {this.currentQuestion.Reponses[i].Contenu}";
@@ -64,16 +65,15 @@ namespace Partie1
                 this.Controls.Add(radioButtonReponseX);
                 this.answers.Add(radioButtonReponseX);
             }
-            
-            
+
             //Afficher l'image
-            if (currentQuestion.ImageAdresse!="")
+            image.Visible = false;
+            if (currentQuestion.ImageAdresse != "")
             {
+                image.Visible = true;
                 image.SizeMode = PictureBoxSizeMode.StretchImage;
-                image.Image = Image.FromFile(@"..\..\Resources\" + currentQuestion.ImageAdresse + ".jpg");
-                image.SizeMode = PictureBoxSizeMode.StretchImage;        
+                image.Image = Image.FromFile(@"..\..\Resources\" + currentQuestion.ImageAdresse + ".jpg");   
             }
-            
         }
 
         /// <summary>
@@ -83,34 +83,35 @@ namespace Partie1
         {
             List<Question> mesQuestions;
 
-            // Création des questions
+            // Création des reponses à la question 1
             var reponses = new List<Reponse>();
-            var reponse1 = new Reponse(0, 0, "la mer noir 1");
+            var reponse1 = new Reponse(0, 0, "la reponse 1 à la question 1");
             reponses.Add(reponse1);
-            var reponse2 = new Reponse(1, 0, "la mer noir 2");
+            var reponse2 = new Reponse(1, 0, "la reponse 2 à la question 1");
             reponses.Add(reponse2);
-            var reponse3 = new Reponse(2, 0, "la mer noir 3");
+            var reponse3 = new Reponse(2, 0, "la reponse 3 à la question 1");
             reponses.Add(reponse3);
-            var reponse4 = new Reponse(3, 0, "la mer noir 4");
+            var reponse4 = new Reponse(3, 0, "la reponse 4 à la question 1");
             reponses.Add(reponse4);
 
-            // Création de la question associée et ajout des questions.
-            var maQuestion = new Question(0, 2, 1, "quelle est la mer?","", reponses);
+            // Création de la question 1 et ajout des reponses.
+            var maQuestion = new Question(0, 2, 1, "quelle est la reponse à cette question 1 ?", "", reponses);
 
-            // Création des questions
+            // Création des reponses à la question 2
             var reponses_2 = new List<Reponse>();
-            var reponse1_2 = new Reponse(0, 0, "la mer noir 1");
+            var reponse1_2 = new Reponse(0, 0, "la reponse 1 à la question 2");
             reponses_2.Add(reponse1_2);
-            var reponse2_2 = new Reponse(1, 0, "la mer noir 2");
+            var reponse2_2 = new Reponse(1, 0, "la reponse 2 à la question 2");
             reponses_2.Add(reponse2_2);
-            var reponse3_2 = new Reponse(2, 0, "la mer noir 3");
+            var reponse3_2 = new Reponse(2, 0, "la reponse 3 à la question 2");
             reponses_2.Add(reponse3_2);
 
-            // Création de la question associée et ajout des questions.
-            var maQuestion_2 = new Question(1, 2, 1, "quelle est la mer azer?", "", reponses_2);
+            // Création de la question 2 et ajout des questions.
+            var maQuestion_2 = new Question(1, 2, 1, "quelle est la reponse à cette question 2 ?", "", reponses_2);
             mesQuestions = new List<Question>();
             mesQuestions.Add(maQuestion);
             mesQuestions.Add(maQuestion_2);
+
             // Opération de serialization
             XmlSerializer serializerQ = new XmlSerializer(typeof(List<Question>));
             TextWriter writer = new StreamWriter("QuestionsReponses.xml");
@@ -123,20 +124,18 @@ namespace Partie1
         /// </summary>
         private void AskNewQuestion()
         {
-            ////this.QuestionCourrante = new Question(1, 2, "?", new List<Reponse>());
-            ///
             var r = new Random();
-            var randomIndex = r.Next(notAlreadyAskedQuestions.Count);
-            ////var indexOfQuestion = notAlreadyAskedQuestions.Where(q => q.Equals(randomIndex)).ToList().First();
-            var indexOfQuestion = notAlreadyAskedQuestions[randomIndex];
+            var randomIndex = r.Next(notAlreadyAskedQuestionsIndex.Count);
+            var indexOfQuestion = notAlreadyAskedQuestionsIndex[randomIndex];
             this.currentQuestion = questions[indexOfQuestion];
-            notAlreadyAskedQuestions.Remove(indexOfQuestion);
+            notAlreadyAskedQuestionsIndex.Remove(indexOfQuestion);
             nbQuestion++;
             this.groupBoxQuestion.Text = $"Question n°{nbQuestion}";
             this.labelQuestion.Text = currentQuestion.Contenu;
             this.UpdateDisplay();
 
         }
+
         /// <summary>
         /// Charge les questions depuis le document xml
         /// </summary>
@@ -150,7 +149,7 @@ namespace Partie1
             }
         }
 
-        private void Valider(object sender, EventArgs e)
+        private void ActionValider(object sender, EventArgs e)
         {
             var buttonsChecked = this.answers.Where(a => a.Checked).ToList();
             this.labelSelectAnAnswer.Visible = false;
@@ -179,8 +178,6 @@ namespace Partie1
                     this.labelCorrection.Text = $"Correction : {this.currentQuestion.IdReponse + 1}.";
                 }
                 this.labelShowCorrectOrNo.Visible = true;
-
-
                 btnControl.Text = "Suivant";
             }
             else
@@ -203,14 +200,13 @@ namespace Partie1
             }
         }
 
-        private void Suivant(object sender, EventArgs e)
+        private void ActionSuivant(object sender, EventArgs e)
         {
             if (this.nbQuestion < this.nbQuestionTotal)
             {
                 this.labelSelectAnAnswer.Visible = false;
                 this.labelShowCorrectOrNo.Visible = false;
                 this.labelCorrection.Visible = false;
-
                 for (int i = 0; i < this.currentQuestion.Reponses.Count; i++)
                 {
                     // Suppression des reponses dans this.control
@@ -218,30 +214,41 @@ namespace Partie1
                     this.Controls.RemoveAt(index);
                 }
                 this.AskNewQuestion();
+
+                btnControl.Text = "Valider";
             }
             else
             {
+                // Question Dijsktra
+
+                btnControl.Text = "Question sur Dijsktra !";
+
+
                 ShowScoreForm ucShowScore = new ShowScoreForm(score, scoreMax);
                 ((Gestionnaire)this.Parent).ChangeControl(ucShowScore);
             }
 
-            btnControl.Text = "Valider";
         }
 
         private void btnControl_Click(object sender, EventArgs e)
         {
-            if (btnControl.Text == "Valider") //si l'utilisateur valide sa réponse
+            if (btnControl.Text == "Valider") // l'utilisateur valide sa réponse
             {
-                Valider(sender, e);
+                ActionValider(sender, e);
             }
-            else if (btnControl.Text == "Suivant") // si l'utilisateur veut la question suivante
+            else if (btnControl.Text == "Suivant") // l'utilisateur veut la question suivante
             {
-                Suivant(sender, e);
+                ActionSuivant(sender, e);
+            }
+            else if (btnControl.Text == "Question sur Dijsktra !") // l'utilisateur va répondre à la dernière question : sur Dijsktra
+            {
+                //Pluscourtchemin.FormDijkstra formDijsktra = new FormDijkstra();
+                //formDijsktra.Retour();
+                //scoreMax += 3;
+                //// score
+                ////et après ?
             }
         }
-
-       
-
     }
 }
 

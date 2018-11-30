@@ -107,7 +107,7 @@
       <Reponse>
         <IdReponse>2</IdReponse>
         <IdQuestion>3</IdQuestion>
-        <Contenu>Est douée d'une concience mais n'est pas capable de battre l'Homme</Contenu>
+        <Contenu>Est douée d'une conscience mais n'est pas capable de battre l'Homme</Contenu>
       </Reponse>
       <Reponse>
         <IdReponse>3</IdReponse>
@@ -177,7 +177,7 @@
   <Question>
     <IdQuestion>6</IdQuestion>
     <IdReponse>0</IdReponse>
-    <Contenu>Un robot permet de se déplacer latéralement, ainsi de tourner vers la droite ou la gauche. Combien de dégrè de liberté possède-t-il ?</Contenu>
+    <Contenu>Un robot permet de se déplacer latéralement, ainsi de tourner vers la droite ou la gauche. Combien de degrès de liberté possède-t-il ?</Contenu>
     <Valeur>1</Valeur>
     <ImageAdresse></ImageAdresse>
     <Reponses>
@@ -206,7 +206,7 @@
   <Question>
     <IdQuestion>7</IdQuestion>
     <IdReponse>2</IdReponse>
-    <Contenu>Quelle est la meilleurs méthode d'intelligence artificielle pour résoudre un jeu d'echec?</Contenu>
+    <Contenu>Quelle est la meilleurs méthode d'intelligence artificielle pour résoudre un jeu d'échec ?</Contenu>
     <Valeur>1</Valeur>
     <ImageAdresse></ImageAdresse>
     <Reponses>
@@ -281,7 +281,7 @@
       <Reponse>
         <IdReponse>2</IdReponse>
         <IdQuestion>9</IdQuestion>
-        <Contenu>Minimiser les valeurs extrèmes</Contenu>
+        <Contenu>Minimiser les valeurs extrêmes</Contenu>
       </Reponse>
       <Reponse>
         <IdReponse>3</IdReponse>
@@ -339,7 +339,7 @@
       <Reponse>
         <IdReponse>2</IdReponse>
         <IdQuestion>11</IdQuestion>
-        <Contenu>Algotithme Min/Max couplé avec Alpha Bêta</Contenu>
+        <Contenu>Algorithme Min/Max couplé avec Alpha Bêta</Contenu>
       </Reponse>
       <Reponse>
         <IdReponse>3</IdReponse>
@@ -352,7 +352,7 @@
     <IdQuestion>12</IdQuestion>
     <IdReponse>1</IdReponse>
     <Contenu>Quelle condition doit respecter l'algorithme A* pour être admissible ?</Contenu>
-    <Valeur>1</Valeur>
+    <Valeur>2</Valeur>
     <ImageAdresse></ImageAdresse>
     <Reponses>
       <Reponse>
@@ -381,7 +381,7 @@
     <IdQuestion>13</IdQuestion>
     <IdReponse>2</IdReponse>
     <Contenu>Comment peut-on qualifier l'exploration d'un arbre d'états faite par un algorithme Dijkstra ?</Contenu>
-    <Valeur>1</Valeur>
+    <Valeur>2</Valeur>
     <ImageAdresse></ImageAdresse>
     <Reponses>
       <Reponse>
@@ -409,8 +409,8 @@
   <Question>
     <IdQuestion>14</IdQuestion>
     <IdReponse>3</IdReponse>
-    <Contenu>Quelle condition doit respecter l'algorithme Dijskra pour être admissible ?</Contenu>
-    <Valeur>1</Valeur>
+    <Contenu>Quelle condition doit respecter l'algorithme Dijkstra pour être admissible ?</Contenu>
+    <Valeur>2</Valeur>
     <ImageAdresse></ImageAdresse>
     <Reponses>
       <Reponse>
@@ -468,7 +468,7 @@
     <IdQuestion>16</IdQuestion>
     <IdReponse>1</IdReponse>
     <Contenu>Voici un graphe sur lequel on applique un algorithme Min/max Alpha/Beta. Quels sont les chemins ignorés ?</Contenu>
-    <Valeur>1</Valeur>
+    <Valeur>2</Valeur>
     <ImageAdresse>AlphaBeta</ImageAdresse>
     <Reponses>
       <Reponse>
@@ -580,4 +580,34 @@
       </Reponse>
     </Reponses>
   </Question>
+  <Question>
+    <IdQuestion>20</IdQuestion>
+    <IdReponse>2</IdReponse>
+    <Contenu>Quelle est la différence entre un capteur passif et un capteur actif ?</Contenu>
+    <Valeur>2</Valeur>
+    <ImageAdresse></ImageAdresse>
+    <Reponses>
+      <Reponse>
+        <IdReponse>0</IdReponse>
+        <IdQuestion>20</IdQuestion>
+        <Contenu>Les capteurs actifs fonctionnent en continue alors qu'il faut activer les capteurs passifs</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>1</IdReponse>
+        <IdQuestion>20</IdQuestion>
+        <Contenu>Les capteurs passifs comprennent un émetteur et un récepteur alors que les capteurs actifs ne comprennent qu'un émetteur</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>2</IdReponse>
+        <IdQuestion>20</IdQuestion>
+        <Contenu>Les capteurs actifs comprennent un émetteur et un récepteur alors que les capteurs passifs ne comprennent qu'un émetteur</Contenu>
+      </Reponse>
+      <Reponse>
+        <IdReponse>3</IdReponse>
+        <IdQuestion>20</IdQuestion>
+        <Contenu>Les capteurs passifs fonctionnent en continue alors qu'il faut activer les capteurs actifs</Contenu>
+      </Reponse>
+    </Reponses>
+  </Question>
+
 </ArrayOfQuestion>

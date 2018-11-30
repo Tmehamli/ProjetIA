@@ -90,7 +90,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LastWindow";
             this.Size = new System.Drawing.Size(1080, 427);
-            this.Load += new System.EventHandler(this.LastWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
