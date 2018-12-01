@@ -28,8 +28,11 @@ namespace Pluscourtchemin
             historiqueUtiOuvert = new List<List<GenericNode>>();
             historiqueUtiFerme = new List<List<GenericNode>>();
             this.labelShowCorrectOrNot.Visible = false;
-        }
+            groupBoxCor1Part.Visible = false;
+            groupBoxCor2Part.Visible = false;
+            panelGraphImage.Visible = true;
 
+        }
 
         // affiche les labels liés a l'image du graphe de dijsktra 
         private void AfficherLabelDijsktra()
@@ -49,7 +52,7 @@ namespace Pluscourtchemin
         {
             // Reinitialisation des affichages
             this.ClearFormDisplays();
-
+            panelGraphImage.Visible = false;
             AfficherLabelDijsktra();
 
             matrice = new double[nbnodes, nbnodes];
@@ -161,7 +164,12 @@ namespace Pluscourtchemin
             listBoxShowOuvertIA.Items.Clear();
             listBoxShowFermeIA.Items.Clear();
             listBox1.Items.Clear();
+            groupBoxCor1Part.Visible = false;
+            groupBoxCor2Part.Visible = false;
             isGraphInMemory.Visible = false;
+            isGraphInMemory2.Visible = false;
+            panelGraphImage.Visible = true;
+
         }
 
         private bool Algorithme_AEtoile(SearchTree g)
@@ -193,6 +201,8 @@ namespace Pluscourtchemin
         public void buttonInitMemoire_Click(object sender, EventArgs e)
         {
             this.ClearFormDisplays();
+            panelGraphImage.Visible = false;
+
             //Initialiser les historiques pour ce graphe
             historiqueUtiFerme = new List<List<GenericNode>>();
             historiqueUtiOuvert = new List<List<GenericNode>>();
@@ -286,22 +296,30 @@ namespace Pluscourtchemin
         {
             if ((textBoxOuverts.Text == "") && (textBoxFermes.Text != ""))
             {
-                this.AjoutOuvertFermetUti(textBoxFermes.Text, false);
-
-                SearchTree g = new SearchTree();
-                bool reussite = Algorithme_AEtoile(g);
-                if (reussite == true)
+                if (matrice != null)
                 {
-                    this.labelShowCorrectOrNot.Text = "Bonne réponse";
-                    this.labelShowCorrectOrNot.ForeColor = Color.Green;
+                    this.AjoutOuvertFermetUti(textBoxFermes.Text, false);
+
+                    SearchTree g = new SearchTree();
+                    bool reussite = Algorithme_AEtoile(g);
+                    if (reussite == true)
+                    {
+                        this.labelShowCorrectOrNot.Text = "Bonne réponse";
+                        this.labelShowCorrectOrNot.ForeColor = Color.Green;
+                    }
+                    else
+                    {
+                        this.labelShowCorrectOrNot.Text = "Mauvaise réponse";
+                        this.labelShowCorrectOrNot.ForeColor = Color.Red;
+                    }
+                    this.labelShowCorrectOrNot.Visible = true;
+                    groupBoxCor1Part.Visible = true;
+                    AffichageHistoIA(g);
                 }
                 else
                 {
-                    this.labelShowCorrectOrNot.Text = "Mauvaise réponse";
-                    this.labelShowCorrectOrNot.ForeColor = Color.Red;
+                    isGraphInMemory2.Visible = true;
                 }
-                this.labelShowCorrectOrNot.Visible = true;
-                AffichageHistoIA(g);
             }
             else
             {
@@ -448,6 +466,7 @@ namespace Pluscourtchemin
             if (matrice != null)
             {
                 isGraphInMemory.Visible = false;
+                isGraphInMemory2.Visible = false;
                 var g = new SearchTree();
                 Algorithme_AEtoile(g);
                 Node2 N0 = new Node2();
@@ -459,11 +478,11 @@ namespace Pluscourtchemin
                 var lastFerme = g.L_Fermes;
                 lastFerme.Add(NEnd);
                 var drawForm = new TreeDrawForm(lastFerme);
-                ////g.InsertNewNodeInOpenList()
                 drawForm.ShowDialog();
             }
             else
             {
+                isGraphInMemory.Visible = true;
                 isGraphInMemory.Visible = true;
             }
         }

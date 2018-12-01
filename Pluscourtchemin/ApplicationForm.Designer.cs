@@ -75,18 +75,20 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBoxCor1Part = new System.Windows.Forms.GroupBox();
             this.isGraphInMemory = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBoxCor2Part = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonQuitter = new System.Windows.Forms.Button();
+            this.isGraphInMemory2 = new System.Windows.Forms.Label();
+            this.panelGraphImage = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.groupBoxCor1Part.SuspendLayout();
+            this.groupBoxCor2Part.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonInitAlea
@@ -170,21 +172,21 @@
             // listBoxShowFermeUti
             // 
             this.listBoxShowFermeUti.FormattingEnabled = true;
-            this.listBoxShowFermeUti.Location = new System.Drawing.Point(6, 70);
+            this.listBoxShowFermeUti.Location = new System.Drawing.Point(6, 55);
             this.listBoxShowFermeUti.Name = "listBoxShowFermeUti";
             this.listBoxShowFermeUti.Size = new System.Drawing.Size(100, 108);
             this.listBoxShowFermeUti.TabIndex = 11;
             // 
             // textBoxOuverts
             // 
-            this.textBoxOuverts.Location = new System.Drawing.Point(145, 43);
+            this.textBoxOuverts.Location = new System.Drawing.Point(145, 28);
             this.textBoxOuverts.Name = "textBoxOuverts";
             this.textBoxOuverts.Size = new System.Drawing.Size(100, 20);
             this.textBoxOuverts.TabIndex = 12;
             // 
             // textBoxFermes
             // 
-            this.textBoxFermes.Location = new System.Drawing.Point(6, 44);
+            this.textBoxFermes.Location = new System.Drawing.Point(6, 29);
             this.textBoxFermes.Name = "textBoxFermes";
             this.textBoxFermes.Size = new System.Drawing.Size(100, 20);
             this.textBoxFermes.TabIndex = 13;
@@ -201,7 +203,7 @@
             // txtOuvert
             // 
             this.txtOuvert.AutoSize = true;
-            this.txtOuvert.Location = new System.Drawing.Point(142, 24);
+            this.txtOuvert.Location = new System.Drawing.Point(142, 14);
             this.txtOuvert.Name = "txtOuvert";
             this.txtOuvert.Size = new System.Drawing.Size(53, 13);
             this.txtOuvert.TabIndex = 15;
@@ -210,7 +212,7 @@
             // txtFerme
             // 
             this.txtFerme.AutoSize = true;
-            this.txtFerme.Location = new System.Drawing.Point(6, 25);
+            this.txtFerme.Location = new System.Drawing.Point(6, 15);
             this.txtFerme.Name = "txtFerme";
             this.txtFerme.Size = new System.Drawing.Size(47, 13);
             this.txtFerme.TabIndex = 16;
@@ -218,7 +220,7 @@
             // 
             // btn_Valider
             // 
-            this.btn_Valider.Location = new System.Drawing.Point(145, 184);
+            this.btn_Valider.Location = new System.Drawing.Point(145, 169);
             this.btn_Valider.Name = "btn_Valider";
             this.btn_Valider.Size = new System.Drawing.Size(100, 23);
             this.btn_Valider.TabIndex = 17;
@@ -229,7 +231,7 @@
             // listBoxShowOuvertUti
             // 
             this.listBoxShowOuvertUti.FormattingEnabled = true;
-            this.listBoxShowOuvertUti.Location = new System.Drawing.Point(145, 70);
+            this.listBoxShowOuvertUti.Location = new System.Drawing.Point(145, 55);
             this.listBoxShowOuvertUti.Name = "listBoxShowOuvertUti";
             this.listBoxShowOuvertUti.Size = new System.Drawing.Size(100, 108);
             this.listBoxShowOuvertUti.TabIndex = 18;
@@ -471,7 +473,7 @@
             // 
             // buttonRetour
             // 
-            this.buttonRetour.Location = new System.Drawing.Point(6, 184);
+            this.buttonRetour.Location = new System.Drawing.Point(6, 169);
             this.buttonRetour.Name = "buttonRetour";
             this.buttonRetour.Size = new System.Drawing.Size(100, 23);
             this.buttonRetour.TabIndex = 105;
@@ -497,6 +499,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.panelGraphImage);
             this.groupBox2.Controls.Add(this.listBoxGraphe);
             this.groupBox2.Controls.Add(this.ld1);
             this.groupBox2.Controls.Add(this.ld5);
@@ -527,6 +530,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.isGraphInMemory2);
             this.groupBox3.Controls.Add(this.listBoxShowFermeUti);
             this.groupBox3.Controls.Add(this.textBoxFermes);
             this.groupBox3.Controls.Add(this.txtFerme);
@@ -560,21 +564,21 @@
             this.label4.TabIndex = 106;
             this.label4.Text = "Ouverts : ";
             // 
-            // groupBox4
+            // groupBoxCor1Part
             // 
-            this.groupBox4.Controls.Add(this.isGraphInMemory);
-            this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.listBoxShowFermeIA);
-            this.groupBox4.Controls.Add(this.listBoxShowOuvertIA);
-            this.groupBox4.Controls.Add(this.labelShowCorrectOrNot);
-            this.groupBox4.Controls.Add(this.buttonShowTree);
-            this.groupBox4.Location = new System.Drawing.Point(346, 378);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(240, 219);
-            this.groupBox4.TabIndex = 110;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Correction première partie";
+            this.groupBoxCor1Part.Controls.Add(this.isGraphInMemory);
+            this.groupBoxCor1Part.Controls.Add(this.label3);
+            this.groupBoxCor1Part.Controls.Add(this.label4);
+            this.groupBoxCor1Part.Controls.Add(this.listBoxShowFermeIA);
+            this.groupBoxCor1Part.Controls.Add(this.listBoxShowOuvertIA);
+            this.groupBoxCor1Part.Controls.Add(this.labelShowCorrectOrNot);
+            this.groupBoxCor1Part.Controls.Add(this.buttonShowTree);
+            this.groupBoxCor1Part.Location = new System.Drawing.Point(346, 378);
+            this.groupBoxCor1Part.Name = "groupBoxCor1Part";
+            this.groupBoxCor1Part.Size = new System.Drawing.Size(240, 219);
+            this.groupBoxCor1Part.TabIndex = 110;
+            this.groupBoxCor1Part.TabStop = false;
+            this.groupBoxCor1Part.Text = "Correction première partie";
             // 
             // isGraphInMemory
             // 
@@ -587,18 +591,18 @@
             this.isGraphInMemory.Text = "Veuillez générer les graphe";
             this.isGraphInMemory.Visible = false;
             // 
-            // groupBox5
+            // groupBoxCor2Part
             // 
-            this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Controls.Add(this.treeViewCorrection);
-            this.groupBox5.Controls.Add(this.listBox1);
-            this.groupBox5.Location = new System.Drawing.Point(592, 12);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(259, 360);
-            this.groupBox5.TabIndex = 111;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Correction deuxième partie";
+            this.groupBoxCor2Part.Controls.Add(this.label6);
+            this.groupBoxCor2Part.Controls.Add(this.label5);
+            this.groupBoxCor2Part.Controls.Add(this.treeViewCorrection);
+            this.groupBoxCor2Part.Controls.Add(this.listBox1);
+            this.groupBoxCor2Part.Location = new System.Drawing.Point(592, 12);
+            this.groupBoxCor2Part.Name = "groupBoxCor2Part";
+            this.groupBoxCor2Part.Size = new System.Drawing.Size(259, 360);
+            this.groupBoxCor2Part.TabIndex = 111;
+            this.groupBoxCor2Part.TabStop = false;
+            this.groupBoxCor2Part.Text = "Correction deuxième partie";
             // 
             // label6
             // 
@@ -628,14 +632,32 @@
             this.buttonQuitter.UseVisualStyleBackColor = true;
             this.buttonQuitter.Click += new System.EventHandler(this.buttonQuitter_Click);
             // 
+            // isGraphInMemory2
+            // 
+            this.isGraphInMemory2.AutoSize = true;
+            this.isGraphInMemory2.ForeColor = System.Drawing.Color.Red;
+            this.isGraphInMemory2.Location = new System.Drawing.Point(111, 195);
+            this.isGraphInMemory2.Name = "isGraphInMemory2";
+            this.isGraphInMemory2.Size = new System.Drawing.Size(134, 13);
+            this.isGraphInMemory2.TabIndex = 108;
+            this.isGraphInMemory2.Text = "Veuillez générer les graphe";
+            this.isGraphInMemory2.Visible = false;
+            // 
+            // panelGraphImage
+            // 
+            this.panelGraphImage.Location = new System.Drawing.Point(112, 18);
+            this.panelGraphImage.Name = "panelGraphImage";
+            this.panelGraphImage.Size = new System.Drawing.Size(456, 191);
+            this.panelGraphImage.TabIndex = 113;
+            // 
             // FormDijkstra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 609);
             this.Controls.Add(this.buttonQuitter);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBoxCor2Part);
+            this.Controls.Add(this.groupBoxCor1Part);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -648,10 +670,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.groupBoxCor1Part.ResumeLayout(false);
+            this.groupBoxCor1Part.PerformLayout();
+            this.groupBoxCor2Part.ResumeLayout(false);
+            this.groupBoxCor2Part.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -705,12 +727,14 @@
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBoxCor1Part;
+        private System.Windows.Forms.GroupBox groupBoxCor2Part;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonQuitter;
         public System.Windows.Forms.Label isGraphInMemory;
+        public System.Windows.Forms.Label isGraphInMemory2;
+        private System.Windows.Forms.Panel panelGraphImage;
     }
 }
 
