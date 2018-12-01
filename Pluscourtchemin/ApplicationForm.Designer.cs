@@ -76,11 +76,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.isGraphInMemory = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.isGraphInMemory = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -463,7 +463,7 @@
             // ld18
             // 
             this.ld18.AutoSize = true;
-            this.ld18.Location = new System.Drawing.Point(336, 93);
+            this.ld18.Location = new System.Drawing.Point(356, 78);
             this.ld18.Name = "ld18";
             this.ld18.Size = new System.Drawing.Size(41, 13);
             this.ld18.TabIndex = 104;
@@ -576,6 +576,17 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Correction première partie";
             // 
+            // isGraphInMemory
+            // 
+            this.isGraphInMemory.AutoSize = true;
+            this.isGraphInMemory.ForeColor = System.Drawing.Color.Red;
+            this.isGraphInMemory.Location = new System.Drawing.Point(53, 198);
+            this.isGraphInMemory.Name = "isGraphInMemory";
+            this.isGraphInMemory.Size = new System.Drawing.Size(134, 13);
+            this.isGraphInMemory.TabIndex = 107;
+            this.isGraphInMemory.Text = "Veuillez générer les graphe";
+            this.isGraphInMemory.Visible = false;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label6);
@@ -615,17 +626,6 @@
             this.button1.TabIndex = 112;
             this.button1.Text = "Quitter";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // isGraphInMemory
-            // 
-            this.isGraphInMemory.AutoSize = true;
-            this.isGraphInMemory.ForeColor = System.Drawing.Color.Red;
-            this.isGraphInMemory.Location = new System.Drawing.Point(53, 198);
-            this.isGraphInMemory.Name = "isGraphInMemory";
-            this.isGraphInMemory.Size = new System.Drawing.Size(134, 13);
-            this.isGraphInMemory.TabIndex = 107;
-            this.isGraphInMemory.Text = "Veuillez générer les graphe";
-            this.isGraphInMemory.Visible = false;
             // 
             // FormDijkstra
             // 

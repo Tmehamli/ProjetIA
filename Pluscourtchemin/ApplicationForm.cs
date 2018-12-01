@@ -50,6 +50,8 @@ namespace Pluscourtchemin
             // Reinitialisation des affichages
             this.ClearFormDisplays();
 
+            AfficherLabelDijsktra();
+
             matrice = new double[nbnodes, nbnodes];
             for (int i = 0; i < nbnodes; i++)
             {
@@ -85,7 +87,6 @@ namespace Pluscourtchemin
 
                 // chargement de l'image 
                 pictureBox1.Image = Image.FromFile(@"..\..\..\Partie1\Resources\graphe1.jpg");
-                //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
             if (graphNumero == 2)
@@ -112,7 +113,6 @@ namespace Pluscourtchemin
 
                 // chargement de l'image 
                 pictureBox1.Image = Image.FromFile(@"..\..\..\Partie1\Resources\graphe2.jpg");
-                //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
             if (graphNumero == 3)
@@ -136,7 +136,6 @@ namespace Pluscourtchemin
 
                 // chargement de l'image 
                 pictureBox1.Image = Image.FromFile(@"..\..\..\Partie1\Resources\graphe3.jpg");
-                //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
             for (int i = 0; i < nbnodes; i++)
@@ -267,6 +266,19 @@ namespace Pluscourtchemin
             }
             // Fermeture du StreamReader (obligatoire) 
             monStreamReader.Close();
+
+            // On gère ici l'affichage du graphe mémoire 
+            // chargement de l'image 
+            pictureBox1.Image = Image.FromFile(@"..\..\..\Partie1\Resources\grapheMem1.jpg");
+            ld11.Text = matrice[0, 1].ToString();
+            ld12.Text = matrice[0, 2].ToString();
+            ld13.Text = matrice[0, 3].ToString();
+            ld15.Text = matrice[1, 4].ToString();
+            ld18.Text = matrice[2, 4].ToString();
+            ld20.Text = matrice[4, 5].ToString();
+            ld22.Text = matrice[5, 6].ToString();
+            ld14.Text = ld16.Text = ld17.Text = ld19.Text = ld21.Text = "";
+
         }
 
         public void btn_Valider_Click(object sender, EventArgs e)
