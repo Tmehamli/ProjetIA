@@ -76,19 +76,26 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBoxCor1Part = new System.Windows.Forms.GroupBox();
             this.isGraphInMemory = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBoxCor2Part = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonQuitter = new System.Windows.Forms.Button();
             this.txtInstruction1 = new System.Windows.Forms.Label();
             this.txtInstruction3 = new System.Windows.Forms.Label();
+=======
+            this.isGraphInMemory2 = new System.Windows.Forms.Label();
+            this.panelGraphImage = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBoxCor1Part.SuspendLayout();
+            this.groupBoxCor2Part.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonInitAlea
@@ -98,6 +105,7 @@
             this.buttonInitAlea.Size = new System.Drawing.Size(100, 23);
             this.buttonInitAlea.TabIndex = 0;
             this.buttonInitAlea.Text = "Démarrer aléa";
+            this.buttonInitAlea.Text = "Démarrer";
             this.buttonInitAlea.UseVisualStyleBackColor = true;
             this.buttonInitAlea.Click += new System.EventHandler(this.buttonInitAlea_Click);
             // 
@@ -173,6 +181,7 @@
             // 
             this.listBoxShowFermeUti.FormattingEnabled = true;
             this.listBoxShowFermeUti.Location = new System.Drawing.Point(6, 70);
+            this.listBoxShowFermeUti.Location = new System.Drawing.Point(6, 55);
             this.listBoxShowFermeUti.Name = "listBoxShowFermeUti";
             this.listBoxShowFermeUti.Size = new System.Drawing.Size(100, 108);
             this.listBoxShowFermeUti.TabIndex = 11;
@@ -180,6 +189,7 @@
             // textBoxOuverts
             // 
             this.textBoxOuverts.Location = new System.Drawing.Point(145, 43);
+            this.textBoxOuverts.Location = new System.Drawing.Point(145, 28);
             this.textBoxOuverts.Name = "textBoxOuverts";
             this.textBoxOuverts.Size = new System.Drawing.Size(100, 20);
             this.textBoxOuverts.TabIndex = 12;
@@ -187,6 +197,7 @@
             // textBoxFermes
             // 
             this.textBoxFermes.Location = new System.Drawing.Point(6, 44);
+            this.textBoxFermes.Location = new System.Drawing.Point(6, 29);
             this.textBoxFermes.Name = "textBoxFermes";
             this.textBoxFermes.Size = new System.Drawing.Size(100, 20);
             this.textBoxFermes.TabIndex = 13;
@@ -205,6 +216,7 @@
             // 
             this.txtOuvert.AutoSize = true;
             this.txtOuvert.Location = new System.Drawing.Point(142, 24);
+            this.txtOuvert.Location = new System.Drawing.Point(142, 14);
             this.txtOuvert.Name = "txtOuvert";
             this.txtOuvert.Size = new System.Drawing.Size(53, 13);
             this.txtOuvert.TabIndex = 15;
@@ -214,6 +226,7 @@
             // 
             this.txtFerme.AutoSize = true;
             this.txtFerme.Location = new System.Drawing.Point(6, 25);
+            this.txtFerme.Location = new System.Drawing.Point(6, 15);
             this.txtFerme.Name = "txtFerme";
             this.txtFerme.Size = new System.Drawing.Size(47, 13);
             this.txtFerme.TabIndex = 16;
@@ -222,6 +235,7 @@
             // btn_Valider
             // 
             this.btn_Valider.Location = new System.Drawing.Point(145, 184);
+            this.btn_Valider.Location = new System.Drawing.Point(145, 169);
             this.btn_Valider.Name = "btn_Valider";
             this.btn_Valider.Size = new System.Drawing.Size(100, 23);
             this.btn_Valider.TabIndex = 17;
@@ -288,6 +302,7 @@
             this.ld14.Size = new System.Drawing.Size(41, 13);
             this.ld14.TabIndex = 101;
             this.ld14.Text = "label14";
+            this.ld14.Visible = false;
             // 
             // ld16
             // 
@@ -297,6 +312,7 @@
             this.ld16.Size = new System.Drawing.Size(41, 13);
             this.ld16.TabIndex = 100;
             this.ld16.Text = "label16";
+            this.ld16.Visible = false;
             // 
             // ld22
             // 
@@ -306,6 +322,7 @@
             this.ld22.Size = new System.Drawing.Size(41, 13);
             this.ld22.TabIndex = 99;
             this.ld22.Text = "label22";
+            this.ld22.Visible = false;
             // 
             // ld21
             // 
@@ -315,6 +332,7 @@
             this.ld21.Size = new System.Drawing.Size(41, 13);
             this.ld21.TabIndex = 98;
             this.ld21.Text = "label21";
+            this.ld21.Visible = false;
             // 
             // ld15
             // 
@@ -324,6 +342,7 @@
             this.ld15.Size = new System.Drawing.Size(41, 13);
             this.ld15.TabIndex = 97;
             this.ld15.Text = "label15";
+            this.ld15.Visible = false;
             // 
             // ld13
             // 
@@ -333,6 +352,7 @@
             this.ld13.Size = new System.Drawing.Size(41, 13);
             this.ld13.TabIndex = 96;
             this.ld13.Text = "label13";
+            this.ld13.Visible = false;
             // 
             // ld17
             // 
@@ -342,6 +362,7 @@
             this.ld17.Size = new System.Drawing.Size(41, 13);
             this.ld17.TabIndex = 95;
             this.ld17.Text = "label17";
+            this.ld17.Visible = false;
             // 
             // ld12
             // 
@@ -351,6 +372,7 @@
             this.ld12.Size = new System.Drawing.Size(41, 13);
             this.ld12.TabIndex = 94;
             this.ld12.Text = "label12";
+            this.ld12.Visible = false;
             // 
             // ld11
             // 
@@ -360,6 +382,7 @@
             this.ld11.Size = new System.Drawing.Size(41, 13);
             this.ld11.TabIndex = 93;
             this.ld11.Text = "label11";
+            this.ld11.Visible = false;
             // 
             // ld2
             // 
@@ -372,6 +395,7 @@
             this.ld2.Size = new System.Drawing.Size(16, 16);
             this.ld2.TabIndex = 92;
             this.ld2.Text = "4";
+            this.ld2.Visible = false;
             // 
             // ld6
             // 
@@ -384,6 +408,7 @@
             this.ld6.Size = new System.Drawing.Size(16, 16);
             this.ld6.TabIndex = 91;
             this.ld6.Text = "2";
+            this.ld6.Visible = false;
             // 
             // ld4
             // 
@@ -396,6 +421,7 @@
             this.ld4.Size = new System.Drawing.Size(16, 16);
             this.ld4.TabIndex = 90;
             this.ld4.Text = "6";
+            this.ld4.Visible = false;
             // 
             // ld7
             // 
@@ -408,6 +434,7 @@
             this.ld7.Size = new System.Drawing.Size(16, 16);
             this.ld7.TabIndex = 89;
             this.ld7.Text = "5";
+            this.ld7.Visible = false;
             // 
             // ld3
             // 
@@ -420,6 +447,7 @@
             this.ld3.Size = new System.Drawing.Size(16, 16);
             this.ld3.TabIndex = 88;
             this.ld3.Text = "3";
+            this.ld3.Visible = false;
             // 
             // ld5
             // 
@@ -432,6 +460,7 @@
             this.ld5.Size = new System.Drawing.Size(16, 16);
             this.ld5.TabIndex = 87;
             this.ld5.Text = "1";
+            this.ld5.Visible = false;
             // 
             // ld1
             // 
@@ -444,6 +473,7 @@
             this.ld1.Size = new System.Drawing.Size(16, 16);
             this.ld1.TabIndex = 86;
             this.ld1.Text = "0";
+            this.ld1.Visible = false;
             // 
             // ld20
             // 
@@ -453,6 +483,7 @@
             this.ld20.Size = new System.Drawing.Size(41, 13);
             this.ld20.TabIndex = 102;
             this.ld20.Text = "label20";
+            this.ld20.Visible = false;
             // 
             // ld19
             // 
@@ -462,6 +493,7 @@
             this.ld19.Size = new System.Drawing.Size(41, 13);
             this.ld19.TabIndex = 103;
             this.ld19.Text = "label19";
+            this.ld19.Visible = false;
             // 
             // ld18
             // 
@@ -471,10 +503,12 @@
             this.ld18.Size = new System.Drawing.Size(41, 13);
             this.ld18.TabIndex = 104;
             this.ld18.Text = "label18";
+            this.ld18.Visible = false;
             // 
             // buttonRetour
             // 
             this.buttonRetour.Location = new System.Drawing.Point(6, 184);
+            this.buttonRetour.Location = new System.Drawing.Point(6, 169);
             this.buttonRetour.Name = "buttonRetour";
             this.buttonRetour.Size = new System.Drawing.Size(100, 23);
             this.buttonRetour.TabIndex = 105;
@@ -491,6 +525,7 @@
             this.groupBox1.Controls.Add(this.textBoxInitialNode);
             this.groupBox1.Controls.Add(this.textBoxFinalNode);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtInstruction);
             this.groupBox1.Controls.Add(this.buttonInitAlea);
             this.groupBox1.Controls.Add(this.btnInitMemoire);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -502,6 +537,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.panelGraphImage);
             this.groupBox2.Controls.Add(this.listBoxGraphe);
             this.groupBox2.Controls.Add(this.ld1);
             this.groupBox2.Controls.Add(this.ld5);
@@ -530,8 +566,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Le graphe";
             // 
+            // panelGraphImage
+            // 
+            this.panelGraphImage.Location = new System.Drawing.Point(112, 18);
+            this.panelGraphImage.Name = "panelGraphImage";
+            this.panelGraphImage.Size = new System.Drawing.Size(456, 191);
+            this.panelGraphImage.TabIndex = 113;
+            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.isGraphInMemory2);
             this.groupBox3.Controls.Add(this.listBoxShowFermeUti);
             this.groupBox3.Controls.Add(this.textBoxFermes);
             this.groupBox3.Controls.Add(this.txtFerme);
@@ -546,6 +590,17 @@
             this.groupBox3.TabIndex = 109;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Remplir";
+            // 
+            // isGraphInMemory2
+            // 
+            this.isGraphInMemory2.AutoSize = true;
+            this.isGraphInMemory2.ForeColor = System.Drawing.Color.Red;
+            this.isGraphInMemory2.Location = new System.Drawing.Point(111, 195);
+            this.isGraphInMemory2.Name = "isGraphInMemory2";
+            this.isGraphInMemory2.Size = new System.Drawing.Size(134, 13);
+            this.isGraphInMemory2.TabIndex = 108;
+            this.isGraphInMemory2.Text = "Veuillez générer les graphe";
+            this.isGraphInMemory2.Visible = false;
             // 
             // label3
             // 
@@ -580,6 +635,21 @@
             this.groupBox4.TabIndex = 110;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Correction première partie";
+            // groupBoxCor1Part
+            // 
+            this.groupBoxCor1Part.Controls.Add(this.isGraphInMemory);
+            this.groupBoxCor1Part.Controls.Add(this.label3);
+            this.groupBoxCor1Part.Controls.Add(this.label4);
+            this.groupBoxCor1Part.Controls.Add(this.listBoxShowFermeIA);
+            this.groupBoxCor1Part.Controls.Add(this.listBoxShowOuvertIA);
+            this.groupBoxCor1Part.Controls.Add(this.labelShowCorrectOrNot);
+            this.groupBoxCor1Part.Controls.Add(this.buttonShowTree);
+            this.groupBoxCor1Part.Location = new System.Drawing.Point(346, 378);
+            this.groupBoxCor1Part.Name = "groupBoxCor1Part";
+            this.groupBoxCor1Part.Size = new System.Drawing.Size(240, 219);
+            this.groupBoxCor1Part.TabIndex = 110;
+            this.groupBoxCor1Part.TabStop = false;
+            this.groupBoxCor1Part.Text = "Correction première partie";
             // 
             // isGraphInMemory
             // 
@@ -593,6 +663,7 @@
             this.isGraphInMemory.Visible = false;
             // 
             // groupBox5
+            // groupBoxCor2Part
             // 
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.label5);
@@ -604,6 +675,16 @@
             this.groupBox5.TabIndex = 111;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Correction deuxième partie";
+            this.groupBoxCor2Part.Controls.Add(this.label6);
+            this.groupBoxCor2Part.Controls.Add(this.label5);
+            this.groupBoxCor2Part.Controls.Add(this.treeViewCorrection);
+            this.groupBoxCor2Part.Controls.Add(this.listBox1);
+            this.groupBoxCor2Part.Location = new System.Drawing.Point(592, 12);
+            this.groupBoxCor2Part.Name = "groupBoxCor2Part";
+            this.groupBoxCor2Part.Size = new System.Drawing.Size(259, 360);
+            this.groupBoxCor2Part.TabIndex = 111;
+            this.groupBoxCor2Part.TabStop = false;
+            this.groupBoxCor2Part.Text = "Correction deuxième partie";
             // 
             // label6
             // 
@@ -660,9 +741,12 @@
             this.Controls.Add(this.buttonQuitter);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBoxCor2Part);
+            this.Controls.Add(this.groupBoxCor1Part);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormDijkstra";
             this.Text = "Mise en application";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -676,6 +760,10 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBoxCor1Part.ResumeLayout(false);
+            this.groupBoxCor1Part.PerformLayout();
+            this.groupBoxCor2Part.ResumeLayout(false);
+            this.groupBoxCor2Part.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -723,6 +811,25 @@
         private System.Windows.Forms.Label ld20;
         private System.Windows.Forms.Label ld19;
         private System.Windows.Forms.Label ld18;
+        public System.Windows.Forms.Label ld14;
+        public System.Windows.Forms.Label ld16;
+        public System.Windows.Forms.Label ld22;
+        public System.Windows.Forms.Label ld21;
+        public System.Windows.Forms.Label ld15;
+        public System.Windows.Forms.Label ld13;
+        public System.Windows.Forms.Label ld17;
+        public System.Windows.Forms.Label ld12;
+        public System.Windows.Forms.Label ld11;
+        public System.Windows.Forms.Label ld2;
+        public System.Windows.Forms.Label ld6;
+        public System.Windows.Forms.Label ld4;
+        public System.Windows.Forms.Label ld7;
+        public System.Windows.Forms.Label ld3;
+        public System.Windows.Forms.Label ld5;
+        public System.Windows.Forms.Label ld1;
+        public System.Windows.Forms.Label ld20;
+        public System.Windows.Forms.Label ld19;
+        public System.Windows.Forms.Label ld18;
         private System.Windows.Forms.Button buttonRetour;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -731,12 +838,16 @@
         public System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBoxCor1Part;
+        private System.Windows.Forms.GroupBox groupBoxCor2Part;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonQuitter;
         public System.Windows.Forms.Label isGraphInMemory;
         public System.Windows.Forms.Label txtInstruction3;
         public System.Windows.Forms.Label txtInstruction1;
+        public System.Windows.Forms.Label isGraphInMemory2;
+        private System.Windows.Forms.Panel panelGraphImage;
     }
 }
 
