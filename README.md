@@ -1,1 +1,5 @@
 # ProjetIA
+Avec le développement de la puissance de calcul des ordinateurs, on peut aujourd’hui proposer des applications de l'intelligence artificielle plus concrète. Il est notamment question du futur des voitures autonomes et des autres systèmes, dit intelligents, qui pourraient envahir le quotidien de demain. 
+    C’est dans le cadre de notre formation à l’Ecole Nationale Supérieur de Cognitique que nous abordons ces différents aspects. C’est d'ailleurs dans le but d’appréhender la logique algorithmique qui se cache derrière le concept d’intelligence artificielle que ce projet existe. 
+Pour cela, il a été question de réaliser un programme informatique permettant de mettre à l’épreuve les connaissances d’une personne dans ce domaine sur la base de l’enseignement dispensé. Le développement de ce programme s’est architecturé autour de deux parties que nous avons ensuite assembler pour former le programme final.
+Ce programme devait donc être réalisé en langage C# et utiliser les windows forms tout en s’appuyant sur un code préexistant fourni avec les consignes du projet.
