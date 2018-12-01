@@ -37,25 +37,15 @@ namespace Pluscourtchemin
         // affiche les labels liés a l'image du graphe de dijsktra 
         private void AfficherLabelDijsktra()
         {
-            ld1.Visible = true;
-            ld2.Visible = true;
-            ld3.Visible = true;
-            ld4.Visible = true;
-            ld5.Visible = true;
-            ld6.Visible = true;
-            ld7.Visible = true;
-            ld11.Visible = true;
-            ld12.Visible = true;
-            ld13.Visible = true;
-            ld14.Visible = true;
-            ld15.Visible = true;
-            ld16.Visible = true;
-            ld17.Visible = true;
-            ld18.Visible = true;
-            ld19.Visible = true;
-            ld20.Visible = true;
-            ld21.Visible = true;
-            ld22.Visible = true;
+            // selectionne tout les labels de dijkstra 
+            var labels = this.Controls.OfType<Label>()
+                          .Where(c => c.Name.StartsWith("ld"))
+                          .ToList();
+            // on affiche tout les labels de dijkstra 
+            foreach (var label in labels)
+            {
+                label.Visible = true;
+            }
         }
 
         private void DemarrerAleaDij()
@@ -158,18 +148,19 @@ namespace Pluscourtchemin
             }
         }
 
-        private void buttonInitAlea_Click(object sender, EventArgs e)
+        private void buttonGraphGeneration_Click(object sender, EventArgs e)
         {
             // Reinitialisation des affichages
             this.ClearFormDisplays();
+            DemarrerAleaDij();
+            this.panelGraphImage.Visible = false;
             /*
             if (true)
             {
                 DemarrerMemoire();
             }
             else*/
-                DemarrerAleaDij();
-            AfficherLabelDijsktra();
+            ////AfficherLabelDijsktra();
         }
 
         private void ClearFormDisplays()

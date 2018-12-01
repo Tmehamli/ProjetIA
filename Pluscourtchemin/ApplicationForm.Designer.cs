@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonInitAlea = new System.Windows.Forms.Button();
+            this.buttonGraphGeneration = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.treeViewCorrection = new System.Windows.Forms.TreeView();
             this.listBoxGraphe = new System.Windows.Forms.ListBox();
@@ -67,7 +67,9 @@
             this.buttonRetour = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panelGraphImage = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.isGraphInMemory2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBoxCor1Part = new System.Windows.Forms.GroupBox();
@@ -76,8 +78,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonQuitter = new System.Windows.Forms.Button();
-            this.isGraphInMemory2 = new System.Windows.Forms.Label();
-            this.panelGraphImage = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -86,15 +86,15 @@
             this.groupBoxCor2Part.SuspendLayout();
             this.SuspendLayout();
             // 
-            // buttonInitAlea
+            // buttonGraphGeneration
             // 
-            this.buttonInitAlea.Location = new System.Drawing.Point(161, 95);
-            this.buttonInitAlea.Name = "buttonInitAlea";
-            this.buttonInitAlea.Size = new System.Drawing.Size(100, 23);
-            this.buttonInitAlea.TabIndex = 0;
-            this.buttonInitAlea.Text = "Démarrer";
-            this.buttonInitAlea.UseVisualStyleBackColor = true;
-            this.buttonInitAlea.Click += new System.EventHandler(this.buttonInitAlea_Click);
+            this.buttonGraphGeneration.Location = new System.Drawing.Point(161, 95);
+            this.buttonGraphGeneration.Name = "buttonGraphGeneration";
+            this.buttonGraphGeneration.Size = new System.Drawing.Size(136, 23);
+            this.buttonGraphGeneration.TabIndex = 0;
+            this.buttonGraphGeneration.Text = "Génération du graph";
+            this.buttonGraphGeneration.UseVisualStyleBackColor = true;
+            this.buttonGraphGeneration.Click += new System.EventHandler(this.buttonGraphGeneration_Click);
             // 
             // listBox1
             // 
@@ -238,7 +238,6 @@
             this.ld14.Size = new System.Drawing.Size(41, 13);
             this.ld14.TabIndex = 101;
             this.ld14.Text = "label14";
-            this.ld14.Visible = false;
             // 
             // ld16
             // 
@@ -248,7 +247,6 @@
             this.ld16.Size = new System.Drawing.Size(41, 13);
             this.ld16.TabIndex = 100;
             this.ld16.Text = "label16";
-            this.ld16.Visible = false;
             // 
             // ld22
             // 
@@ -258,7 +256,6 @@
             this.ld22.Size = new System.Drawing.Size(41, 13);
             this.ld22.TabIndex = 99;
             this.ld22.Text = "label22";
-            this.ld22.Visible = false;
             // 
             // ld21
             // 
@@ -268,7 +265,6 @@
             this.ld21.Size = new System.Drawing.Size(41, 13);
             this.ld21.TabIndex = 98;
             this.ld21.Text = "label21";
-            this.ld21.Visible = false;
             // 
             // ld15
             // 
@@ -288,7 +284,6 @@
             this.ld13.Size = new System.Drawing.Size(41, 13);
             this.ld13.TabIndex = 96;
             this.ld13.Text = "label13";
-            this.ld13.Visible = false;
             // 
             // ld17
             // 
@@ -298,7 +293,6 @@
             this.ld17.Size = new System.Drawing.Size(41, 13);
             this.ld17.TabIndex = 95;
             this.ld17.Text = "label17";
-            this.ld17.Visible = false;
             // 
             // ld12
             // 
@@ -308,7 +302,6 @@
             this.ld12.Size = new System.Drawing.Size(41, 13);
             this.ld12.TabIndex = 94;
             this.ld12.Text = "label12";
-            this.ld12.Visible = false;
             // 
             // ld11
             // 
@@ -318,7 +311,6 @@
             this.ld11.Size = new System.Drawing.Size(41, 13);
             this.ld11.TabIndex = 93;
             this.ld11.Text = "label11";
-            this.ld11.Visible = false;
             // 
             // ld2
             // 
@@ -331,7 +323,6 @@
             this.ld2.Size = new System.Drawing.Size(16, 16);
             this.ld2.TabIndex = 92;
             this.ld2.Text = "4";
-            this.ld2.Visible = false;
             // 
             // ld6
             // 
@@ -344,7 +335,6 @@
             this.ld6.Size = new System.Drawing.Size(16, 16);
             this.ld6.TabIndex = 91;
             this.ld6.Text = "2";
-            this.ld6.Visible = false;
             // 
             // ld4
             // 
@@ -357,7 +347,6 @@
             this.ld4.Size = new System.Drawing.Size(16, 16);
             this.ld4.TabIndex = 90;
             this.ld4.Text = "6";
-            this.ld4.Visible = false;
             // 
             // ld7
             // 
@@ -370,7 +359,6 @@
             this.ld7.Size = new System.Drawing.Size(16, 16);
             this.ld7.TabIndex = 89;
             this.ld7.Text = "5";
-            this.ld7.Visible = false;
             // 
             // ld3
             // 
@@ -383,7 +371,6 @@
             this.ld3.Size = new System.Drawing.Size(16, 16);
             this.ld3.TabIndex = 88;
             this.ld3.Text = "3";
-            this.ld3.Visible = false;
             // 
             // ld5
             // 
@@ -396,7 +383,6 @@
             this.ld5.Size = new System.Drawing.Size(16, 16);
             this.ld5.TabIndex = 87;
             this.ld5.Text = "1";
-            this.ld5.Visible = false;
             // 
             // ld1
             // 
@@ -409,7 +395,6 @@
             this.ld1.Size = new System.Drawing.Size(16, 16);
             this.ld1.TabIndex = 86;
             this.ld1.Text = "0";
-            this.ld1.Visible = false;
             // 
             // ld20
             // 
@@ -419,7 +404,6 @@
             this.ld20.Size = new System.Drawing.Size(41, 13);
             this.ld20.TabIndex = 102;
             this.ld20.Text = "label20";
-            this.ld20.Visible = false;
             // 
             // ld19
             // 
@@ -429,7 +413,6 @@
             this.ld19.Size = new System.Drawing.Size(41, 13);
             this.ld19.TabIndex = 103;
             this.ld19.Text = "label19";
-            this.ld19.Visible = false;
             // 
             // ld18
             // 
@@ -439,7 +422,6 @@
             this.ld18.Size = new System.Drawing.Size(41, 13);
             this.ld18.TabIndex = 104;
             this.ld18.Text = "label18";
-            this.ld18.Visible = false;
             // 
             // buttonRetour
             // 
@@ -454,7 +436,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtInstruction);
-            this.groupBox1.Controls.Add(this.buttonInitAlea);
+            this.groupBox1.Controls.Add(this.buttonGraphGeneration);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(574, 124);
@@ -657,7 +639,7 @@
         public System.Windows.Forms.Button btn_Valider;
         public System.Windows.Forms.ListBox listBoxShowOuvertUti;
         public System.Windows.Forms.Label labelShowCorrectOrNot;
-        public System.Windows.Forms.Button buttonInitAlea;
+        public System.Windows.Forms.Button buttonGraphGeneration;
         public System.Windows.Forms.ListBox listBoxShowOuvertIA;
         public System.Windows.Forms.ListBox listBoxShowFermeIA;
         private System.Windows.Forms.Button buttonShowTree;
