@@ -15,15 +15,20 @@ namespace Pluscourtchemin
         private Graphics g;
         private Pen pen;
         private List<GenericNode> lastFerme;
-        private List<Point> nodesLocation;
+        private Dictionary<int, Point> nodesLocation;
+        private Dictionary<int, bool> nodeIsCorrect;
 
-        public int nbCall { get; private set; }
+        private int nbCall;
+        private int pos;
 
         public TreeDrawForm(List<GenericNode> lastFerme)
         {
             InitializeComponent();
             this.lastFerme = lastFerme;
-            this.nodesLocation = new List<Point>();
+            this.nodesLocation = new Dictionary<int, Point>();
+            this.nodeIsCorrect = new Dictionary<int, bool>();
+            this.nbCall = new int();
+            this.pos = new int();
         }
 
         private void DrawForm_Load(object sender, System.EventArgs e)
@@ -36,7 +41,6 @@ namespace Pluscourtchemin
             if (this.nbCall < 1)
             {
                 this.nbCall++;
-
                 // Declares the Graphics object and sets it to the Graphics object  
                 // supplied in the PaintEventArgs.  
                 g = pe.Graphics;
@@ -44,11 +48,10 @@ namespace Pluscourtchemin
                 pen = new Pen(Color.FromArgb(255, 0, 0, 0));
                 pen.Width = 3;
                 var initPoint = new Point(200, 125);
-                nodesLocation.Add(initPoint);
                 DrawGraph(lastFerme[0], initPoint, initPoint);
-                foreach (var point in nodesLocation)
+                foreach (KeyValuePair<int, Point> kvp in nodesLocation)
                 {
-                    this.CreatNewTextBox(point);
+                    this.CreatNewTextBox(kvp);
                 }
             }
         }
@@ -56,6 +59,7 @@ namespace Pluscourtchemin
         private void DrawGraph(GenericNode node, Point parentLocation, Point initLocation)
         {
             List<GenericNode> lChilds = node.GetEnfants();
+            nodesLocation.Add(((Node2)node).numero, parentLocation);
             Point myStartPoint = new Point();
             for (int i = 0; i < lChilds.Count; i++)
             {
@@ -67,34 +71,71 @@ namespace Pluscourtchemin
                     int x; int y;
                     if (lChilds.Count == 1)
                     {
-                        x = initLocation.X;
+                        x = myStartPoint.X;
                     }
                     else
                     {
-                        x = (initLocation.X) - (initLocation.X / lChilds.Count) + (initLocation.X / lChilds.Count) * i;
+                        x = (myStartPoint.X) - (myStartPoint.X / lChilds.Count) + (myStartPoint.X / lChilds.Count) * i;
                     }
                     y = parentLocation.Y + 50;
                     Point myEndPoint = new Point(x, y);
                     g.DrawLine(pen, myStartPoint, myEndPoint);
-
                     DrawGraph(child, myEndPoint, initLocation);
-                    nodesLocation.Add(myEndPoint);
+
                 }
             }
         }
 
-        private void CreatNewTextBox(Point point)
+        private void CreatNewTextBox(KeyValuePair<int, Point> kvp)
         {
             // 
             // textBoxX
             // 
             var textBoxX = new TextBox();
-            textBoxX.Location = new System.Drawing.Point(point.X - 17, point.Y-2);
-            textBoxX.Name = "textBox" + point.X;
+            textBoxX.Location = new System.Drawing.Point(kvp.Value.X - 17, kvp.Value.Y - 2);
+            textBoxX.Name = kvp.Key.ToString();
             textBoxX.Size = new System.Drawing.Size(35, 20);
-            textBoxX.TabIndex = this.Controls.Count;
             textBoxX.MaxLength = 5;
             this.Controls.Add(textBoxX);
+        }
+
+        private void buttonValider_Click(object sender, EventArgs e)
+        {
+            this.TreeCorrection(lastFerme[0]);
+            bool isCorrectTreeQuestion = true;
+            int nbInputCorrect = 0;
+            foreach (KeyValuePair<int, bool> kvp in nodeIsCorrect)
+            {
+                nbInputCorrect = nodeIsCorrect[kvp.Key] == true ? nbInputCorrect + 1 : nbInputCorrect;
+            }
+            isCorrectTreeQuestion = nbInputCorrect == nodeIsCorrect.Count ? true : false;
+
+        }
+
+        private void TreeCorrection(GenericNode node)
+        {
+            var text = this.Controls[2 + pos].Text.Split(':');
+            var noeudText = text[0];
+            string valText = text[1];
+            if (noeudText == ((Node2)node).numero.ToString() && valText == node.GetGCost().ToString())
+            {
+                nodeIsCorrect.Add(((Node2)node).numero, true);
+            }
+            else
+            {
+                nodeIsCorrect.Add(((Node2)node).numero, false);
+            }
+            List<GenericNode> lChilds = node.GetEnfants();
+            for (int i = 0; i < lChilds.Count; i++)
+            {
+                GenericNode child = lChilds[i];
+                var isIn = lastFerme.Where(f => ((Node2)f).numero == ((Node2)child).numero).ToList().Count != 0 ? true : false;
+                if (isIn)
+                {
+                    pos++;
+                    TreeCorrection(child);
+                }
+            }
         }
     }
 }

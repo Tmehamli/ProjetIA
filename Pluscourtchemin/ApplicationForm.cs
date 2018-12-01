@@ -28,8 +28,11 @@ namespace Pluscourtchemin
             historiqueUtiOuvert = new List<List<GenericNode>>();
             historiqueUtiFerme = new List<List<GenericNode>>();
             this.labelShowCorrectOrNot.Visible = false;
-        }
+            groupBoxCor1Part.Visible = false;
+            groupBoxCor2Part.Visible = false;
+            panelGraphImage.Visible = true;
 
+        }
 
         // affiche les labels liés a l'image du graphe de dijsktra 
         private void AfficherLabelDijsktra()
@@ -66,7 +69,7 @@ namespace Pluscourtchemin
                 }
             }
 
-            int graphNumero = alea.Next(1,4);
+            int graphNumero = alea.Next(1, 4);
             // On choisit aléatoirement un graphe parmis trois différents  
             if (graphNumero == 1)
             {
@@ -180,7 +183,12 @@ namespace Pluscourtchemin
             listBoxShowOuvertIA.Items.Clear();
             listBoxShowFermeIA.Items.Clear();
             listBox1.Items.Clear();
+            groupBoxCor1Part.Visible = false;
+            groupBoxCor2Part.Visible = false;
             isGraphInMemory.Visible = false;
+            isGraphInMemory2.Visible = false;
+            panelGraphImage.Visible = true;
+
         }
 
         private bool Algorithme_AEtoile(SearchTree g)
@@ -211,6 +219,9 @@ namespace Pluscourtchemin
 
         public void DemarrerMemoire()
         {
+            this.ClearFormDisplays();
+            panelGraphImage.Visible = false;
+
             //Initialiser les historiques pour ce graphe
             historiqueUtiFerme = new List<List<GenericNode>>();
             historiqueUtiOuvert = new List<List<GenericNode>>();
@@ -302,26 +313,32 @@ namespace Pluscourtchemin
 
         public void btn_Valider_Click(object sender, EventArgs e)
         {
-
-
             if ((textBoxOuverts.Text == "") && (textBoxFermes.Text != ""))
             {
-                this.AjoutOuvertFermetUti(textBoxFermes.Text, false);
-
-                SearchTree g = new SearchTree();
-                bool reussite = Algorithme_AEtoile(g);
-                if (reussite == true)
+                if (matrice != null)
                 {
-                    this.labelShowCorrectOrNot.Text = "Bonne réponse";
-                    this.labelShowCorrectOrNot.ForeColor = Color.Green;
+                    this.AjoutOuvertFermetUti(textBoxFermes.Text, false);
+
+                    SearchTree g = new SearchTree();
+                    bool reussite = Algorithme_AEtoile(g);
+                    if (reussite == true)
+                    {
+                        this.labelShowCorrectOrNot.Text = "Bonne réponse";
+                        this.labelShowCorrectOrNot.ForeColor = Color.Green;
+                    }
+                    else
+                    {
+                        this.labelShowCorrectOrNot.Text = "Mauvaise réponse";
+                        this.labelShowCorrectOrNot.ForeColor = Color.Red;
+                    }
+                    this.labelShowCorrectOrNot.Visible = true;
+                    groupBoxCor1Part.Visible = true;
+                    AffichageHistoIA(g);
                 }
                 else
                 {
-                    this.labelShowCorrectOrNot.Text = "Mauvaise réponse";
-                    this.labelShowCorrectOrNot.ForeColor = Color.Red;
+                    isGraphInMemory2.Visible = true;
                 }
-                this.labelShowCorrectOrNot.Visible = true;
-                AffichageHistoIA(g);
             }
             else
             {
@@ -454,7 +471,13 @@ namespace Pluscourtchemin
 
         private void buttonRetour_Click(object sender, EventArgs e)
         {
-
+            if (historiqueUtiOuvert.Count > 0 && historiqueUtiFerme.Count > 0)
+            {
+                historiqueUtiOuvert.RemoveAt(historiqueUtiOuvert.Count - 1);
+                historiqueUtiFerme.RemoveAt(historiqueUtiFerme.Count - 1);
+                listBoxShowOuvertUti.Items.RemoveAt(listBoxShowOuvertUti.Items.Count - 1);
+                listBoxShowFermeUti.Items.RemoveAt(listBoxShowFermeUti.Items.Count - 1);
+            }
         }
 
         private void buttonShowTree_Click(object sender, EventArgs e)
@@ -462,13 +485,16 @@ namespace Pluscourtchemin
             if (matrice != null)
             {
                 isGraphInMemory.Visible = false;
+                isGraphInMemory2.Visible = false;
                 var g = new SearchTree();
                 Algorithme_AEtoile(g);
                 Node2 N0 = new Node2();
                 N0.numero = numinitial;
-                Node2 NEnd = new Node2();
-                NEnd.numero = numfinal;
-                var lastFerme = g.historiqueIAFermes.LastOrDefault();
+                var l = g.RechercheSolutionAEtoile2(N0);
+
+                Node2 NEnd = (Node2)l.Last();
+
+                var lastFerme = g.L_Fermes;
                 lastFerme.Add(NEnd);
                 var drawForm = new TreeDrawForm(lastFerme);
                 drawForm.ShowDialog();
@@ -476,7 +502,13 @@ namespace Pluscourtchemin
             else
             {
                 isGraphInMemory.Visible = true;
+                isGraphInMemory.Visible = true;
             }
+        }
+
+        private void buttonQuitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
