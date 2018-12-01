@@ -120,7 +120,15 @@
     <None Include="Resources\MatAdj.JPG" />
     <None Include="Resources\AlphaBeta.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pluscourtchemin\Pluscourtchemin.csproj">
+      <Project>{6f7c0e5c-624a-42b0-87cf-af86c721e2f7}</Project>
+      <Name>Pluscourtchemin</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

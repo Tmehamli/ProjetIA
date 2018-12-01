@@ -18,6 +18,8 @@ namespace Pluscourtchemin
         private Dictionary<int, Point> nodesLocation;
         private Dictionary<int, bool> nodeIsCorrect;
 
+        private bool reussite;
+
         private int nbCall;
         private int pos;
 
@@ -28,6 +30,7 @@ namespace Pluscourtchemin
             this.nodesLocation = new Dictionary<int, Point>();
             this.nodeIsCorrect = new Dictionary<int, bool>();
             this.nbCall = new int();
+            reussite = false;
             this.pos = new int();
         }
 
@@ -109,9 +112,12 @@ namespace Pluscourtchemin
                 nbInputCorrect = nodeIsCorrect[kvp.Key] == true ? nbInputCorrect + 1 : nbInputCorrect;
             }
             isCorrectTreeQuestion = nbInputCorrect == nodeIsCorrect.Count ? true : false;
-
+            if(isCorrectTreeQuestion==true) { reussite = true; }
         }
-
+        public bool GetReussite()
+        {
+            return reussite;
+        }
         private void TreeCorrection(GenericNode node)
         {
             var text = this.Controls[2 + pos].Text.Split(':');

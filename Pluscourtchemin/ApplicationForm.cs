@@ -22,12 +22,17 @@ namespace Pluscourtchemin
         static public List<List<GenericNode>> historiqueUtiOuvert;
         static public List<List<GenericNode>> historiqueUtiFerme;
 
+        private bool reussite1;
+        private bool reussite2;
+
         public FormDijkstra()
         {
             InitializeComponent();
             historiqueUtiOuvert = new List<List<GenericNode>>();
             historiqueUtiFerme = new List<List<GenericNode>>();
             this.labelShowCorrectOrNot.Visible = false;
+            reussite2 = false;
+            reussite1 = false;
         }
 
 
@@ -294,11 +299,13 @@ namespace Pluscourtchemin
                 {
                     this.labelShowCorrectOrNot.Text = "Bonne réponse";
                     this.labelShowCorrectOrNot.ForeColor = Color.Green;
+                    reussite1 = true;
                 }
                 else
                 {
                     this.labelShowCorrectOrNot.Text = "Mauvaise réponse";
                     this.labelShowCorrectOrNot.ForeColor = Color.Red;
+                    reussite1 = false;
                 }
                 this.labelShowCorrectOrNot.Visible = true;
                 AffichageHistoIA(g);
@@ -461,6 +468,7 @@ namespace Pluscourtchemin
                 var drawForm = new TreeDrawForm(lastFerme);
                 ////g.InsertNewNodeInOpenList()
                 drawForm.ShowDialog();
+                reussite2 = drawForm.GetReussite();
             }
             else
             {
@@ -472,5 +480,12 @@ namespace Pluscourtchemin
         {
             this.Close();
         }
+
+        public List<bool> GetReussite()
+        {
+            List<bool> liste = new List<bool> { reussite1, reussite2 };
+            return(liste);
+        }
+        
     }
 }

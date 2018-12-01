@@ -40,7 +40,7 @@
             this.listBoxShowFermeUti = new System.Windows.Forms.ListBox();
             this.textBoxOuverts = new System.Windows.Forms.TextBox();
             this.textBoxFermes = new System.Windows.Forms.TextBox();
-            this.txtInstruction = new System.Windows.Forms.Label();
+            this.txtInstruction2 = new System.Windows.Forms.Label();
             this.txtOuvert = new System.Windows.Forms.Label();
             this.txtFerme = new System.Windows.Forms.Label();
             this.btn_Valider = new System.Windows.Forms.Button();
@@ -81,6 +81,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonQuitter = new System.Windows.Forms.Button();
+            this.txtInstruction1 = new System.Windows.Forms.Label();
+            this.txtInstruction3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -189,14 +191,15 @@
             this.textBoxFermes.Size = new System.Drawing.Size(100, 20);
             this.textBoxFermes.TabIndex = 13;
             // 
-            // txtInstruction
+            // txtInstruction2
             // 
-            this.txtInstruction.AutoSize = true;
-            this.txtInstruction.Location = new System.Drawing.Point(13, 25);
-            this.txtInstruction.Name = "txtInstruction";
-            this.txtInstruction.Size = new System.Drawing.Size(113, 13);
-            this.txtInstruction.TabIndex = 14;
-            this.txtInstruction.Text = "Ecrire ici la consigne...";
+            this.txtInstruction2.AutoSize = true;
+            this.txtInstruction2.Location = new System.Drawing.Point(11, 41);
+            this.txtInstruction2.Name = "txtInstruction2";
+            this.txtInstruction2.Size = new System.Drawing.Size(569, 13);
+            this.txtInstruction2.TabIndex = 14;
+            this.txtInstruction2.Text = "Puis remplissez la liste des fermés et des ouverts à chaque étape. Lorsqu\'il n\'y " +
+    "a plus d\'ouvert, la correction est affichée.";
             // 
             // txtOuvert
             // 
@@ -481,7 +484,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtInstruction);
+            this.groupBox1.Controls.Add(this.txtInstruction3);
+            this.groupBox1.Controls.Add(this.txtInstruction1);
+            this.groupBox1.Controls.Add(this.txtInstruction2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBoxInitialNode);
             this.groupBox1.Controls.Add(this.textBoxFinalNode);
@@ -628,6 +633,25 @@
             this.buttonQuitter.UseVisualStyleBackColor = true;
             this.buttonQuitter.Click += new System.EventHandler(this.buttonQuitter_Click);
             // 
+            // txtInstruction1
+            // 
+            this.txtInstruction1.AutoSize = true;
+            this.txtInstruction1.Location = new System.Drawing.Point(13, 22);
+            this.txtInstruction1.Name = "txtInstruction1";
+            this.txtInstruction1.Size = new System.Drawing.Size(551, 13);
+            this.txtInstruction1.TabIndex = 15;
+            this.txtInstruction1.Text = "Appuyez sur \"Démarrer aléa\" pour créer un arbbre aléatoirement. Vous pouvez chang" +
+    "er les noeuds initiaux et finaux";
+            // 
+            // txtInstruction3
+            // 
+            this.txtInstruction3.AutoSize = true;
+            this.txtInstruction3.Location = new System.Drawing.Point(11, 59);
+            this.txtInstruction3.Name = "txtInstruction3";
+            this.txtInstruction3.Size = new System.Drawing.Size(321, 13);
+            this.txtInstruction3.TabIndex = 16;
+            this.txtInstruction3.Text = "Enfin, cliquez sur \"remplir l\'arbre\" pour accéder à la dernière étape.";
+            // 
             // FormDijkstra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -669,7 +693,7 @@
         public System.Windows.Forms.ListBox listBoxShowFermeUti;
         public System.Windows.Forms.TextBox textBoxOuverts;
         public System.Windows.Forms.TextBox textBoxFermes;
-        public System.Windows.Forms.Label txtInstruction;
+        public System.Windows.Forms.Label txtInstruction2;
         public System.Windows.Forms.Label txtOuvert;
         public System.Windows.Forms.Label txtFerme;
         public System.Windows.Forms.Button btn_Valider;
@@ -711,6 +735,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonQuitter;
         public System.Windows.Forms.Label isGraphInMemory;
+        public System.Windows.Forms.Label txtInstruction3;
+        public System.Windows.Forms.Label txtInstruction1;
     }
 }
 

@@ -18,7 +18,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Partie1.Gestionnaire">
-    <Position X="8.25" Y="0.5" Width="1.5" />
+    <Position X="2.5" Y="2.75" Width="1.5" />
     <Members>
       <Field Name="components" Hidden="true" />
       <Method Name="Dispose" Hidden="true" />
