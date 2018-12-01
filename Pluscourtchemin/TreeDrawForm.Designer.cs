@@ -41,6 +41,7 @@
             this.buttonValider.TabIndex = 0;
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
+            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
             // groupBoxConsignes
             // 

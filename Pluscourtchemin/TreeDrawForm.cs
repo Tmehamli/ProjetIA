@@ -15,7 +15,8 @@ namespace Pluscourtchemin
         private Graphics g;
         private Pen pen;
         private List<GenericNode> lastFerme;
-        private List<Point> nodesLocation;
+        private Dictionary<int, Point> nodesLocation;
+        private Dictionary<int, bool> nodeIsCorrect;
 
         public int nbCall { get; private set; }
 
@@ -23,7 +24,7 @@ namespace Pluscourtchemin
         {
             InitializeComponent();
             this.lastFerme = lastFerme;
-            this.nodesLocation = new List<Point>();
+            this.nodesLocation = new Dictionary<int, Point>();
         }
 
         private void DrawForm_Load(object sender, System.EventArgs e)
@@ -44,11 +45,11 @@ namespace Pluscourtchemin
                 pen = new Pen(Color.FromArgb(255, 0, 0, 0));
                 pen.Width = 3;
                 var initPoint = new Point(200, 125);
-                nodesLocation.Add(initPoint);
+                nodesLocation.Add(((Node2)lastFerme[0]).numero, initPoint);
                 DrawGraph(lastFerme[0], initPoint, initPoint);
-                foreach (var point in nodesLocation)
+                foreach (KeyValuePair<int, Point> kvp in nodesLocation)
                 {
-                    this.CreatNewTextBox(point);
+                    this.CreatNewTextBox(kvp);
                 }
             }
         }
@@ -78,23 +79,52 @@ namespace Pluscourtchemin
                     g.DrawLine(pen, myStartPoint, myEndPoint);
 
                     DrawGraph(child, myEndPoint, initLocation);
-                    nodesLocation.Add(myEndPoint);
+                    nodesLocation.Add(((Node2)node).numero, myEndPoint);
                 }
             }
         }
 
-        private void CreatNewTextBox(Point point)
+        private void CreatNewTextBox(KeyValuePair<int, Point> kvp)
         {
             // 
             // textBoxX
             // 
             var textBoxX = new TextBox();
-            textBoxX.Location = new System.Drawing.Point(point.X - 17, point.Y-2);
-            textBoxX.Name = "textBox" + point.X;
+            textBoxX.Location = new System.Drawing.Point(kvp.Value.X - 17, kvp.Value.Y - 2);
+            textBoxX.Name = kvp.Key.ToString();
             textBoxX.Size = new System.Drawing.Size(35, 20);
             textBoxX.TabIndex = this.Controls.Count;
             textBoxX.MaxLength = 5;
             this.Controls.Add(textBoxX);
+        }
+
+        private void buttonValider_Click(object sender, EventArgs e)
+        {
+            bool isCorrectTreeQuestion = TreeCorrection(lastFerme[0], 0);
+        }
+
+        private bool TreeCorrection(GenericNode node, int pos)
+        {
+            if (this.Controls[1+pos].Text == pos.ToString())
+            {
+                nodeIsCorrect.Add(((Node2)node).numero, true);
+            }
+            else
+            {
+                nodeIsCorrect.Add(((Node2)node).numero, false);
+            }
+            List<GenericNode> lChilds = node.GetEnfants();
+            for (int i = 0; i < lChilds.Count; i++)
+            {
+                GenericNode child = lChilds[i];
+                var isIn = lastFerme.Where(f => ((Node2)f).numero == ((Node2)child).numero).ToList().Count != 0 ? true : false;
+                if (isIn)
+                {
+                    TreeCorrection(child, i);
+                }
+            }
+            
+            return true;
         }
     }
 }

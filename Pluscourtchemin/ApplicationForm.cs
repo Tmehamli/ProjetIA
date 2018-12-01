@@ -59,7 +59,7 @@ namespace Pluscourtchemin
                 }
             }
 
-            int graphNumero = alea.Next(4);
+            int graphNumero = alea.Next(1,4);
             // On choisit aléatoirement un graphe parmis trois différents  
             if (graphNumero == 1)
             {
@@ -193,6 +193,7 @@ namespace Pluscourtchemin
 
         public void buttonInitMemoire_Click(object sender, EventArgs e)
         {
+            this.ClearFormDisplays();
             //Initialiser les historiques pour ce graphe
             historiqueUtiFerme = new List<List<GenericNode>>();
             historiqueUtiOuvert = new List<List<GenericNode>>();
