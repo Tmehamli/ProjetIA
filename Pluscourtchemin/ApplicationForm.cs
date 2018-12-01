@@ -34,24 +34,29 @@ namespace Pluscourtchemin
         // affiche les labels liés a l'image du graphe de dijsktra 
         private void AfficherLabelDijsktra()
         {
-            // selectionne tout les labels de dijkstra 
-            var labels = this.Controls.OfType<Label>()
-                          .Where(c => c.Name.StartsWith("ld"))
-                          .ToList();
-            // on affiche tout les labels de dijkstra 
-            foreach (var label in labels)
-            {
-                label.Visible = true;
-            }
+            ld1.Visible = true;
+            ld2.Visible = true;
+            ld3.Visible = true;
+            ld4.Visible = true;
+            ld5.Visible = true;
+            ld6.Visible = true;
+            ld7.Visible = true;
+            ld11.Visible = true;
+            ld12.Visible = true;
+            ld13.Visible = true;
+            ld14.Visible = true;
+            ld15.Visible = true;
+            ld16.Visible = true;
+            ld17.Visible = true;
+            ld18.Visible = true;
+            ld19.Visible = true;
+            ld20.Visible = true;
+            ld21.Visible = true;
+            ld22.Visible = true;
         }
 
-        private void buttonInitAlea_Click(object sender, EventArgs e)
+        private void DemarrerAleaDij()
         {
-            // Reinitialisation des affichages
-            this.ClearFormDisplays();
-
-            AfficherLabelDijsktra();
-
             matrice = new double[nbnodes, nbnodes];
             for (int i = 0; i < nbnodes; i++)
             {
@@ -61,7 +66,7 @@ namespace Pluscourtchemin
                 }
             }
 
-            int graphNumero = alea.Next(4);
+            int graphNumero = alea.Next(1,4);
             // On choisit aléatoirement un graphe parmis trois différents  
             if (graphNumero == 1)
             {
@@ -150,6 +155,20 @@ namespace Pluscourtchemin
             }
         }
 
+        private void buttonInitAlea_Click(object sender, EventArgs e)
+        {
+            // Reinitialisation des affichages
+            this.ClearFormDisplays();
+            /*
+            if (true)
+            {
+                DemarrerMemoire();
+            }
+            else*/
+                DemarrerAleaDij();
+            AfficherLabelDijsktra();
+        }
+
         private void ClearFormDisplays()
         {
             listBoxGraphe.Items.Clear();
@@ -166,8 +185,8 @@ namespace Pluscourtchemin
 
         private bool Algorithme_AEtoile(SearchTree g)
         {
-            numinitial = Convert.ToInt32(textBoxInitialNode.Text);
-            numfinal = Convert.ToInt32(textBoxFinalNode.Text);
+            numinitial = 0;
+            numfinal = 6;
 
             Node2 N0 = new Node2();
             N0.numero = numinitial;
@@ -190,7 +209,7 @@ namespace Pluscourtchemin
             return reussite;
         }
 
-        public void buttonInitMemoire_Click(object sender, EventArgs e)
+        public void DemarrerMemoire()
         {
             //Initialiser les historiques pour ce graphe
             historiqueUtiFerme = new List<List<GenericNode>>();
@@ -339,7 +358,7 @@ namespace Pluscourtchemin
                 {
                     // On ajoute l'ouvert {0} au début
                     var n = new Node2();
-                    n.numero = int.Parse(this.textBoxInitialNode.Text);
+                    n.numero = 0;
                     var listeInit = new List<GenericNode>();
                     listeInit.Add(n);
                     historiqueUtiOuvert.Add(listeInit);
