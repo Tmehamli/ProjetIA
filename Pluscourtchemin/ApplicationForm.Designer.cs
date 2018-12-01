@@ -504,7 +504,7 @@
             // panelGraphImage
             // 
             this.panelGraphImage.Controls.Add(this.label18);
-            this.panelGraphImage.Location = new System.Drawing.Point(112, 18);
+            this.panelGraphImage.Location = new System.Drawing.Point(111, 18);
             this.panelGraphImage.Name = "panelGraphImage";
             this.panelGraphImage.Size = new System.Drawing.Size(456, 191);
             this.panelGraphImage.TabIndex = 113;

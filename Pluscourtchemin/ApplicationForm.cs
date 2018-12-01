@@ -355,8 +355,11 @@ namespace Pluscourtchemin
                 }
                 else if ((textBoxOuverts.Text != "") && (textBoxFermes.Text != ""))
                 {
-                    this.AjoutOuvertFermetUti(textBoxFermes.Text, false);
-                    this.AjoutOuvertFermetUti(textBoxOuverts.Text, true);
+                    if ((textBoxOuverts.Text != (-1).ToString()) && (textBoxFermes.Text != (-1).ToString()))
+                    {
+                        this.AjoutOuvertFermetUti(textBoxFermes.Text, false);
+                        this.AjoutOuvertFermetUti(textBoxOuverts.Text, true);
+                    }
                 }
             }
             else
@@ -377,17 +380,20 @@ namespace Pluscourtchemin
                 if (c != ',')
                 {
                     int x = (int)Char.GetNumericValue(c);
-                    Node2 N = new Node2();
-                    N.numero = x;
-                    listeOF.Add(N);
-                    nouveauOF += Convert.ToString(N.numero) + ", ";
+                    if (x != -1)
+                    {
+                        Node2 N = new Node2();
+                        N.numero = x;
+                        listeOF.Add(N);
+                        nouveauOF += Convert.ToString(N.numero) + ", ";
+                    }
                 }
             }
             // le mettre dans une liste statique,
             // affichage listBox ,
             // Vider la textBox de saise utilisateur.
 
-            if (isOuvert)
+            if (isOuvert && nouveauOF != "")
             {
                 if (historiqueUtiOuvert.Count == 0)
                 {
@@ -403,7 +409,7 @@ namespace Pluscourtchemin
                 listBoxShowOuvertUti.Items.Add(nouveauOF);
                 textBoxOuverts.Text = string.Empty;
             }
-            else
+            else if(!isOuvert && nouveauOF != "")
             {
                 historiqueUtiFerme.Add(listeOF);
                 listBoxShowFermeUti.Items.Add(nouveauOF);
