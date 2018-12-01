@@ -61,7 +61,7 @@ namespace Pluscourtchemin
                 }
             }
 
-            int graphNumero = alea.Next(1,4);
+            int graphNumero = alea.Next(1, 4);
             // On choisit aléatoirement un graphe parmis trois différents  
             if (graphNumero == 1)
             {
@@ -284,8 +284,6 @@ namespace Pluscourtchemin
 
         public void btn_Valider_Click(object sender, EventArgs e)
         {
-
-
             if ((textBoxOuverts.Text == "") && (textBoxFermes.Text != ""))
             {
                 this.AjoutOuvertFermetUti(textBoxFermes.Text, false);
@@ -436,7 +434,13 @@ namespace Pluscourtchemin
 
         private void buttonRetour_Click(object sender, EventArgs e)
         {
-
+            if (historiqueUtiOuvert.Count > 0 && historiqueUtiFerme.Count > 0)
+            {
+                historiqueUtiOuvert.RemoveAt(historiqueUtiOuvert.Count - 1);
+                historiqueUtiFerme.RemoveAt(historiqueUtiFerme.Count - 1);
+                listBoxShowOuvertUti.Items.RemoveAt(listBoxShowOuvertUti.Items.Count - 1);
+                listBoxShowFermeUti.Items.RemoveAt(listBoxShowFermeUti.Items.Count - 1);
+            }
         }
 
         private void buttonShowTree_Click(object sender, EventArgs e)
@@ -448,17 +452,25 @@ namespace Pluscourtchemin
                 Algorithme_AEtoile(g);
                 Node2 N0 = new Node2();
                 N0.numero = numinitial;
-                Node2 NEnd = new Node2();
-                NEnd.numero = numfinal;
-                var lastFerme = g.historiqueIAFermes.LastOrDefault();
+                var l = g.RechercheSolutionAEtoile2(N0);
+
+                Node2 NEnd = (Node2)l.Last();
+
+                var lastFerme = g.L_Fermes;
                 lastFerme.Add(NEnd);
                 var drawForm = new TreeDrawForm(lastFerme);
+                ////g.InsertNewNodeInOpenList()
                 drawForm.ShowDialog();
             }
             else
             {
                 isGraphInMemory.Visible = true;
             }
+        }
+
+        private void buttonQuitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
