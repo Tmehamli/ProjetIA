@@ -39,7 +39,7 @@ namespace Partie1
             reussiteDij2 = false;
             this.notAlreadyAskedQuestionsIndex = new List<int>();
             this.DownloadQuestions();
-            nbQuestionTotal = 2;
+            nbQuestionTotal = 20;
             this.notAlreadyAskedQuestionsIndex = questions.Select(q => q.IdQuestion).ToList();
 
             AskNewQuestion();
@@ -189,7 +189,6 @@ namespace Partie1
             {
                 this.labelSelectAnAnswer.Visible = true;
             }
-
         }
 
         private bool CheckAnswer(RadioButton buttonChecked)
