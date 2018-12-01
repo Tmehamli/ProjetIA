@@ -393,7 +393,7 @@ namespace Pluscourtchemin
                 {
                     // On ajoute l'ouvert {0} au début
                     var n = new Node2();
-                    n.numero = int.Parse(this.graphConfig.Text);
+                    n.numero = int.Parse(this.graphConfig.InitNode);
                     n.numero = 0;
                     var listeInit = new List<GenericNode>();
                     listeInit.Add(n);
