@@ -70,6 +70,7 @@
             this.txtInstruction1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panelGraphImage = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.isGraphInMemory2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -85,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panelGraphImage.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBoxCor1Part.SuspendLayout();
             this.groupBoxCor2Part.SuspendLayout();
@@ -229,7 +231,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(112, 18);
+            this.pictureBox1.Location = new System.Drawing.Point(111, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(450, 191);
             this.pictureBox1.TabIndex = 24;
@@ -279,7 +281,6 @@
             this.ld15.Size = new System.Drawing.Size(41, 13);
             this.ld15.TabIndex = 97;
             this.ld15.Text = "label15";
-            this.ld15.Visible = false;
             // 
             // ld13
             // 
@@ -422,7 +423,7 @@
             // ld18
             // 
             this.ld18.AutoSize = true;
-            this.ld18.Location = new System.Drawing.Point(356, 78);
+            this.ld18.Location = new System.Drawing.Point(356, 134);
             this.ld18.Name = "ld18";
             this.ld18.Size = new System.Drawing.Size(41, 13);
             this.ld18.TabIndex = 104;
@@ -502,10 +503,18 @@
             // 
             // panelGraphImage
             // 
+            this.panelGraphImage.Controls.Add(this.label18);
             this.panelGraphImage.Location = new System.Drawing.Point(112, 18);
             this.panelGraphImage.Name = "panelGraphImage";
             this.panelGraphImage.Size = new System.Drawing.Size(456, 191);
             this.panelGraphImage.TabIndex = 113;
+            // 
+            // label18
+            // 
+            this.label18.Location = new System.Drawing.Point(0, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(100, 23);
+            this.label18.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -662,6 +671,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panelGraphImage.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBoxCor1Part.ResumeLayout(false);
@@ -727,6 +737,7 @@
         public System.Windows.Forms.Label isGraphInMemory2;
         private System.Windows.Forms.Panel panelGraphImage;
         private System.Windows.Forms.Button buttonQuitter;
+        private System.Windows.Forms.Label label18;
     }
 }
 
