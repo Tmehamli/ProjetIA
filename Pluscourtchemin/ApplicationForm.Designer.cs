@@ -528,6 +528,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Le graphe";
             // 
+            // panelGraphImage
+            // 
+            this.panelGraphImage.Location = new System.Drawing.Point(112, 18);
+            this.panelGraphImage.Name = "panelGraphImage";
+            this.panelGraphImage.Size = new System.Drawing.Size(456, 191);
+            this.panelGraphImage.TabIndex = 113;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.isGraphInMemory2);
@@ -545,6 +552,17 @@
             this.groupBox3.TabIndex = 109;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Remplir";
+            // 
+            // isGraphInMemory2
+            // 
+            this.isGraphInMemory2.AutoSize = true;
+            this.isGraphInMemory2.ForeColor = System.Drawing.Color.Red;
+            this.isGraphInMemory2.Location = new System.Drawing.Point(111, 195);
+            this.isGraphInMemory2.Name = "isGraphInMemory2";
+            this.isGraphInMemory2.Size = new System.Drawing.Size(134, 13);
+            this.isGraphInMemory2.TabIndex = 108;
+            this.isGraphInMemory2.Text = "Veuillez générer les graphe";
+            this.isGraphInMemory2.Visible = false;
             // 
             // label3
             // 
@@ -632,24 +650,6 @@
             this.buttonQuitter.UseVisualStyleBackColor = true;
             this.buttonQuitter.Click += new System.EventHandler(this.buttonQuitter_Click);
             // 
-            // isGraphInMemory2
-            // 
-            this.isGraphInMemory2.AutoSize = true;
-            this.isGraphInMemory2.ForeColor = System.Drawing.Color.Red;
-            this.isGraphInMemory2.Location = new System.Drawing.Point(111, 195);
-            this.isGraphInMemory2.Name = "isGraphInMemory2";
-            this.isGraphInMemory2.Size = new System.Drawing.Size(134, 13);
-            this.isGraphInMemory2.TabIndex = 108;
-            this.isGraphInMemory2.Text = "Veuillez générer les graphe";
-            this.isGraphInMemory2.Visible = false;
-            // 
-            // panelGraphImage
-            // 
-            this.panelGraphImage.Location = new System.Drawing.Point(112, 18);
-            this.panelGraphImage.Name = "panelGraphImage";
-            this.panelGraphImage.Size = new System.Drawing.Size(456, 191);
-            this.panelGraphImage.TabIndex = 113;
-            // 
             // FormDijkstra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -661,6 +661,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormDijkstra";
             this.Text = "Mise en application";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
