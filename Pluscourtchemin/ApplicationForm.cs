@@ -24,6 +24,7 @@ namespace Pluscourtchemin
 
         private bool reussite1;
         private bool reussite2;
+        private ConfigForm graphConfig;
 
         public FormDijkstra()
         {
@@ -33,7 +34,7 @@ namespace Pluscourtchemin
             this.labelShowCorrectOrNot.Visible = false;
             reussite2 = false;
             reussite1 = false;
-        }
+
             groupBoxCor1Part.Visible = false;
             groupBoxCor2Part.Visible = false;
             panelGraphImage.Visible = true;
@@ -54,7 +55,6 @@ namespace Pluscourtchemin
             }
         }
 
-        private void buttonInitAlea_Click(object sender, EventArgs e)
         private void DemarrerAleaDij()
         {
             // Reinitialisation des affichages
@@ -162,9 +162,23 @@ namespace Pluscourtchemin
 
         private void buttonGraphGeneration_Click(object sender, EventArgs e)
         {
+
             // Reinitialisation des affichages
             this.ClearFormDisplays();
-            DemarrerAleaDij();
+            this.graphConfig = new ConfigForm();
+            this.graphConfig.ShowDialog();
+
+            numinitial = int.Parse(graphConfig.InitNode);
+            numfinal = int.Parse(graphConfig.FinalNode);
+            if (graphConfig.IsRandomGraph)
+            {
+                AfficherLabelDijsktra();
+                DemarrerAleaDij();
+            }
+            else
+            {
+                DemarrerMemoire();
+            }
             this.panelGraphImage.Visible = false;
             /*
             if (true)
@@ -196,10 +210,6 @@ namespace Pluscourtchemin
 
         private bool Algorithme_AEtoile(SearchTree g)
         {
-            numinitial = Convert.ToInt32(textBoxInitialNode.Text);
-            numfinal = Convert.ToInt32(textBoxFinalNode.Text);
-            numinitial = 0;
-            numfinal = 6;
 
             Node2 N0 = new Node2();
             N0.numero = numinitial;
@@ -222,7 +232,6 @@ namespace Pluscourtchemin
             return reussite;
         }
 
-        public void buttonInitMemoire_Click(object sender, EventArgs e)
         public void DemarrerMemoire()
         {
             this.ClearFormDisplays();
@@ -319,24 +328,10 @@ namespace Pluscourtchemin
 
         public void btn_Valider_Click(object sender, EventArgs e)
         {
-            if ((textBoxOuverts.Text == "") && (textBoxFermes.Text != ""))
+            if (matrice != null)
             {
-                this.AjoutOuvertFermetUti(textBoxFermes.Text, false);
-
-                SearchTree g = new SearchTree();
-                bool reussite = Algorithme_AEtoile(g);
-                if (reussite == true)
-                if (matrice != null)
+                if ((textBoxOuverts.Text == "") && (textBoxFermes.Text != ""))
                 {
-                    this.labelShowCorrectOrNot.Text = "Bonne réponse";
-                    this.labelShowCorrectOrNot.ForeColor = Color.Green;
-                    reussite1 = true;
-                }
-                else
-                {
-                    this.labelShowCorrectOrNot.Text = "Mauvaise réponse";
-                    this.labelShowCorrectOrNot.ForeColor = Color.Red;
-                    reussite1 = false;
                     this.AjoutOuvertFermetUti(textBoxFermes.Text, false);
 
                     SearchTree g = new SearchTree();
@@ -345,27 +340,28 @@ namespace Pluscourtchemin
                     {
                         this.labelShowCorrectOrNot.Text = "Bonne réponse";
                         this.labelShowCorrectOrNot.ForeColor = Color.Green;
+                        reussite1 = true;
                     }
                     else
                     {
                         this.labelShowCorrectOrNot.Text = "Mauvaise réponse";
                         this.labelShowCorrectOrNot.ForeColor = Color.Red;
+                        reussite1 = false;
                     }
                     this.labelShowCorrectOrNot.Visible = true;
                     groupBoxCor1Part.Visible = true;
                     AffichageHistoIA(g);
+
                 }
-                else
+                else if ((textBoxOuverts.Text != "") && (textBoxFermes.Text != ""))
                 {
-                    isGraphInMemory2.Visible = true;
+                    this.AjoutOuvertFermetUti(textBoxFermes.Text, false);
+                    this.AjoutOuvertFermetUti(textBoxOuverts.Text, true);
                 }
-                this.labelShowCorrectOrNot.Visible = true;
-                AffichageHistoIA(g);
             }
             else
             {
-                this.AjoutOuvertFermetUti(textBoxFermes.Text, false);
-                this.AjoutOuvertFermetUti(textBoxOuverts.Text, true);
+                isGraphInMemory2.Visible = true;
             }
         }
 
@@ -397,7 +393,7 @@ namespace Pluscourtchemin
                 {
                     // On ajoute l'ouvert {0} au début
                     var n = new Node2();
-                    n.numero = int.Parse(this.textBoxInitialNode.Text);
+                    n.numero = int.Parse(this.graphConfig.Text);
                     n.numero = 0;
                     var listeInit = new List<GenericNode>();
                     listeInit.Add(n);
@@ -520,14 +516,15 @@ namespace Pluscourtchemin
                 var lastFerme = g.L_Fermes;
                 lastFerme.Add(NEnd);
                 var drawForm = new TreeDrawForm(lastFerme);
-                ////g.InsertNewNodeInOpenList()
                 drawForm.ShowDialog();
                 reussite2 = drawForm.GetReussite();
+                groupBoxCor2Part.Visible = true;
+                buttonQuitter.Visible = true;
             }
             else
             {
                 isGraphInMemory.Visible = true;
-                isGraphInMemory.Visible = true;
+                isGraphInMemory2.Visible = true;
             }
         }
 
@@ -539,8 +536,8 @@ namespace Pluscourtchemin
         public List<bool> GetReussite()
         {
             List<bool> liste = new List<bool> { reussite1, reussite2 };
-            return(liste);
+            return (liste);
         }
-        
+
     }
 }

@@ -139,7 +139,6 @@ namespace Partie1
             this.groupBoxQuestion.Text = $"Question n°{nbQuestion}";
             this.labelQuestion.Text = currentQuestion.Contenu;
             this.UpdateDisplay();
-
         }
 
         /// <summary>
@@ -226,11 +225,7 @@ namespace Partie1
             else
             {
                 // Question Dijsktra
-
                 btnControl.Text = "Question sur Dijsktra !";
-
-
-                
             }
 
         }
@@ -259,11 +254,16 @@ namespace Partie1
                 // Incrémenter les scores
                 scoreMax += 3;
 
-                if (reussiteDij1 == true) { score += 2; }
+                if (reussiteDij1 == true)
+                {
+                    score += 2;
+                }
+                if (reussiteDij2 == true)
+                {
+                    score += 1;
+                }
 
-                if (reussiteDij2 == true) { score += 1; }
-
-                ShowScoreForm userControlScore = new ShowScoreForm();
+                ShowScoreForm userControlScore = new ShowScoreForm(score, scoreMax);
                 ((Gestionnaire)this.Parent).ChangeControl(userControlScore);
             }
         }

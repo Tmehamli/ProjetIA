@@ -30,7 +30,6 @@ namespace Pluscourtchemin
             this.nodesLocation = new Dictionary<int, Point>();
             this.nodeIsCorrect = new Dictionary<int, bool>();
             this.nbCall = new int();
-            reussite = false;
             this.pos = new int();
         }
 
@@ -104,15 +103,50 @@ namespace Pluscourtchemin
 
         private void buttonValider_Click(object sender, EventArgs e)
         {
-            this.TreeCorrection(lastFerme[0]);
-            bool isCorrectTreeQuestion = true;
-            int nbInputCorrect = 0;
-            foreach (KeyValuePair<int, bool> kvp in nodeIsCorrect)
+            if (buttonValider.Text == "Valider")
             {
-                nbInputCorrect = nodeIsCorrect[kvp.Key] == true ? nbInputCorrect + 1 : nbInputCorrect;
+                var nbVide = 0;
+                for (int i = 3; i < this.Controls.Count; i++)
+                {
+                    if (this.Controls[i].Text == "")
+                    {
+                        nbVide++;
+                    }
+                }
+                if (nbVide == 0)
+                {
+                    ////repondu = true;
+                    this.TreeCorrection(lastFerme[0]);
+                    bool isCorrectTreeQuestion = true;
+                    int nbInputCorrect = 0;
+                    foreach (KeyValuePair<int, bool> kvp in nodeIsCorrect)
+                    {
+                        nbInputCorrect = nodeIsCorrect[kvp.Key] == true ? nbInputCorrect + 1 : nbInputCorrect;
+                    }
+                    isCorrectTreeQuestion = nbInputCorrect == nodeIsCorrect.Count ? true : false;
+                    if (isCorrectTreeQuestion == true)
+                    {
+                        reussite = true;
+                        labelCorrectOrNoTree.Text = "Bravo ";
+                        labelCorrectOrNoTree.ForeColor = Color.Green;
+                        labelCorrectOrNoTree.Visible = true;
+                    }
+                    else
+                    {
+                        reussite = false;
+                        labelCorrectOrNoTree.Text = "Mauvaise réponse ";
+                        labelCorrectOrNoTree.ForeColor = Color.Red;
+                        labelCorrectOrNoTree.Visible = true;
+                    }
+                    buttonValider.Text = "Quitter";
+                }
+
             }
-            isCorrectTreeQuestion = nbInputCorrect == nodeIsCorrect.Count ? true : false;
-            if(isCorrectTreeQuestion==true) { reussite = true; }
+            else
+            {
+                this.Close();
+            }
+
         }
         public bool GetReussite()
         {
@@ -120,7 +154,8 @@ namespace Pluscourtchemin
         }
         private void TreeCorrection(GenericNode node)
         {
-            var text = this.Controls[2 + pos].Text.Split(':');
+
+            var text = this.Controls[3 + pos].Text.Split(':');
             var noeudText = text[0];
             string valText = text[1];
             if (noeudText == ((Node2)node).numero.ToString() && valText == node.GetGCost().ToString())
