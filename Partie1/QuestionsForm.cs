@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using Pluscourtchemin;
 
 namespace Partie1
 {
@@ -23,6 +24,9 @@ namespace Partie1
         private int scoreMax;
         private int nbQuestionTotal;
 
+        public bool reussiteDij1;
+        public bool reussiteDij2;
+
         public Questionnaire()
         {
 
@@ -31,9 +35,11 @@ namespace Partie1
             questions = new List<Question>();
             this.score = 0;
             this.scoreMax = 0;
+            reussiteDij1 = false;
+            reussiteDij2 = false;
             this.notAlreadyAskedQuestionsIndex = new List<int>();
             this.DownloadQuestions();
-            nbQuestionTotal = questions.Count;
+            nbQuestionTotal = 2;
             this.notAlreadyAskedQuestionsIndex = questions.Select(q => q.IdQuestion).ToList();
 
             AskNewQuestion();
@@ -224,8 +230,7 @@ namespace Partie1
                 btnControl.Text = "Question sur Dijsktra !";
 
 
-                ShowScoreForm ucShowScore = new ShowScoreForm(score, scoreMax);
-                ((Gestionnaire)this.Parent).ChangeControl(ucShowScore);
+                
             }
 
         }
@@ -242,11 +247,24 @@ namespace Partie1
             }
             else if (btnControl.Text == "Question sur Dijsktra !") // l'utilisateur va répondre à la dernière question : sur Dijsktra
             {
-                //Pluscourtchemin.FormDijkstra formDijsktra = new FormDijkstra();
-                //formDijsktra.Retour();
-                //scoreMax += 3;
-                //// score
-                ////et après ?
+                // Ouvrir le questionnaire Dijkstra
+                Pluscourtchemin.FormDijkstra formDijsktra = new FormDijkstra();
+                formDijsktra.ShowDialog();
+
+                // Voir si il a réussi
+                List<bool> liste = formDijsktra.GetReussite();
+                reussiteDij1 = liste[0];
+                reussiteDij2 = liste[1];
+
+                // Incrémenter les scores
+                scoreMax += 3;
+
+                if (reussiteDij1 == true) { score += 2; }
+
+                if (reussiteDij2 == true) { score += 1; }
+
+                ShowScoreForm userControlScore = new ShowScoreForm();
+                ((Gestionnaire)this.Parent).ChangeControl(userControlScore);
             }
         }
     }

@@ -28,14 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonGraphGeneration = new System.Windows.Forms.Button();
+            this.buttonInitAlea = new System.Windows.Forms.Button();
+            this.textBoxInitialNode = new System.Windows.Forms.TextBox();
+            this.textBoxFinalNode = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.treeViewCorrection = new System.Windows.Forms.TreeView();
+            this.btnInitMemoire = new System.Windows.Forms.Button();
             this.listBoxGraphe = new System.Windows.Forms.ListBox();
             this.listBoxShowFermeUti = new System.Windows.Forms.ListBox();
             this.textBoxOuverts = new System.Windows.Forms.TextBox();
             this.textBoxFermes = new System.Windows.Forms.TextBox();
-            this.txtInstruction = new System.Windows.Forms.Label();
+            this.txtInstruction2 = new System.Windows.Forms.Label();
             this.txtOuvert = new System.Windows.Forms.Label();
             this.txtFerme = new System.Windows.Forms.Label();
             this.btn_Valider = new System.Windows.Forms.Button();
@@ -72,16 +77,25 @@
             this.isGraphInMemory2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBoxCor1Part = new System.Windows.Forms.GroupBox();
             this.isGraphInMemory = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBoxCor2Part = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonQuitter = new System.Windows.Forms.Button();
+            this.txtInstruction1 = new System.Windows.Forms.Label();
+            this.txtInstruction3 = new System.Windows.Forms.Label();
+=======
+            this.isGraphInMemory2 = new System.Windows.Forms.Label();
+            this.panelGraphImage = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBoxCor1Part.SuspendLayout();
             this.groupBoxCor2Part.SuspendLayout();
             this.SuspendLayout();
@@ -95,6 +109,40 @@
             this.buttonGraphGeneration.Text = "Génération du graph";
             this.buttonGraphGeneration.UseVisualStyleBackColor = true;
             this.buttonGraphGeneration.Click += new System.EventHandler(this.buttonGraphGeneration_Click);
+            // 
+            // textBoxInitialNode
+            // 
+            this.textBoxInitialNode.Location = new System.Drawing.Point(16, 98);
+            this.textBoxInitialNode.Name = "textBoxInitialNode";
+            this.textBoxInitialNode.Size = new System.Drawing.Size(52, 20);
+            this.textBoxInitialNode.TabIndex = 1;
+            this.textBoxInitialNode.Text = "0";
+            // 
+            // textBoxFinalNode
+            // 
+            this.textBoxFinalNode.Location = new System.Drawing.Point(87, 98);
+            this.textBoxFinalNode.Name = "textBoxFinalNode";
+            this.textBoxFinalNode.Size = new System.Drawing.Size(52, 20);
+            this.textBoxFinalNode.TabIndex = 2;
+            this.textBoxFinalNode.Text = "6";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 77);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Noeud initial";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(84, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Noeud final";
             // 
             // listBox1
             // 
@@ -111,6 +159,16 @@
             this.treeViewCorrection.Size = new System.Drawing.Size(152, 180);
             this.treeViewCorrection.TabIndex = 7;
             // 
+            // btnInitMemoire
+            // 
+            this.btnInitMemoire.Location = new System.Drawing.Point(267, 96);
+            this.btnInitMemoire.Name = "btnInitMemoire";
+            this.btnInitMemoire.Size = new System.Drawing.Size(100, 23);
+            this.btnInitMemoire.TabIndex = 8;
+            this.btnInitMemoire.Text = "Démarrer Mem";
+            this.btnInitMemoire.UseVisualStyleBackColor = true;
+            this.btnInitMemoire.Click += new System.EventHandler(this.buttonInitMemoire_Click);
+            // 
             // listBoxGraphe
             // 
             this.listBoxGraphe.FormattingEnabled = true;
@@ -123,6 +181,7 @@
             // listBoxShowFermeUti
             // 
             this.listBoxShowFermeUti.FormattingEnabled = true;
+            this.listBoxShowFermeUti.Location = new System.Drawing.Point(6, 70);
             this.listBoxShowFermeUti.Location = new System.Drawing.Point(6, 55);
             this.listBoxShowFermeUti.Name = "listBoxShowFermeUti";
             this.listBoxShowFermeUti.Size = new System.Drawing.Size(100, 108);
@@ -130,6 +189,7 @@
             // 
             // textBoxOuverts
             // 
+            this.textBoxOuverts.Location = new System.Drawing.Point(145, 43);
             this.textBoxOuverts.Location = new System.Drawing.Point(145, 28);
             this.textBoxOuverts.Name = "textBoxOuverts";
             this.textBoxOuverts.Size = new System.Drawing.Size(100, 20);
@@ -137,23 +197,26 @@
             // 
             // textBoxFermes
             // 
+            this.textBoxFermes.Location = new System.Drawing.Point(6, 44);
             this.textBoxFermes.Location = new System.Drawing.Point(6, 29);
             this.textBoxFermes.Name = "textBoxFermes";
             this.textBoxFermes.Size = new System.Drawing.Size(100, 20);
             this.textBoxFermes.TabIndex = 13;
             // 
-            // txtInstruction
+            // txtInstruction2
             // 
-            this.txtInstruction.AutoSize = true;
-            this.txtInstruction.Location = new System.Drawing.Point(13, 25);
-            this.txtInstruction.Name = "txtInstruction";
-            this.txtInstruction.Size = new System.Drawing.Size(113, 13);
-            this.txtInstruction.TabIndex = 14;
-            this.txtInstruction.Text = "Ecrire ici la consigne...";
+            this.txtInstruction2.AutoSize = true;
+            this.txtInstruction2.Location = new System.Drawing.Point(11, 41);
+            this.txtInstruction2.Name = "txtInstruction2";
+            this.txtInstruction2.Size = new System.Drawing.Size(569, 13);
+            this.txtInstruction2.TabIndex = 14;
+            this.txtInstruction2.Text = "Puis remplissez la liste des fermés et des ouverts à chaque étape. Lorsqu\'il n\'y " +
+    "a plus d\'ouvert, la correction est affichée.";
             // 
             // txtOuvert
             // 
             this.txtOuvert.AutoSize = true;
+            this.txtOuvert.Location = new System.Drawing.Point(142, 24);
             this.txtOuvert.Location = new System.Drawing.Point(142, 14);
             this.txtOuvert.Name = "txtOuvert";
             this.txtOuvert.Size = new System.Drawing.Size(53, 13);
@@ -163,6 +226,7 @@
             // txtFerme
             // 
             this.txtFerme.AutoSize = true;
+            this.txtFerme.Location = new System.Drawing.Point(6, 25);
             this.txtFerme.Location = new System.Drawing.Point(6, 15);
             this.txtFerme.Name = "txtFerme";
             this.txtFerme.Size = new System.Drawing.Size(47, 13);
@@ -171,6 +235,7 @@
             // 
             // btn_Valider
             // 
+            this.btn_Valider.Location = new System.Drawing.Point(145, 184);
             this.btn_Valider.Location = new System.Drawing.Point(145, 169);
             this.btn_Valider.Name = "btn_Valider";
             this.btn_Valider.Size = new System.Drawing.Size(100, 23);
@@ -182,7 +247,7 @@
             // listBoxShowOuvertUti
             // 
             this.listBoxShowOuvertUti.FormattingEnabled = true;
-            this.listBoxShowOuvertUti.Location = new System.Drawing.Point(145, 55);
+            this.listBoxShowOuvertUti.Location = new System.Drawing.Point(145, 70);
             this.listBoxShowOuvertUti.Name = "listBoxShowOuvertUti";
             this.listBoxShowOuvertUti.Size = new System.Drawing.Size(100, 108);
             this.listBoxShowOuvertUti.TabIndex = 18;
@@ -425,6 +490,7 @@
             // 
             // buttonRetour
             // 
+            this.buttonRetour.Location = new System.Drawing.Point(6, 184);
             this.buttonRetour.Location = new System.Drawing.Point(6, 169);
             this.buttonRetour.Name = "buttonRetour";
             this.buttonRetour.Size = new System.Drawing.Size(100, 23);
@@ -435,8 +501,17 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtInstruction3);
+            this.groupBox1.Controls.Add(this.txtInstruction1);
+            this.groupBox1.Controls.Add(this.txtInstruction2);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBoxInitialNode);
+            this.groupBox1.Controls.Add(this.textBoxFinalNode);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtInstruction);
             this.groupBox1.Controls.Add(this.buttonGraphGeneration);
+            this.groupBox1.Controls.Add(this.buttonInitAlea);
+            this.groupBox1.Controls.Add(this.btnInitMemoire);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(574, 124);
@@ -529,6 +604,21 @@
             this.label4.TabIndex = 106;
             this.label4.Text = "Ouverts : ";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.isGraphInMemory);
+            this.groupBox4.Controls.Add(this.label3);
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.listBoxShowFermeIA);
+            this.groupBox4.Controls.Add(this.listBoxShowOuvertIA);
+            this.groupBox4.Controls.Add(this.labelShowCorrectOrNot);
+            this.groupBox4.Controls.Add(this.buttonShowTree);
+            this.groupBox4.Location = new System.Drawing.Point(346, 378);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(240, 219);
+            this.groupBox4.TabIndex = 110;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Correction première partie";
             // groupBoxCor1Part
             // 
             this.groupBoxCor1Part.Controls.Add(this.isGraphInMemory);
@@ -556,8 +646,19 @@
             this.isGraphInMemory.Text = "Veuillez générer les graphe";
             this.isGraphInMemory.Visible = false;
             // 
+            // groupBox5
             // groupBoxCor2Part
             // 
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Controls.Add(this.label5);
+            this.groupBox5.Controls.Add(this.treeViewCorrection);
+            this.groupBox5.Controls.Add(this.listBox1);
+            this.groupBox5.Location = new System.Drawing.Point(592, 12);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(259, 360);
+            this.groupBox5.TabIndex = 111;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Correction deuxième partie";
             this.groupBoxCor2Part.Controls.Add(this.label6);
             this.groupBoxCor2Part.Controls.Add(this.label5);
             this.groupBoxCor2Part.Controls.Add(this.treeViewCorrection);
@@ -597,12 +698,33 @@
             this.buttonQuitter.UseVisualStyleBackColor = true;
             this.buttonQuitter.Click += new System.EventHandler(this.buttonQuitter_Click);
             // 
+            // txtInstruction1
+            // 
+            this.txtInstruction1.AutoSize = true;
+            this.txtInstruction1.Location = new System.Drawing.Point(13, 22);
+            this.txtInstruction1.Name = "txtInstruction1";
+            this.txtInstruction1.Size = new System.Drawing.Size(551, 13);
+            this.txtInstruction1.TabIndex = 15;
+            this.txtInstruction1.Text = "Appuyez sur \"Démarrer aléa\" pour créer un arbbre aléatoirement. Vous pouvez chang" +
+    "er les noeuds initiaux et finaux";
+            // 
+            // txtInstruction3
+            // 
+            this.txtInstruction3.AutoSize = true;
+            this.txtInstruction3.Location = new System.Drawing.Point(11, 59);
+            this.txtInstruction3.Name = "txtInstruction3";
+            this.txtInstruction3.Size = new System.Drawing.Size(321, 13);
+            this.txtInstruction3.TabIndex = 16;
+            this.txtInstruction3.Text = "Enfin, cliquez sur \"remplir l\'arbre\" pour accéder à la dernière étape.";
+            // 
             // FormDijkstra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 609);
             this.Controls.Add(this.buttonQuitter);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBoxCor2Part);
             this.Controls.Add(this.groupBoxCor1Part);
             this.Controls.Add(this.groupBox3);
@@ -618,6 +740,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBoxCor1Part.ResumeLayout(false);
             this.groupBoxCor1Part.PerformLayout();
             this.groupBoxCor2Part.ResumeLayout(false);
@@ -627,13 +753,19 @@
         }
 
         #endregion
+
+        public System.Windows.Forms.TextBox textBoxInitialNode;
+        public System.Windows.Forms.TextBox textBoxFinalNode;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
         public System.Windows.Forms.ListBox listBox1;
         public System.Windows.Forms.TreeView treeViewCorrection;
+        public System.Windows.Forms.Button btnInitMemoire;
         public System.Windows.Forms.ListBox listBoxGraphe;
         public System.Windows.Forms.ListBox listBoxShowFermeUti;
         public System.Windows.Forms.TextBox textBoxOuverts;
         public System.Windows.Forms.TextBox textBoxFermes;
-        public System.Windows.Forms.Label txtInstruction;
+        public System.Windows.Forms.Label txtInstruction2;
         public System.Windows.Forms.Label txtOuvert;
         public System.Windows.Forms.Label txtFerme;
         public System.Windows.Forms.Button btn_Valider;
@@ -644,6 +776,25 @@
         public System.Windows.Forms.ListBox listBoxShowFermeIA;
         private System.Windows.Forms.Button buttonShowTree;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label ld14;
+        private System.Windows.Forms.Label ld16;
+        private System.Windows.Forms.Label ld22;
+        private System.Windows.Forms.Label ld21;
+        private System.Windows.Forms.Label ld15;
+        private System.Windows.Forms.Label ld13;
+        private System.Windows.Forms.Label ld17;
+        private System.Windows.Forms.Label ld12;
+        private System.Windows.Forms.Label ld11;
+        private System.Windows.Forms.Label ld2;
+        private System.Windows.Forms.Label ld6;
+        private System.Windows.Forms.Label ld4;
+        private System.Windows.Forms.Label ld7;
+        private System.Windows.Forms.Label ld3;
+        private System.Windows.Forms.Label ld5;
+        private System.Windows.Forms.Label ld1;
+        private System.Windows.Forms.Label ld20;
+        private System.Windows.Forms.Label ld19;
+        private System.Windows.Forms.Label ld18;
         public System.Windows.Forms.Label ld14;
         public System.Windows.Forms.Label ld16;
         public System.Windows.Forms.Label ld22;
@@ -669,12 +820,16 @@
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBoxCor1Part;
         private System.Windows.Forms.GroupBox groupBoxCor2Part;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonQuitter;
         public System.Windows.Forms.Label isGraphInMemory;
+        public System.Windows.Forms.Label txtInstruction3;
+        public System.Windows.Forms.Label txtInstruction1;
         public System.Windows.Forms.Label isGraphInMemory2;
         private System.Windows.Forms.Panel panelGraphImage;
     }

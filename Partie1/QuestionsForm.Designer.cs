@@ -95,10 +95,10 @@
             // 
             // btnControl
             // 
-            this.btnControl.Location = new System.Drawing.Point(183, 275);
-            this.btnControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnControl.Location = new System.Drawing.Point(169, 260);
+            this.btnControl.Margin = new System.Windows.Forms.Padding(2);
             this.btnControl.Name = "btnControl";
-            this.btnControl.Size = new System.Drawing.Size(64, 28);
+            this.btnControl.Size = new System.Drawing.Size(95, 43);
             this.btnControl.TabIndex = 7;
             this.btnControl.Text = "button1";
             this.btnControl.UseVisualStyleBackColor = true;
@@ -107,7 +107,7 @@
             // image
             // 
             this.image.Location = new System.Drawing.Point(481, 88);
-            this.image.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.image.Margin = new System.Windows.Forms.Padding(2);
             this.image.Name = "image";
             this.image.Size = new System.Drawing.Size(316, 254);
             this.image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

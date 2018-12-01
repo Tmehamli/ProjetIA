@@ -22,12 +22,18 @@ namespace Pluscourtchemin
         static public List<List<GenericNode>> historiqueUtiOuvert;
         static public List<List<GenericNode>> historiqueUtiFerme;
 
+        private bool reussite1;
+        private bool reussite2;
+
         public FormDijkstra()
         {
             InitializeComponent();
             historiqueUtiOuvert = new List<List<GenericNode>>();
             historiqueUtiFerme = new List<List<GenericNode>>();
             this.labelShowCorrectOrNot.Visible = false;
+            reussite2 = false;
+            reussite1 = false;
+        }
             groupBoxCor1Part.Visible = false;
             groupBoxCor2Part.Visible = false;
             panelGraphImage.Visible = true;
@@ -48,8 +54,14 @@ namespace Pluscourtchemin
             }
         }
 
+        private void buttonInitAlea_Click(object sender, EventArgs e)
         private void DemarrerAleaDij()
         {
+            // Reinitialisation des affichages
+            this.ClearFormDisplays();
+
+            AfficherLabelDijsktra();
+
             matrice = new double[nbnodes, nbnodes];
             for (int i = 0; i < nbnodes; i++)
             {
@@ -184,6 +196,8 @@ namespace Pluscourtchemin
 
         private bool Algorithme_AEtoile(SearchTree g)
         {
+            numinitial = Convert.ToInt32(textBoxInitialNode.Text);
+            numfinal = Convert.ToInt32(textBoxFinalNode.Text);
             numinitial = 0;
             numfinal = 6;
 
@@ -208,6 +222,7 @@ namespace Pluscourtchemin
             return reussite;
         }
 
+        public void buttonInitMemoire_Click(object sender, EventArgs e)
         public void DemarrerMemoire()
         {
             this.ClearFormDisplays();
@@ -306,8 +321,22 @@ namespace Pluscourtchemin
         {
             if ((textBoxOuverts.Text == "") && (textBoxFermes.Text != ""))
             {
+                this.AjoutOuvertFermetUti(textBoxFermes.Text, false);
+
+                SearchTree g = new SearchTree();
+                bool reussite = Algorithme_AEtoile(g);
+                if (reussite == true)
                 if (matrice != null)
                 {
+                    this.labelShowCorrectOrNot.Text = "Bonne réponse";
+                    this.labelShowCorrectOrNot.ForeColor = Color.Green;
+                    reussite1 = true;
+                }
+                else
+                {
+                    this.labelShowCorrectOrNot.Text = "Mauvaise réponse";
+                    this.labelShowCorrectOrNot.ForeColor = Color.Red;
+                    reussite1 = false;
                     this.AjoutOuvertFermetUti(textBoxFermes.Text, false);
 
                     SearchTree g = new SearchTree();
@@ -330,6 +359,8 @@ namespace Pluscourtchemin
                 {
                     isGraphInMemory2.Visible = true;
                 }
+                this.labelShowCorrectOrNot.Visible = true;
+                AffichageHistoIA(g);
             }
             else
             {
@@ -366,6 +397,7 @@ namespace Pluscourtchemin
                 {
                     // On ajoute l'ouvert {0} au début
                     var n = new Node2();
+                    n.numero = int.Parse(this.textBoxInitialNode.Text);
                     n.numero = 0;
                     var listeInit = new List<GenericNode>();
                     listeInit.Add(n);
@@ -488,7 +520,9 @@ namespace Pluscourtchemin
                 var lastFerme = g.L_Fermes;
                 lastFerme.Add(NEnd);
                 var drawForm = new TreeDrawForm(lastFerme);
+                ////g.InsertNewNodeInOpenList()
                 drawForm.ShowDialog();
+                reussite2 = drawForm.GetReussite();
             }
             else
             {
@@ -501,5 +535,12 @@ namespace Pluscourtchemin
         {
             this.Close();
         }
+
+        public List<bool> GetReussite()
+        {
+            List<bool> liste = new List<bool> { reussite1, reussite2 };
+            return(liste);
+        }
+        
     }
 }
